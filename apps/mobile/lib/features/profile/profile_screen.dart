@@ -110,7 +110,9 @@ class ProfileScreen extends ConsumerWidget {
                     icon: Icons.bolt_outlined,
                     dense: true,
                     onTap: () async {
-                      await n.inject('swiggy_now');
+                      final res = await n.inject('swiggy_now');
+                      if (!context.mounted) return;
+                      if (res != null && res.m('sms').s('body').isNotEmpty) await _showBankSms(context, res);
                       if (context.mounted) context.go('/');
                     },
                   ),
@@ -172,4 +174,58 @@ class _Section extends StatelessWidget {
       child: PCard(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [SectionLabel(title), const SizedBox(height: 12), child])),
     );
   }
+}
+
+/// Shows the synthetic bank SMS a demo transaction arrived as, and what the parser made of it.
+/// Every figure on it comes from the server.
+Future<void> _showBankSms(BuildContext context, Json res) {
+  final l = L.of(context);
+  final sms = res.m('sms');
+  final txn = res.m('transaction');
+  return showPocketSheet<void>(
+    context,
+    title: l.smsTitle,
+    builder: (ctx) => Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(color: Pk.raised, border: Border.all(color: Pk.line)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(sms.s('sender_id'), style: Pk.num(12, c: Pk.muted, ls: 0.4)),
+              const SizedBox(height: 8),
+              Text(sms.s('body'), style: Pk.num(13, w: FontWeight.w400, h: 1.5)),
+            ],
+          ),
+        ),
+        const Stitch(vertical: 16),
+        SectionLabel(l.smsReadAs, color: Pk.lime),
+        const SizedBox(height: 12),
+        Row(
+          children: [
+            EmojiTile(txn.s('emoji', '•')),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(txn.s('merchant'), style: Pk.text(16, w: FontWeight.w600), maxLines: 1, overflow: TextOverflow.ellipsis),
+                  const SizedBox(height: 2),
+                  Text('${txn.s('category')} · ${txn.s('account')}', style: Pk.text(13, c: Pk.muted), maxLines: 1, overflow: TextOverflow.ellipsis),
+                ],
+              ),
+            ),
+            const SizedBox(width: 12),
+            Text(txn.m('amount').s('exact'), style: Pk.num(18, w: FontWeight.w600)),
+          ],
+        ),
+        const SizedBox(height: 16),
+        Text(l.smsSynthetic, style: Pk.text(13, c: Pk.faint, h: 1.4)),
+        const SizedBox(height: 18),
+        BlockButton(label: l.smsSeeHome, onTap: () => Navigator.of(ctx).pop()),
+      ],
+    ),
+  );
 }

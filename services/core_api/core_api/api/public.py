@@ -641,8 +641,10 @@ class InjectIn(In):
 async def demo_inject(body: InjectIn, session: Session, ctx: UserCtx) -> dict[str, Any]:
     from core_api.demo.inject import inject
 
-    txn = await inject(session, ctx, body.preset)
+    result = await inject(session, ctx, body.preset)
+    txn_id, sms = result.transaction.id if result.transaction else "", {"sender_id": result.sms.sender_id, "body": result.sms.body}
     await session.commit()
     new_ctx = await refresh(session, ctx.user)
-    return {"transaction": summary.txn_row(new_ctx, next(x for x in new_ctx.txns if x.id == txn.id)),
+    return {"transaction": summary.txn_row(new_ctx, next(x for x in new_ctx.txns if x.id == txn_id)),
+            "sms": sms,  # the synthetic bank SMS this transaction was read from
             "nudges": await nudges.due_nudges(session, new_ctx)}

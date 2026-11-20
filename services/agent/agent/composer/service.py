@@ -67,7 +67,7 @@ WIDGET_WORDS: dict[str, str] = {
     "bills_emis": r"emi|bill|loan|due|rent|ईएमआई|बिल|कर्ज़|किराया|இஎம்ஐ|பில்|கடன்|வாடகை",
     "goals": r"goal|saving|laptop|bike|trip fund|education|लक्ष्य|बचत|இலக்கு|சேமிப்பு",
     "investments": r"invest|fund|sip|portfolio|निवेश|फंड|முதலீடு|ஃபண்ட்",
-    "net_worth": r"net worth|worth|wealth|संपत्ति|சொத்து",
+    "net_worth": r"net worth|worth|wealth|संपत्ति|नेट ?वर्थ|சொத்து|நெட் ?வொர்த்",
     "cash_flow": r"cash ?flow|income|earning|आय|कमाई|வருமானம்",
     "spend_by_category": r"categor|where.{0,12}money|money goes|breakdown|spending|कहाँ जा|खर्च|எங்கே போ|செலவு",
     "pockets": r"pocket|budget|पॉकेट|बजट|பாக்கெட்|பட்ஜெட்",
@@ -79,6 +79,10 @@ WIDGET_WORDS: dict[str, str] = {
 FIRST = re.compile(r"first|top|above|start|upar|mudhal|पहले|ऊपर|सबसे|முதலில்|மேலே", re.IGNORECASE)
 HIDE = re.compile(r"hide|remove|take (?:it )?(?:off|out|away)|don't show|no more|get rid|eduthudu|vendam|हटा|मत दिखा|நீக்கு|மறை|வேண்டாம்", re.IGNORECASE)
 RESET = re.compile(r"reset|start over|default|rebuild|फिर से|மீண்டும்", re.IGNORECASE)
+# "keep it simple", "too many cards", "only the essentials": cut Home down to the minimum
+SIMPLE = re.compile(r"simpl|too many|clutter|minimal|essential|fewer|सिंपल|सरल|ज़रूरी|जरूरी|कम कर|சிம்பிள|எளிமை|குறை", re.IGNORECASE)
+# "I only want net worth and goals": keep just the things named
+ONLY = re.compile(r"\bonly\b|सिर्फ़|सिर्फ|केवल|மட்டும்", re.IGNORECASE)
 
 FAKE_TEXT = {
     "first": {"en": "You asked for this near the top.", "hi": "आपने इसे ऊपर रखने को कहा था।", "ta": "இதை மேலே வைக்கச் சொன்னீர்கள்."},
@@ -87,6 +91,9 @@ FAKE_TEXT = {
     "summary_first": {"en": "I moved that right under Safe-to-spend.", "hi": "मैंने उसे सेफ़-टू-स्पेंड के ठीक नीचे रख दिया।", "ta": "அதை செலவு வரம்புக்கு அடுத்ததாக வைத்தேன்."},
     "summary_hide": {"en": "I took that off your Home.", "hi": "मैंने उसे आपके होम से हटा दिया।", "ta": "அதை உங்கள் முகப்பிலிருந்து நீக்கினேன்."},
     "summary_add": {"en": "I added that to your Home.", "hi": "मैंने उसे आपके होम में जोड़ दिया।", "ta": "அதை உங்கள் முகப்பில் சேர்த்தேன்."},
+    "kept": {"en": "You asked to keep this.", "hi": "आपने इसे रखने को कहा था।", "ta": "இதை வைத்திருக்கச் சொன்னீர்கள்."},
+    "summary_simple": {"en": "I kept only the essentials on your Home.", "hi": "मैंने आपके होम पर सिर्फ़ ज़रूरी चीज़ें रखीं।", "ta": "உங்கள் முகப்பில் முக்கியமானவற்றை மட்டும் வைத்தேன்."},
+    "summary_only": {"en": "Your Home now shows just what you asked for.", "hi": "अब आपके होम पर वही है जो आपने माँगा।", "ta": "நீங்கள் கேட்டவை மட்டும் இப்போது உங்கள் முகப்பில் உள்ளன."},
     "summary_default": {"en": "I rebuilt your Home around what matters most to you.", "hi": "मैंने आपका होम आपकी ज़रूरत के हिसाब से फिर बनाया।", "ta": "உங்களுக்கு முக்கியமானவற்றைச் சுற்றி முகப்பை மீண்டும் அமைத்தேன்."},
 }
 
@@ -114,6 +121,24 @@ def rule_compose(body: dict[str, Any]) -> LayoutSpec:
     widgets = [WidgetSpec(type=w.type, variant=w.variant, params=dict(w.params)) for w in base.widgets if w.type != "safe_to_spend"]
     reasons: dict[str, str] = {}
     actions: list[str] = []
+
+    def finish(kept: list[WidgetSpec], why: dict[str, str], summary_key: str) -> LayoutSpec:
+        spec = enforce_layout(LayoutSpec(widgets=[WidgetSpec(type="safe_to_spend", variant="hero"), *kept], summary=""), lctx)
+        out = [Reason(widget_index=0, text=FAKE_TEXT["pinned"][lang])]
+        out += [Reason(widget_index=i, text=why[w.type]) for i, w in enumerate(spec.widgets) if w.type in why]
+        return LayoutSpec(widgets=spec.widgets, reasons=out, summary=FAKE_TEXT[summary_key][lang])
+
+    named = {w: m.start() for w, pat in WIDGET_WORDS.items()
+             if w in lctx.available and (m := re.search(pat, instruction, re.IGNORECASE)) is not None}
+    if named and ONLY.search(instruction) and not FIRST.search(instruction) and not HIDE.search(instruction):
+        # the things named, in the order they were said, filled up to the smallest Home allowed
+        kept = [next((w for w in widgets if w.type == t), WidgetSpec(type=t)) for t in sorted(named, key=lambda t: named[t])]
+        fill = sorted((w for w in widgets if w.type not in named), key=lambda w: w.type != "insight_card")
+        kept += fill[: max(0, MIN_WIDGETS - 1 - len(kept))]
+        return finish(kept, dict.fromkeys(named, FAKE_TEXT["kept"][lang]), "summary_only")
+    if not named and SIMPLE.search(instruction):
+        return finish(widgets[: MIN_WIDGETS - 1], {}, "summary_simple")
+
     for clause in [c for c in CLAUSE_SPLIT.split(instruction) if c and c.strip()]:
         targets = [w for w, pat in WIDGET_WORDS.items() if re.search(pat, clause, re.IGNORECASE) and w in lctx.available]
         if not targets:
@@ -132,11 +157,8 @@ def rule_compose(body: dict[str, Any]) -> LayoutSpec:
         actions.append("hide" if hide else "first" if first else "add")
     if not actions:
         return default
-    spec = enforce_layout(LayoutSpec(widgets=[WidgetSpec(type="safe_to_spend", variant="hero"), *widgets], summary=""), lctx)
-    out_reasons = [Reason(widget_index=0, text=FAKE_TEXT["pinned"][lang])]
-    out_reasons += [Reason(widget_index=i, text=reasons[w.type]) for i, w in enumerate(spec.widgets) if w.type in reasons]
     kind = "first" if "first" in actions else "add" if "add" in actions else "hide"
-    return LayoutSpec(widgets=spec.widgets, reasons=out_reasons, summary=FAKE_TEXT[f"summary_{kind}"][lang])
+    return finish(widgets, reasons, f"summary_{kind}")
 
 
 def _prompt(body: dict[str, Any]) -> str:

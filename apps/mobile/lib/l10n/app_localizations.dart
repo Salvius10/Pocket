@@ -63,8 +63,7 @@ import 'app_localizations_ta.dart';
 /// be consistent with the languages listed in the L.supportedLocales
 /// property.
 abstract class L {
-  L(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  L(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -84,19 +83,18 @@ abstract class L {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('hi'),
-    Locale('ta'),
+    Locale('ta')
   ];
 
   /// No description provided for @appName.
@@ -1394,6 +1392,30 @@ abstract class L {
   /// In en, this message translates to:
   /// **'Mute voice'**
   String get muteVoice;
+
+  /// No description provided for @smsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A bank SMS just arrived'**
+  String get smsTitle;
+
+  /// No description provided for @smsReadAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Pocket read it as'**
+  String get smsReadAs;
+
+  /// No description provided for @smsSynthetic.
+  ///
+  /// In en, this message translates to:
+  /// **'This message is made up for the demo. Pocket does not read the SMS on your phone.'**
+  String get smsSynthetic;
+
+  /// No description provided for @smsSeeHome.
+  ///
+  /// In en, this message translates to:
+  /// **'See it on Home'**
+  String get smsSeeHome;
 }
 
 class _LDelegate extends LocalizationsDelegate<L> {
@@ -1405,28 +1427,26 @@ class _LDelegate extends LocalizationsDelegate<L> {
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'hi', 'ta'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'hi', 'ta'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_LDelegate old) => false;
 }
 
 L lookupL(Locale locale) {
+
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en':
-      return LEn();
-    case 'hi':
-      return LHi();
-    case 'ta':
-      return LTa();
+    case 'en': return LEn();
+    case 'hi': return LHi();
+    case 'ta': return LTa();
   }
 
   throw FlutterError(
     'L.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.',
+    'that was used.'
   );
 }

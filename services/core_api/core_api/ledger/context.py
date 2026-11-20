@@ -111,11 +111,9 @@ async def load_ctx(session: AsyncSession, user: m.User) -> Ctx:
             q = q.order_by(order)
         return list((await session.execute(q)).scalars().all())
 
-    ctx = Ctx(
-        user=user,
-        lang=user.language,
-        today=today,
-        month=month_key(today),
+    ctx = make_ctx(
+        user,
+        today,
         settings=await session.get(m.UserSettings, user.id),
         categories=await load_categories(session),
         accounts=await rows(m.Account),
@@ -130,10 +128,17 @@ async def load_ctx(session: AsyncSession, user: m.User) -> Ctx:
         statements=await rows(m.CardStatement, m.CardStatement.statement_date),
         nav=await load_nav(session),
     )
-    _derive(ctx)
     if len(_ctx_cache) >= _CTX_CACHE_MAX:
         _ctx_cache.pop(next(iter(_ctx_cache)))
     _ctx_cache[user.id] = (key, ctx)
+    return ctx
+
+
+def make_ctx(user: m.User, today: date, **parts: Any) -> Ctx:
+    """A Ctx from rows already in hand. `load_ctx` reads them from the database; the evals build
+    them straight from the dataset. Transactions must be in time order."""
+    ctx = Ctx(user=user, lang=user.language, today=today, month=month_key(today), **parts)
+    _derive(ctx)
     return ctx
 
 

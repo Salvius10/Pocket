@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -68,8 +67,7 @@ class LEn extends L {
   String get errorTitle => 'Something went wrong';
 
   @override
-  String get errorBody =>
-      'We couldn\'t load this. Check your connection and try again.';
+  String get errorBody => 'We couldn\'t load this. Check your connection and try again.';
 
   @override
   String get onbTagline => 'Money that explains itself.';
@@ -114,8 +112,7 @@ class LEn extends L {
   String get onbPickPersona => 'Pick the profile closest to you';
 
   @override
-  String get onbPersonaNote =>
-      'Each one is invented, with a year of realistic money.';
+  String get onbPersonaNote => 'Each one is invented, with a year of realistic money.';
 
   @override
   String get onbSuggested => 'Closest match';
@@ -178,8 +175,7 @@ class LEn extends L {
   String get stsSpent => 'Spent';
 
   @override
-  String get stsFormula =>
-      'Income, minus bills and goals, minus what you\'ve spent, shared over the days left.';
+  String get stsFormula => 'Income, minus bills and goals, minus what you\'ve spent, shared over the days left.';
 
   @override
   String get wPockets => 'Pockets';
@@ -427,12 +423,10 @@ class LEn extends L {
   String get connecting => 'Connecting';
 
   @override
-  String get voiceOffNote =>
-      'Voice comes on when the live key is set. Type to chat.';
+  String get voiceOffNote => 'Voice comes on when the live key is set. Type to chat.';
 
   @override
-  String get mascotOffline =>
-      'Poko needs the internet. Your numbers are still here.';
+  String get mascotOffline => 'Poko needs the internet. Your numbers are still here.';
 
   @override
   String get confirmCardNote => 'Nothing happens until you tap Confirm.';
@@ -462,8 +456,7 @@ class LEn extends L {
   String get pulseEmpty => 'No Pulse yet today';
 
   @override
-  String get pulseEmptyBody =>
-      'Markets and world news with sources will appear here.';
+  String get pulseEmptyBody => 'Markets and world news with sources will appear here.';
 
   @override
   String get planTitle => 'Plan';
@@ -583,12 +576,10 @@ class LEn extends L {
   }
 
   @override
-  String get pocketNeverHolds =>
-      'Pocket never holds money. You pay in your own UPI app.';
+  String get pocketNeverHolds => 'Pocket never holds money. You pay in your own UPI app.';
 
   @override
-  String get demoUpiNote =>
-      'Demo UPI IDs (@pocketdemo) are not real, so no money will move.';
+  String get demoUpiNote => 'Demo UPI IDs (@pocketdemo) are not real, so no money will move.';
 
   @override
   String get sharedBudget => 'Shared budget';
@@ -603,8 +594,7 @@ class LEn extends L {
   String get privacyGroup => 'What this group sees';
 
   @override
-  String get privacyGroupNote =>
-      'Nothing of yours is shared unless you turn it on.';
+  String get privacyGroupNote => 'Nothing of yours is shared unless you turn it on.';
 
   @override
   String get shareNothing => 'Sharing nothing';
@@ -671,15 +661,13 @@ class LEn extends L {
   String get deleteData => 'Delete my data';
 
   @override
-  String get deleteConfirm =>
-      'This removes everything about you from Pocket. It can\'t be undone.';
+  String get deleteConfirm => 'This removes everything about you from Pocket. It can\'t be undone.';
 
   @override
   String get disclaimerTitle => 'Data, not advice';
 
   @override
-  String get disclaimerBody =>
-      'Pocket shows your own numbers and general explanations. It never tells you to buy, sell or switch any investment. All data in this build is synthetic.';
+  String get disclaimerBody => 'Pocket shows your own numbers and general explanations. It never tells you to buy, sell or switch any investment. All data in this build is synthetic.';
 
   @override
   String get switchPersona => 'Switch demo profile';
@@ -703,4 +691,16 @@ class LEn extends L {
 
   @override
   String get muteVoice => 'Mute voice';
+
+  @override
+  String get smsTitle => 'A bank SMS just arrived';
+
+  @override
+  String get smsReadAs => 'Pocket read it as';
+
+  @override
+  String get smsSynthetic => 'This message is made up for the demo. Pocket does not read the SMS on your phone.';
+
+  @override
+  String get smsSeeHome => 'See it on Home';
 }

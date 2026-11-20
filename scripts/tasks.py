@@ -97,8 +97,32 @@ def test() -> None:
 
 
 def l10n() -> None:
-    run([flutter(), "gen-l10n", "--arb-dir", "lib/l10n", "--template-arb-file", "app_en.arb", "--output-localization-file", "app_localizations.dart",
-         "--output-class", "L", "--no-nullable-getter"], MOBILE)
+    """Regenerate lib/l10n/app_localizations*.dart from the ARB files (they are committed).
+
+    Flutter only generates when pubspec.yaml has `flutter: generate: true`, and with that flag every
+    build regenerates into lib/l10n, which fails in a OneDrive-synced folder. So the flag is set
+    only for this one command, on the build copy, and the result is copied back."""
+    where = _android_build_dir()
+    pubspec = where / "pubspec.yaml"
+    original = pubspec.read_text(encoding="utf-8")
+    marker = "\nflutter:\n"
+    if marker not in original:
+        sys.exit("pubspec.yaml has no top-level `flutter:` section")
+    if "generate: true" not in original:
+        pubspec.write_text(original.replace(marker, marker + "  generate: true\n", 1), encoding="utf-8")
+    if os.name == "nt":
+        # OneDrive marks its folders read-only and the copy keeps that mark; the generator then
+        # refuses the folder ("arb-dir doesn't allow reading and writing").
+        subprocess.run(["attrib", "-R", str(where / "lib" / "l10n")], check=False)
+    try:
+        run([flutter(), "gen-l10n", "--arb-dir", "lib/l10n", "--template-arb-file", "app_en.arb",
+             "--output-localization-file", "app_localizations.dart", "--output-class", "L", "--no-nullable-getter"], where)
+    finally:
+        pubspec.write_text(original, encoding="utf-8")
+    if where != MOBILE:
+        for generated in sorted((where / "lib" / "l10n").glob("app_localizations*.dart")):
+            (MOBILE / "lib" / "l10n" / generated.name).write_bytes(generated.read_bytes())
+            print(f"updated lib/l10n/{generated.name}")
 
 
 def app() -> None:

@@ -26,7 +26,16 @@ copy .env.example .env        # then set DATABASE_URL (create the database "pock
 ./make.ps1 app                # the app in Chrome, pointed at localhost
 ```
 
-`./make.ps1 test`, `lint`, `typecheck`, `seed-demo`, `eval-chats`, `web`, `apk` and `l10n` do what they say. `seed-demo` links all six personas and prints their headline numbers next to the planted answer key.
+`./make.ps1 test`, `lint`, `typecheck`, `seed-demo`, `web`, `apk` and `l10n` do what they say. `seed-demo` links all six personas and prints their headline numbers next to the planted answer key.
+
+The evals, and what each needs:
+
+| Command | Measures | Needs |
+| --- | --- | --- |
+| `./make.ps1 eval-insights` | Gate 1: the insight engine against the answer key, 6 personas + 200 eval users | nothing (in memory, about 30 s) |
+| `./make.ps1 eval-parsers` | Gate 4: the SMS parser on all 2.4 lakh synthetic SMS; the gate counts the held-out wordings | nothing (about 90 s) |
+| `./make.ps1 eval-composer` | The 6 ideal layouts + 30 instruction variants, on the rule-based composer. Add `--model` to run Gemini instead (up to 72 calls) | nothing, or a key with `--model` |
+| `./make.ps1 eval-chats` | Gates 2 and 3: the 100 test chats (no buy/sell lines, every number from the ledger) | both services running |
 
 With no Gemini key the agent runs in `GEMINI_MODE=fake`: the mascot answers typed questions through the same tools, with no voice. Everything else works.
 
@@ -44,20 +53,22 @@ Leave `DATABASE_URL` empty in `infra/demo.env` for the quickest demo: core-api t
 Working end to end today, verified against the demo data:
 
 - Persona link in about 1 second; Safe-to-spend, pockets, goals, cash flow, bills & EMIs, net worth, investments.
-- Insight engine: all 36 planted patterns found across the 6 demo personas with no false positives.
+- Insight engine (Gate 1): all 520 planted patterns found across the 6 demo personas and the 200 eval users, with 2 extra findings (recall 1.000, precision 0.996).
+- SMS parser (Gate 4): 99.98% of the held-out wordings fully correct (30,175 SMS), 99.99% of the seen ones (207,390). The few misses are rows where the answer key lists a balance the SMS does not print. The demo's "add a Swiggy order" writes a synthetic SMS in the user's own bank's wording and puts it through this parser.
 - Proposals: every mascot write is a confirm card; only a tap executes, atomically, with an audit row.
 - Collab: groups, guests, equal / percent / exact splits, balances, settle plan, UPI link + QR, pot, invite codes.
 - Nudges: at most 2 a day, quiet hours, dedupe (in-app).
-- Home: 12 catalog widgets, composer (rules in fake mode, Gemini in live mode), validator, manual reorder/hide, "Why this layout?".
-- Mascot: painted Poko with 8 moods and lip-sync; text chat everywhere; the live-voice path is written against google-adk 2.15 but has **not been run against Gemini yet**.
+- Home: 12 catalog widgets, composer (Gemini in live mode; rules in fake mode and whenever the model is unavailable), validator, manual reorder/hide, "Why this layout?". The rule-based composer meets all 30 shipped instruction variants; the Gemini path has produced valid layouts but has not been run through the 30 variants.
+- Mascot: painted Poko with 8 moods and lip-sync; text chat everywhere. Live voice runs against `gemini-3.8-live` (checked with typed questions: tool call, spoken answer with the right numbers, refusal on "should I buy this fund"). The browser microphone path has not been tried by a person yet.
 - Guardrail: number check and advice check on every transcript sentence, stop-audio and self-correction.
 - App: onboarding, five tabs, Profile, English / Hindi / Tamil, offline snapshot with an "as of" time.
 
 Not done yet (see `DECISIONS_LOG.md` for why):
 
-- **Parsers (M2, Gate 4).** Persona link loads the processed dataset; the AA and SMS parsers are not written.
-- **Gate 1 on the 200 eval users.** The detectors are only checked on the 6 demo personas so far.
-- **Android APK.** Needs the Android SDK installed; the code has no web-only parts.
+- **Account-feed (AA) parser.** Persona link still loads the processed dataset; only the SMS half of M2 is written. A reversal SMS is stored but not linked back to the payment it reverses.
+- **Gates 2 and 3 on the live model.** `eval-chats` passes both in fake mode; it has not been run against Gemini.
+- **Deploy.** `infra/deploy.ps1` has never been run.
+- **Android APK.** It builds (`./make.ps1 apk`) but has not been installed on a phone.
 - `a2ui_flutter`'s own surface widget is not mounted yet; Home reads the stored A2UI messages through our adapter.
 - drift (the cache is a snapshot in shared_preferences), the Rive file (H3), the daily data drip, the monthly report screen, Cloud Scheduler set-up, CI, and widget tests for the app.
 - Hindi and Tamil strings are agent-written and need a native-speaker review (H4).

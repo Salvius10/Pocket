@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -68,8 +67,7 @@ class LTa extends L {
   String get errorTitle => 'ஏதோ தவறு நடந்தது';
 
   @override
-  String get errorBody =>
-      'இதை ஏற்ற முடியவில்லை. இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.';
+  String get errorBody => 'இதை ஏற்ற முடியவில்லை. இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.';
 
   @override
   String get onbTagline => 'தன்னைத் தானே விளக்கும் பணம்.';
@@ -84,8 +82,7 @@ class LTa extends L {
   String get onbTryDemo => 'டெமோ சுயவிவரத்தை முயற்சிக்கவும்';
 
   @override
-  String get onbDemoNote =>
-      'டெமோ தரவு மட்டும். உண்மையான வங்கி எதுவும் இணைக்கப்படவில்லை.';
+  String get onbDemoNote => 'டெமோ தரவு மட்டும். உண்மையான வங்கி எதுவும் இணைக்கப்படவில்லை.';
 
   @override
   String get onbVoiceTitle => 'போகோவின் குரலைத் தேர்ந்தெடுங்கள்';
@@ -106,19 +103,16 @@ class LTa extends L {
   String get onbTalkTitle => 'உங்கள் பணத்தைப் பற்றி போகோவிடம் சொல்லுங்கள்';
 
   @override
-  String get onbTalkHint =>
-      'நான்கு சிறு கேள்விகள். தட்டச்சு செய்யலாம் அல்லது பேசலாம்.';
+  String get onbTalkHint => 'நான்கு சிறு கேள்விகள். தட்டச்சு செய்யலாம் அல்லது பேசலாம்.';
 
   @override
   String get onbSkipTalk => 'உரையாடலைத் தவிர்';
 
   @override
-  String get onbPickPersona =>
-      'உங்களுக்கு மிக நெருக்கமான சுயவிவரத்தைத் தேர்ந்தெடுங்கள்';
+  String get onbPickPersona => 'உங்களுக்கு மிக நெருக்கமான சுயவிவரத்தைத் தேர்ந்தெடுங்கள்';
 
   @override
-  String get onbPersonaNote =>
-      'ஒவ்வொன்றும் கற்பனையானது; ஒரு வருட நிஜம் போன்ற பணப் பதிவுகளுடன்.';
+  String get onbPersonaNote => 'ஒவ்வொன்றும் கற்பனையானது; ஒரு வருட நிஜம் போன்ற பணப் பதிவுகளுடன்.';
 
   @override
   String get onbSuggested => 'மிக நெருக்கம்';
@@ -181,8 +175,7 @@ class LTa extends L {
   String get stsSpent => 'செலவு';
 
   @override
-  String get stsFormula =>
-      'வருமானத்திலிருந்து பில்களும் இலக்குகளும் கழித்து, இதுவரை செலவானதைக் கழித்து, மீதமுள்ள நாட்களுக்குப் பகிர்ந்தது.';
+  String get stsFormula => 'வருமானத்திலிருந்து பில்களும் இலக்குகளும் கழித்து, இதுவரை செலவானதைக் கழித்து, மீதமுள்ள நாட்களுக்குப் பகிர்ந்தது.';
 
   @override
   String get wPockets => 'பாக்கெட்டுகள்';
@@ -227,8 +220,7 @@ class LTa extends L {
   String get editHome => 'முகப்பைத் திருத்து';
 
   @override
-  String get editHomeHint =>
-      'இழுத்து வரிசையை மாற்றுங்கள். செலவு வரம்பு எப்போதும் மேலே இருக்கும்.';
+  String get editHomeHint => 'இழுத்து வரிசையை மாற்றுங்கள். செலவு வரம்பு எப்போதும் மேலே இருக்கும்.';
 
   @override
   String get resetHome => 'போகோவின் அமைப்புக்குத் திரும்பு';
@@ -308,15 +300,13 @@ class LTa extends L {
   String get weekChange => 'இந்த வாரம்';
 
   @override
-  String get viewOnly =>
-      'பார்க்க மட்டும். பாக்கெட் ஒருபோதும் வாங்கவோ விற்கவோ சொல்லாது.';
+  String get viewOnly => 'பார்க்க மட்டும். பாக்கெட் ஒருபோதும் வாங்கவோ விற்கவோ சொல்லாது.';
 
   @override
   String get noInsights => 'சொல்ல புதிதாக எதுவும் இல்லை';
 
   @override
-  String get noInsightsBody =>
-      'போகோ கவனித்துக்கொண்டிருக்கிறது. வடிவங்கள் இங்கே தெரியும்.';
+  String get noInsightsBody => 'போகோ கவனித்துக்கொண்டிருக்கிறது. வடிவங்கள் இங்கே தெரியும்.';
 
   @override
   String get forYou => 'உங்களுக்கு';
@@ -433,16 +423,13 @@ class LTa extends L {
   String get connecting => 'இணைகிறது';
 
   @override
-  String get voiceOffNote =>
-      'லைவ் கீ அமைத்ததும் குரல் இயங்கும். இப்போது தட்டச்சு செய்து பேசுங்கள்.';
+  String get voiceOffNote => 'லைவ் கீ அமைத்ததும் குரல் இயங்கும். இப்போது தட்டச்சு செய்து பேசுங்கள்.';
 
   @override
-  String get mascotOffline =>
-      'போகோவுக்கு இணையம் தேவை. உங்கள் எண்கள் இங்கேயே உள்ளன.';
+  String get mascotOffline => 'போகோவுக்கு இணையம் தேவை. உங்கள் எண்கள் இங்கேயே உள்ளன.';
 
   @override
-  String get confirmCardNote =>
-      'உறுதிசெய் என்பதைத் தட்டும் வரை எதுவும் நடக்காது.';
+  String get confirmCardNote => 'உறுதிசெய் என்பதைத் தட்டும் வரை எதுவும் நடக்காது.';
 
   @override
   String get proposalDone => 'முடிந்தது. உங்கள் எண்கள் புதுப்பிக்கப்பட்டன.';
@@ -469,8 +456,7 @@ class LTa extends L {
   String get pulseEmpty => 'இன்றைய பல்ஸ் இன்னும் வரவில்லை';
 
   @override
-  String get pulseEmptyBody =>
-      'சந்தை, உலகச் செய்திகள் ஆதாரத்துடன் இங்கே தெரியும்.';
+  String get pulseEmptyBody => 'சந்தை, உலகச் செய்திகள் ஆதாரத்துடன் இங்கே தெரியும்.';
 
   @override
   String get planTitle => 'திட்டம்';
@@ -590,12 +576,10 @@ class LTa extends L {
   }
 
   @override
-  String get pocketNeverHolds =>
-      'பாக்கெட் ஒருபோதும் பணத்தை வைத்திருக்காது. உங்கள் யுபிஐ செயலியில்தான் செலுத்துகிறீர்கள்.';
+  String get pocketNeverHolds => 'பாக்கெட் ஒருபோதும் பணத்தை வைத்திருக்காது. உங்கள் யுபிஐ செயலியில்தான் செலுத்துகிறீர்கள்.';
 
   @override
-  String get demoUpiNote =>
-      'டெமோ யுபிஐ ஐடிகள் (@pocketdemo) உண்மையானவை அல்ல; பணம் எதுவும் போகாது.';
+  String get demoUpiNote => 'டெமோ யுபிஐ ஐடிகள் (@pocketdemo) உண்மையானவை அல்ல; பணம் எதுவும் போகாது.';
 
   @override
   String get sharedBudget => 'பொது பட்ஜெட்';
@@ -610,8 +594,7 @@ class LTa extends L {
   String get privacyGroup => 'இந்தக் குழு என்ன பார்க்கும்';
 
   @override
-  String get privacyGroupNote =>
-      'நீங்கள் இயக்கும் வரை உங்களுடையது எதுவும் பகிரப்படாது.';
+  String get privacyGroupNote => 'நீங்கள் இயக்கும் வரை உங்களுடையது எதுவும் பகிரப்படாது.';
 
   @override
   String get shareNothing => 'எதுவும் பகிரப்படவில்லை';
@@ -620,8 +603,7 @@ class LTa extends L {
   String get noGroups => 'இன்னும் குழு இல்லை';
 
   @override
-  String get noGroupsBody =>
-      'பயணம், வீடு அல்லது குடும்பத்திற்காக ஒன்றைத் தொடங்குங்கள்.';
+  String get noGroupsBody => 'பயணம், வீடு அல்லது குடும்பத்திற்காக ஒன்றைத் தொடங்குங்கள்.';
 
   @override
   String get you => 'நீங்கள்';
@@ -679,15 +661,13 @@ class LTa extends L {
   String get deleteData => 'என் தரவை அழி';
 
   @override
-  String get deleteConfirm =>
-      'இது பாக்கெட்டில் உங்களைப் பற்றிய அனைத்தையும் நீக்கும். மீட்க முடியாது.';
+  String get deleteConfirm => 'இது பாக்கெட்டில் உங்களைப் பற்றிய அனைத்தையும் நீக்கும். மீட்க முடியாது.';
 
   @override
   String get disclaimerTitle => 'தகவல், ஆலோசனை அல்ல';
 
   @override
-  String get disclaimerBody =>
-      'பாக்கெட் உங்கள் சொந்த எண்களையும் பொதுவான விளக்கங்களையும் காட்டுகிறது. எந்த முதலீட்டையும் வாங்க, விற்க, மாற்ற அது ஒருபோதும் சொல்லாது. இந்தப் பதிப்பில் உள்ள அனைத்துத் தரவும் செயற்கையானது.';
+  String get disclaimerBody => 'பாக்கெட் உங்கள் சொந்த எண்களையும் பொதுவான விளக்கங்களையும் காட்டுகிறது. எந்த முதலீட்டையும் வாங்க, விற்க, மாற்ற அது ஒருபோதும் சொல்லாது. இந்தப் பதிப்பில் உள்ள அனைத்துத் தரவும் செயற்கையானது.';
 
   @override
   String get switchPersona => 'டெமோ சுயவிவரத்தை மாற்று';
@@ -711,4 +691,16 @@ class LTa extends L {
 
   @override
   String get muteVoice => 'குரலை அணை';
+
+  @override
+  String get smsTitle => 'ஒரு வங்கி SMS இப்போது வந்தது';
+
+  @override
+  String get smsReadAs => 'பாக்கெட் இதை இப்படிப் படித்தது';
+
+  @override
+  String get smsSynthetic => 'இந்தச் செய்தி டெமோவுக்காக உருவாக்கப்பட்டது. பாக்கெட் உங்கள் போனில் உள்ள SMS-ஐப் படிப்பதில்லை.';
+
+  @override
+  String get smsSeeHome => 'முகப்பில் பார்க்க';
 }

@@ -347,5 +347,9 @@
       }
     }
   },
-  "muteVoice": "Mute voice"
+  "muteVoice": "Mute voice",
+  "smsTitle": "A bank SMS just arrived",
+  "smsReadAs": "Pocket read it as",
+  "smsSynthetic": "This message is made up for the demo. Pocket does not read the SMS on your phone.",
+  "smsSeeHome": "See it on Home"
 }

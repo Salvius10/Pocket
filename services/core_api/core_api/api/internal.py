@@ -335,10 +335,11 @@ async def job_inject(body: JobInject, session: Session) -> dict[str, Any]:
     user = await session.get(m.User, body.user_id)
     if user is None:
         raise HTTPException(404, "user not found")
-    txn = await inject(session, await load_ctx(session, user), body.preset)
+    result = await inject(session, await load_ctx(session, user), body.preset)
+    txn_id = result.transaction.id if result.transaction else None
     await session.commit()
     await refresh(session, user)
-    return {"transaction_id": txn.id, "at": now_utc().isoformat()}
+    return {"transaction_id": txn_id, "at": now_utc().isoformat()}
 
 
 _ = Annotated  # keep import for FastAPI typing helpers

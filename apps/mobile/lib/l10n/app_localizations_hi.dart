@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -113,8 +112,7 @@ class LHi extends L {
   String get onbPickPersona => 'अपने सबसे करीब की प्रोफ़ाइल चुनें';
 
   @override
-  String get onbPersonaNote =>
-      'हर प्रोफ़ाइल काल्पनिक है, साल भर के असली जैसे लेन-देन के साथ।';
+  String get onbPersonaNote => 'हर प्रोफ़ाइल काल्पनिक है, साल भर के असली जैसे लेन-देन के साथ।';
 
   @override
   String get onbSuggested => 'सबसे करीब';
@@ -177,8 +175,7 @@ class LHi extends L {
   String get stsSpent => 'खर्च';
 
   @override
-  String get stsFormula =>
-      'आय में से बिल और लक्ष्य घटाकर, फिर अब तक का खर्च घटाकर, बचे दिनों में बाँटा गया।';
+  String get stsFormula => 'आय में से बिल और लक्ष्य घटाकर, फिर अब तक का खर्च घटाकर, बचे दिनों में बाँटा गया।';
 
   @override
   String get wPockets => 'पॉकेट';
@@ -303,8 +300,7 @@ class LHi extends L {
   String get weekChange => 'इस हफ्ते';
 
   @override
-  String get viewOnly =>
-      'सिर्फ़ देखने के लिए। पॉकेट कभी खरीदने या बेचने को नहीं कहता।';
+  String get viewOnly => 'सिर्फ़ देखने के लिए। पॉकेट कभी खरीदने या बेचने को नहीं कहता।';
 
   @override
   String get noInsights => 'बताने लायक कुछ नया नहीं';
@@ -427,8 +423,7 @@ class LHi extends L {
   String get connecting => 'जुड़ रहा है';
 
   @override
-  String get voiceOffNote =>
-      'लाइव की लगने पर आवाज़ चालू होगी। अभी लिखकर बात करें।';
+  String get voiceOffNote => 'लाइव की लगने पर आवाज़ चालू होगी। अभी लिखकर बात करें।';
 
   @override
   String get mascotOffline => 'पोको को इंटरनेट चाहिए। आपके आँकड़े यहीं हैं।';
@@ -461,8 +456,7 @@ class LHi extends L {
   String get pulseEmpty => 'आज का पल्स अभी नहीं आया';
 
   @override
-  String get pulseEmptyBody =>
-      'बाज़ार और दुनिया की खबरें स्रोत के साथ यहाँ दिखेंगी।';
+  String get pulseEmptyBody => 'बाज़ार और दुनिया की खबरें स्रोत के साथ यहाँ दिखेंगी।';
 
   @override
   String get planTitle => 'प्लान';
@@ -582,12 +576,10 @@ class LHi extends L {
   }
 
   @override
-  String get pocketNeverHolds =>
-      'पॉकेट कभी पैसा नहीं रखता। आप अपने यूपीआई ऐप से चुकाते हैं।';
+  String get pocketNeverHolds => 'पॉकेट कभी पैसा नहीं रखता। आप अपने यूपीआई ऐप से चुकाते हैं।';
 
   @override
-  String get demoUpiNote =>
-      'डेमो यूपीआई आईडी (@pocketdemo) असली नहीं हैं, इसलिए कोई पैसा नहीं जाएगा।';
+  String get demoUpiNote => 'डेमो यूपीआई आईडी (@pocketdemo) असली नहीं हैं, इसलिए कोई पैसा नहीं जाएगा।';
 
   @override
   String get sharedBudget => 'साझा बजट';
@@ -602,8 +594,7 @@ class LHi extends L {
   String get privacyGroup => 'यह ग्रुप क्या देखता है';
 
   @override
-  String get privacyGroupNote =>
-      'जब तक आप चालू न करें, आपका कुछ भी साझा नहीं होता।';
+  String get privacyGroupNote => 'जब तक आप चालू न करें, आपका कुछ भी साझा नहीं होता।';
 
   @override
   String get shareNothing => 'कुछ भी साझा नहीं';
@@ -670,15 +661,13 @@ class LHi extends L {
   String get deleteData => 'मेरा डेटा मिटाएँ';
 
   @override
-  String get deleteConfirm =>
-      'इससे पॉकेट से आपके बारे में सब कुछ हट जाएगा। इसे वापस नहीं लाया जा सकता।';
+  String get deleteConfirm => 'इससे पॉकेट से आपके बारे में सब कुछ हट जाएगा। इसे वापस नहीं लाया जा सकता।';
 
   @override
   String get disclaimerTitle => 'जानकारी, सलाह नहीं';
 
   @override
-  String get disclaimerBody =>
-      'पॉकेट आपके अपने आँकड़े और सामान्य जानकारी दिखाता है। यह कभी कोई निवेश खरीदने, बेचने या बदलने को नहीं कहता। इस बिल्ड का सारा डेटा बनावटी है।';
+  String get disclaimerBody => 'पॉकेट आपके अपने आँकड़े और सामान्य जानकारी दिखाता है। यह कभी कोई निवेश खरीदने, बेचने या बदलने को नहीं कहता। इस बिल्ड का सारा डेटा बनावटी है।';
 
   @override
   String get switchPersona => 'डेमो प्रोफ़ाइल बदलें';
@@ -702,4 +691,16 @@ class LHi extends L {
 
   @override
   String get muteVoice => 'आवाज़ बंद करें';
+
+  @override
+  String get smsTitle => 'अभी एक बैंक SMS आया';
+
+  @override
+  String get smsReadAs => 'पॉकेट ने इसे ऐसे पढ़ा';
+
+  @override
+  String get smsSynthetic => 'यह संदेश डेमो के लिए बनाया गया है। पॉकेट आपके फ़ोन के SMS नहीं पढ़ता।';
+
+  @override
+  String get smsSeeHome => 'होम पर देखें';
 }

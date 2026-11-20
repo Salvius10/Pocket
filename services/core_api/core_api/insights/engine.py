@@ -66,16 +66,31 @@ def price_hike(ctx: Ctx) -> list[Found]:
     """A fixed-price bill that stepped up: the latest charge (within 45 days) is >=10% and >=Rs 20
     above the median of the 3 before it. Read from the feed alone, "fixed price" means the three
     charges before the step were the same amount, which is what rules out variable bills
-    (electricity, gas) and everyday shops where every basket differs."""
-    by_merchant: dict[str, list[m.Transaction]] = defaultdict(list)
+    (electricity, gas) and everyday shops where every basket differs.
+
+    One series is one recurring item when the charge belongs to one, otherwise one merchant. That
+    covers bills paid to a person or a society, which have no merchant (maintenance, a helper's
+    pay), and keeps two plans from the same company apart. Rent, EMIs and SIPs never count."""
+    items = {r.id: r for r in ctx.recurring}
+    series: dict[str, list[m.Transaction]] = defaultdict(list)
+    names: dict[str, str] = {}
     for x in _ok_debits(ctx):
-        if x.merchant and x.amount_paise > 5 * RS and x.spend_class in ("flexible", "committed"):
-            by_merchant[x.merchant].append(x)
+        if x.amount_paise <= 5 * RS or x.spend_class not in ("flexible", "committed"):
+            continue
+        item = items.get(x.recurring_item_id or "")
+        if item is not None:
+            if item.kind in ("rent", "emi", "sip"):
+                continue
+            series[f"item:{item.id}"].append(x)
+            names[f"item:{item.id}"] = item.name or ""
+        elif x.merchant:
+            series[f"merchant:{x.merchant}"].append(x)
     out = []
-    for merchant, rows in by_merchant.items():
+    for key, rows in series.items():
         if len(rows) < 4:
             continue
         latest = rows[-1]
+        merchant = latest.merchant  # None for a bill paid to a person; the answer key writes that as "None"
         if (ctx.today - latest.local_date).days > 45:
             continue
         base = mathx.median_int([x.amount_paise for x in rows[-4:-1]])
@@ -89,7 +104,8 @@ def price_hike(ctx: Ctx) -> list[Found]:
             continue
         out.append(Found(
             "price_hike", f"price_hike:{merchant}:{latest.amount_paise}", 1, (latest.amount_paise - base) * 12,
-            {"merchant": merchant, "name": latest.merchant_name, "old_paise": base, "new_paise": latest.amount_paise,
+            {"merchant": merchant, "name": latest.merchant_name if merchant else (names.get(key) or latest.merchant_name),
+             "old_paise": base, "new_paise": latest.amount_paise,
              "pct": pct_half_up(latest.amount_paise - base, base), "since": rows[-run].local_date.isoformat()},
         ))
     return out
@@ -111,7 +127,16 @@ def category_creep(ctx: Ctx) -> list[Found]:
     )]
 
 
+DUPLICATE_WINDOW_SECONDS = 600  # a known merchant charging the same amount twice
+DUPLICATE_WINDOW_LOCAL_SECONDS = 120  # a local shop or a person, known only by name
+
+
 def duplicate_charge(ctx: Ctx) -> list[Found]:
+    """Same account, payee and amount, both successful, minutes apart.
+
+    A payee with no merchant key is a local shop or a person. Paying the same tea stall the same
+    amount twice in ten minutes is ordinary (a second cup), so those only count when the two
+    payments are within two minutes, which is what a double tap or a retried payment looks like."""
     groups: dict[tuple[str, str, int], list[m.Transaction]] = defaultdict(list)
     for x in _ok_debits(ctx):
         who = x.merchant or (x.counterparty_name or "")
@@ -120,7 +145,8 @@ def duplicate_charge(ctx: Ctx) -> list[Found]:
     out = []
     for rows in groups.values():
         for a, b in zip(rows, rows[1:], strict=False):
-            if 0 <= (b.occurred_at - a.occurred_at).total_seconds() <= 600:
+            window = DUPLICATE_WINDOW_SECONDS if b.merchant else DUPLICATE_WINDOW_LOCAL_SECONDS
+            if 0 <= (b.occurred_at - a.occurred_at).total_seconds() <= window:
                 recent = (ctx.today - b.local_date).days <= 30
                 out.append(Found(
                     "duplicate_charge", f"dup:{b.id}", 3 if recent else 1, b.amount_paise,

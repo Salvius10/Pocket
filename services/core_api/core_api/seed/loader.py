@@ -10,6 +10,8 @@ from __future__ import annotations
 import csv
 import json
 from collections import defaultdict
+from collections.abc import Callable
+from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from functools import lru_cache
@@ -81,25 +83,34 @@ def _b(v: str | None) -> bool:
 class DemoData:
     """The shipped dataset, read once and held in memory (about 7k transactions)."""
 
-    def __init__(self, root: Path) -> None:
-        ref, db = root / "reference", root / "demo" / "db"
+    def __init__(self, root: Path, dataset: str = "demo", skip: tuple[str, ...] = ()) -> None:
+        """`dataset` is the folder under data/ ("demo" or "eval"). Tables named in `skip`, and tables
+        the dataset does not ship, load as empty (the eval set is too big to hold its transactions)."""
+        ref, db = root / "reference", root / dataset / "db"
+
+        def table_rows(name: str) -> list[dict[str, str | None]]:
+            path = db / f"{name}.csv"
+            return _read_csv(path) if name not in skip and path.exists() else []
+
+        self.db_dir = db
         self.categories = _read_csv(ref / "categories.csv")
         self.merchants = _read_csv(ref / "merchants.csv")
         self.funds = _read_csv(ref / "funds.csv")
         self.nav = _read_csv(ref / "nav_history_synthetic.csv")
-        self.users = {u["persona_id"]: u for u in _read_csv(db / "users.csv")}
+        self.all_users = _read_csv(db / "users.csv")
+        self.users = {u["persona_id"]: u for u in self.all_users if u["persona_id"]}
         self.by_user: dict[str, dict[str, list[dict[str, str | None]]]] = defaultdict(lambda: defaultdict(list))
         for table in ("accounts", "transactions", "recurring_items", "loans", "holdings", "pockets", "goals",
                       "goal_contributions", "profile_facts", "planted_patterns", "card_statements"):
-            for row in _read_csv(db / f"{table}.csv"):
+            for row in table_rows(table):
                 self.by_user[str(row["user_id"])][table].append(row)
-        self.groups = _read_csv(db / "groups.csv")
+        self.groups = table_rows("groups")
         self.by_group: dict[str, dict[str, list[dict[str, str | None]]]] = defaultdict(lambda: defaultdict(list))
         for table in ("group_members", "group_expenses", "group_pot_contributions", "settlements", "group_invites"):
-            for row in _read_csv(db / f"{table}.csv"):
+            for row in table_rows(table):
                 self.by_group[str(row["group_id"])][table].append(row)
         self.shares_by_expense: dict[str, list[dict[str, str | None]]] = defaultdict(list)
-        for row in _read_csv(db / "group_expense_shares.csv"):
+        for row in table_rows("group_expense_shares"):
             self.shares_by_expense[str(row["expense_id"])].append(row)
         self.category_map = {str(c["category_id"]): c for c in self.categories}
         self.merchant_map = {str(x["merchant_key"]): x for x in self.merchants}
@@ -110,30 +121,38 @@ def demo_data() -> DemoData:
     return DemoData(get_settings().data_path)
 
 
+def category_models(data: DemoData) -> list[m.Category]:
+    return [
+        m.Category(
+            id=str(c["category_id"]), kind=str(c["kind"]), default_class=str(c["default_class"]),
+            name_en=str(c["name_en"]),
+            name_hi=CATEGORY_I18N.get(str(c["category_id"]), ("", "", ""))[0],
+            name_ta=CATEGORY_I18N.get(str(c["category_id"]), ("", "", ""))[1],
+            emoji=CATEGORY_I18N.get(str(c["category_id"]), ("", "", ""))[2],
+        )
+        for c in data.categories
+    ]
+
+
+def merchant_models(data: DemoData) -> list[m.Merchant]:
+    return [
+        m.Merchant(
+            key=str(x["merchant_key"]), name=str(x["name"]), narration_name=x["narration_name"] or "",
+            category_id=str(x["category_id"]), subcategory=x["subcategory"], vpa_pattern=x["vpa_pattern"],
+            is_subscription_likely=_b(x["is_subscription_likely"]), is_local=_b(x["is_local"]),
+            aliases=x["aliases"] or "",
+        )
+        for x in data.merchants
+    ]
+
+
 async def seed_reference(session: AsyncSession) -> None:
     """Idempotent: categories, merchants and NAV history."""
     data = demo_data()
     if (await session.execute(select(m.Category.id).limit(1))).first() is None:
-        session.add_all(
-            m.Category(
-                id=str(c["category_id"]), kind=str(c["kind"]), default_class=str(c["default_class"]),
-                name_en=str(c["name_en"]),
-                name_hi=CATEGORY_I18N.get(str(c["category_id"]), ("", "", ""))[0],
-                name_ta=CATEGORY_I18N.get(str(c["category_id"]), ("", "", ""))[1],
-                emoji=CATEGORY_I18N.get(str(c["category_id"]), ("", "", ""))[2],
-            )
-            for c in data.categories
-        )
+        session.add_all(category_models(data))
     if (await session.execute(select(m.Merchant.key).limit(1))).first() is None:
-        session.add_all(
-            m.Merchant(
-                key=str(x["merchant_key"]), name=str(x["name"]), narration_name=x["narration_name"] or "",
-                category_id=str(x["category_id"]), subcategory=x["subcategory"], vpa_pattern=x["vpa_pattern"],
-                is_subscription_likely=_b(x["is_subscription_likely"]), is_local=_b(x["is_local"]),
-                aliases=x["aliases"] or "",
-            )
-            for x in data.merchants
-        )
+        session.add_all(merchant_models(data))
     if (await session.execute(select(m.NavPrice.scheme_code).limit(1))).first() is None:
         await session.execute(
             insert(m.NavPrice),
@@ -163,34 +182,36 @@ async def wipe_user_data(session: AsyncSession, user_id: str) -> None:
         await session.execute(delete(ut).where(ut.user_id == user_id))
 
 
-async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> dict[str, int]:
-    """Replace the user's data with a fresh copy of the persona. Returns row counts."""
-    if persona_id not in PERSONAS:
-        raise ValueError(f"unknown persona: {persona_id}")
-    data = demo_data()
-    src_user = data.users[persona_id]
-    src_uid = str(src_user["user_id"])
+@dataclass
+class UserRows:
+    """One dataset user's rows shaped as app rows: plain dicts, ready to insert or to wrap in models."""
+
+    accounts: list[dict[str, Any]]
+    recurring: list[dict[str, Any]]
+    txns: list[dict[str, Any]]
+    loans: list[dict[str, Any]]
+    holdings: list[dict[str, Any]]
+    pockets: list[dict[str, Any]]
+    goals: list[dict[str, Any]]
+    contributions: list[dict[str, Any]]
+    facts: list[dict[str, Any]]
+    planted: list[dict[str, Any]]
+    statements: list[dict[str, Any]]
+    my_groups: list[dict[str, str | None]]
+
+
+def build_user_rows(data: DemoData, src_uid: str, user_id: str, today: date, nid: Callable[[str | None], str | None]) -> UserRows:
+    """Pure (no database): shape dataset user `src_uid`'s rows for app user `user_id`.
+
+    `nid` maps dataset ids to this user's ids. Linking a persona remaps them with uuid5; the evals
+    pass an identity function so the ids still match the dataset's answer key."""
     rows = data.by_user[src_uid]
-    ns = UUID(user.id)
-    today = today_ist()
-
-    def nid(old: str | None) -> str | None:
-        return str(uuid5(ns, old)) if old else None
-
-    await wipe_user_data(session, user.id)
-
-    user.persona_id = persona_id
-    user.display_name = str(src_user["display_name"])
-    user.first_name = str(src_user["first_name"])
-    user.income_pattern = src_user["income_pattern"]
-    user.city = src_user["city"]
-    user.occupation = src_user["occupation"]
-    user.data_version = (user.data_version or 0) + 1
+    ns = UUID(user_id)
 
     # --- accounts ---
     accounts = [
         {
-            "id": nid(a["account_id"]), "user_id": user.id, "institution": a["institution_name"],
+            "id": nid(a["account_id"]), "user_id": user_id, "institution": a["institution_name"],
             "institution_code": a["institution_code"], "type": a["type"], "masked_number": a["masked_number"] or "",
             "nickname": a["nickname"], "role": a["role"], "balance_paise": _i(a["current_balance_paise"]) or 0,
             "balance_as_of": _ts(a["balance_as_of"]), "credit_limit_paise": _i(a["credit_limit_paise"]),
@@ -211,7 +232,7 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
         rec_kind_by_key[key] = RECURRING_KIND_MAP.get(str(r["kind"]), "bill")
         recurring.append(
             {
-                "id": rid, "user_id": user.id, "key": key, "kind": rec_kind_by_key[key], "source_kind": r["kind"],
+                "id": rid, "user_id": user_id, "key": key, "kind": rec_kind_by_key[key], "source_kind": r["kind"],
                 "name": r["name"], "category": r["category"], "cadence": r["cadence"], "day": _i(r["day"]),
                 "channel": r["channel"], "merchant": r["merchant_key"], "payee": r["payee"],
                 "amount_paise": _i(r["amount_paise"]) or 0, "amount_is_variable": _b(r["amount_is_variable"]),
@@ -259,7 +280,7 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
             last_paid[rkey].append(local)
         txns.append(
             {
-                "id": nid(t["txn_id"]), "user_id": user.id, "account_id": nid(t["account_id"]),
+                "id": nid(t["txn_id"]), "user_id": user_id, "account_id": nid(t["account_id"]),
                 "occurred_at": occurred, "local_date": local,
                 "budget_month": budget_month_for(local, cat_id in SALARY_CATEGORIES),
                 "amount_paise": amount, "personal_amount_paise": personal, "direction": t["direction"],
@@ -289,7 +310,7 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
 
     loans = [
         {
-            "id": str(uuid5(ns, f"loan:{ln['key']}")), "user_id": user.id, "key": ln["key"], "lender": ln["lender"],
+            "id": str(uuid5(ns, f"loan:{ln['key']}")), "user_id": user_id, "key": ln["key"], "lender": ln["lender"],
             "loan_type": ln["loan_type"], "rate_type": ln["rate_type"], "principal_paise": _i(ln["principal_paise"]),
             "outstanding_paise": _i(ln["outstanding_paise"]), "interest_rate_bps": _i(ln["interest_rate_bps"]),
             "tenure_months": _i(ln["tenure_months"]), "emi_paise": _i(ln["emi_paise"]), "emi_day": _i(ln["emi_day"]),
@@ -300,7 +321,7 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
     ]
     holdings = [
         {
-            "id": str(uuid5(ns, f"holding:{i}")), "user_id": user.id, "kind": h["kind"], "name": h["name"],
+            "id": str(uuid5(ns, f"holding:{i}")), "user_id": user_id, "kind": h["kind"], "name": h["name"],
             "scheme_code": _i(h["scheme_code"]), "units": Decimal(h["units"]) if h["units"] else None,
             "invested_paise": _i(h["invested_paise"]), "sip_amount_paise": _i(h["sip_amount_paise"]),
             "sip_day": _i(h["sip_day"]), "folio_masked": h["folio_masked"],
@@ -313,7 +334,7 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
     ]
     pockets = [
         {
-            "id": nid(p["pocket_id"]), "user_id": user.id, "name": p["name"], "emoji": p["emoji"] or "",
+            "id": nid(p["pocket_id"]), "user_id": user_id, "name": p["name"], "emoji": p["emoji"] or "",
             "monthly_limit_paise": _i(p["monthly_limit_paise"]) or 0,
             "category_ids": (p["category_ids"] or "").split("|") if p["category_ids"] else [],
             "status": p["status"] or "active", "sort_order": _i(p["sort_order"]) or 0, "created_by": "loader",
@@ -323,7 +344,7 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
     ]
     goals = [
         {
-            "id": nid(g["goal_id"]), "user_id": user.id, "name": g["name"], "emoji": g["emoji"] or "",
+            "id": nid(g["goal_id"]), "user_id": user_id, "name": g["name"], "emoji": g["emoji"] or "",
             "target_paise": _i(g["target_paise"]) or 0, "deadline": _d(g["deadline"]),
             "monthly_plan_paise": _i(g["monthly_plan_paise"]), "priority": _i(g["priority"]) or 0,
             "status": g["status"] or "active", "created_by": "loader", "created_at": datetime.now(UTC),
@@ -332,35 +353,64 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
     ]
     contributions = [
         {
-            "id": str(uuid5(ns, f"contrib:{i}")), "user_id": user.id, "goal_id": nid(c["goal_id"]),
+            "id": str(uuid5(ns, f"contrib:{i}")), "user_id": user_id, "goal_id": nid(c["goal_id"]),
             "amount_paise": _i(c["amount_paise"]) or 0, "month": str(c["month"])[:7], "source": "loader",
             "note": c["note"], "proposal_id": None, "created_at": datetime.now(UTC),
         }
         for i, c in enumerate(rows["goal_contributions"])
     ]
     facts = [
-        {"id": str(uuid5(ns, f"fact:{f['key']}")), "user_id": user.id, "key": f["key"], "value": f["value"] or "",
+        {"id": str(uuid5(ns, f"fact:{f['key']}")), "user_id": user_id, "key": f["key"], "value": f["value"] or "",
          "source": f["source"] or "onboarding", "language": f["language"]}
         for f in rows["profile_facts"]
     ]
     planted = [
-        {"id": str(uuid5(ns, f"planted:{p['natural_key']}")), "user_id": user.id, "pattern_type": p["pattern_type"],
+        {"id": str(uuid5(ns, f"planted:{p['natural_key']}")), "user_id": user_id, "pattern_type": p["pattern_type"],
          "natural_key": _remap_natural_key(str(p["natural_key"]), nid),
          "data": {k: v for k, v in p.items() if v is not None and k not in ("user_id",)}}
         for p in rows["planted_patterns"]
     ]
     statements = [
-        {"id": str(uuid5(ns, f"stmt:{s['account_id']}:{s['statement_date']}")), "user_id": user.id,
+        {"id": str(uuid5(ns, f"stmt:{s['account_id']}:{s['statement_date']}")), "user_id": user_id,
          "account_id": nid(s["account_id"]), "statement_date": _d(s["statement_date"]), "due_date": _d(s["due_date"]),
          "total_due_paise": _i(s["total_due_paise"]) or 0, "min_due_paise": _i(s["min_due_paise"]) or 0,
          "paid_paise": _i(s["paid_paise"]), "finance_charges_paise": _i(s["finance_charges_paise"]) or 0}
         for s in rows["card_statements"]
     ]
 
+    return UserRows(accounts, recurring, txns, loans, holdings, pockets, goals, contributions, facts, planted, statements, my_groups)
+
+
+async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> dict[str, int]:
+    """Replace the user's data with a fresh copy of the persona. Returns row counts."""
+    if persona_id not in PERSONAS:
+        raise ValueError(f"unknown persona: {persona_id}")
+    data = demo_data()
+    src_user = data.users[persona_id]
+    src_uid = str(src_user["user_id"])
+    ns = UUID(user.id)
+    today = today_ist()
+
+    def nid(old: str | None) -> str | None:
+        return str(uuid5(ns, old)) if old else None
+
+    await wipe_user_data(session, user.id)
+
+    user.persona_id = persona_id
+    user.display_name = str(src_user["display_name"])
+    user.first_name = str(src_user["first_name"])
+    user.income_pattern = src_user["income_pattern"]
+    user.city = src_user["city"]
+    user.occupation = src_user["occupation"]
+    user.data_version = (user.data_version or 0) + 1
+
+    built = build_user_rows(data, src_uid, user.id, today, nid)
+    my_groups = built.my_groups
+
     for table, payload in (
-        (m.Account, accounts), (m.RecurringItem, recurring), (m.Transaction, txns), (m.Loan, loans),
-        (m.Holding, holdings), (m.Pocket, pockets), (m.Goal, goals), (m.GoalContribution, contributions),
-        (m.ProfileFact, facts), (m.PlantedPattern, planted), (m.CardStatement, statements),
+        (m.Account, built.accounts), (m.RecurringItem, built.recurring), (m.Transaction, built.txns), (m.Loan, built.loans),
+        (m.Holding, built.holdings), (m.Pocket, built.pockets), (m.Goal, built.goals), (m.GoalContribution, built.contributions),
+        (m.ProfileFact, built.facts), (m.PlantedPattern, built.planted), (m.CardStatement, built.statements),
     ):
         for chunk_start in range(0, len(payload), 500):
             await session.execute(insert(table), payload[chunk_start : chunk_start + 500])
@@ -427,7 +477,7 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
     if (await session.get(m.UserSettings, user.id)) is None:
         session.add(m.UserSettings(user_id=user.id))
     await session.flush()
-    return {"accounts": len(accounts), "transactions": len(txns), "recurring": len(recurring), "groups": n_groups}
+    return {"accounts": len(built.accounts), "transactions": len(built.txns), "recurring": len(built.recurring), "groups": n_groups}
 
 
 def _remap_natural_key(key: str, nid: Any) -> str:

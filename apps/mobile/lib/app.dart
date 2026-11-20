@@ -35,6 +35,15 @@ final routerProvider = Provider<GoRouter>((ref) {
   );
 });
 
+/// Pocket's strings plus Material's, Cupertino's and the base widgets' own strings.
+///
+/// Not `L.localizationsDelegates`: the generated list still names the old delegates from
+/// `flutter_localizations`, which produce a different `MaterialLocalizations` type from the one
+/// `material_ui` widgets look up. English then falls back to the built-in default, but in Hindi
+/// and Tamil every `MaterialLocalizations.of(context)` (a back button's tooltip, a sheet's close
+/// label, a text field's menu) is null and the screen fails to draw.
+const pocketLocalizationsDelegates = <LocalizationsDelegate<dynamic>>[L.delegate, ...GlobalMaterialLocalizations.delegates];
+
 class PocketApp extends ConsumerWidget {
   const PocketApp({super.key});
 
@@ -50,7 +59,7 @@ class PocketApp extends ConsumerWidget {
       theme: pocketTheme(),
       locale: Locale(language),
       supportedLocales: L.supportedLocales,
-      localizationsDelegates: L.localizationsDelegates,
+      localizationsDelegates: pocketLocalizationsDelegates,
       routerConfig: router,
       builder: (context, child) => _PhoneFrame(child: child ?? const SizedBox.shrink()),
     );

@@ -50,6 +50,11 @@ async def layout_context(session: AsyncSession, ctx: Ctx) -> LayoutContext:
     has_insight = (await session.execute(
         select(m.Insight.id).where(m.Insight.user_id == ctx.user.id, m.Insight.status == "active").limit(1)
     )).first() is not None
+    return layout_context_for(ctx, groups, has_insight)
+
+
+def layout_context_for(ctx: Ctx, groups: list[str], has_insight: bool) -> LayoutContext:
+    """The rule itself, with no database: the evals build the same context straight from the dataset."""
     available = {"safe_to_spend", "spend_by_category", "cash_flow", "transactions", "pulse_card"}
     if ctx.pockets:
         available.add("pockets")
@@ -120,12 +125,28 @@ async def composer_features(session: AsyncSession, ctx: Ctx) -> dict[str, Any]:
              if f.key in ("saving_for", "worries", "occupation", "household") and not has_digit(f.value)}
     groups = [{"id": g.id, "name": g.name, "type": g.type, "has_pot": g.pot_target_paise is not None}
               for gid in await user_group_ids(session, ctx.user.id) if (g := await session.get(m.Group, gid)) is not None]
+    return features_for(ctx, insights, facts, groups)
+
+
+def features_for(ctx: Ctx, insight_types: list[str], facts: dict[str, str], groups: list[dict[str, Any]]) -> dict[str, Any]:
+    """The feature set itself, with no database. Names and yes/no facts only: never an amount."""
     return {
         "language": ctx.lang, "persona": ctx.user.persona_id, "income_pattern": ctx.user.income_pattern,
         "has_emis": any(r.kind == "emi" and r.status == "active" for r in ctx.recurring), "has_loans": bool(ctx.loans),
         "has_goals": bool(ctx.goals), "goal_names": [g.name for g in ctx.goals], "pocket_names": [p.name for p in ctx.pockets],
         "has_investments": bool(ctx.holdings), "has_credit_card": any(a.type == "credit_card" for a in ctx.accounts),
-        "top_insight_types": insights, "groups": groups, "profile": facts,
+        "top_insight_types": insight_types, "groups": groups, "profile": facts,
+    }
+
+
+def compose_request(ctx: Ctx, lctx: LayoutContext, features: dict[str, Any], instruction: str | None,
+                    current_spec: dict[str, Any]) -> dict[str, Any]:
+    """The body core-api sends to the agent's composer."""
+    return {
+        "features": features, "instruction": instruction, "current": current_spec,
+        "default": default_layout(ctx, lctx).model_dump(),
+        "context": {"available": sorted(lctx.available), "group_ids": sorted(lctx.group_ids), "goal_ids": sorted(lctx.goal_ids),
+                    "default_group_id": lctx.default_group_id},
     }
 
 
@@ -134,12 +155,7 @@ async def compose(session: AsyncSession, ctx: Ctx, instruction: str | None) -> t
     lctx = await layout_context(session, ctx)
     current = await current_layout(session, ctx)
     settings = get_settings()
-    body = {
-        "features": await composer_features(session, ctx), "instruction": instruction, "current": current.spec,
-        "default": default_layout(ctx, lctx).model_dump(),
-        "context": {"available": sorted(lctx.available), "group_ids": sorted(lctx.group_ids), "goal_ids": sorted(lctx.goal_ids),
-                    "default_group_id": lctx.default_group_id},
-    }
+    body = compose_request(ctx, lctx, await composer_features(session, ctx), instruction, current.spec)
     try:
         async with httpx.AsyncClient(timeout=40) as client:
             r = await client.post(f"{settings.agent_url}/v1/compose", json=body, headers={"X-Internal-Token": settings.internal_token})

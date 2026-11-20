@@ -51,8 +51,8 @@ Owners: **B** = Backend, **A** = AI, **M** = Mobile. One agent can do all three;
 - `POST /v1/onboarding/link {persona_id}` generates and loads a persona for the user in under 8 seconds.
 
 **Done when:**
-- [ ] `make eval-parsers`: ≥ 95% of synthetic SMS fully correct, run on held-out template variants **(Gate 4)**
-- [ ] Loader invariants are tested: transfer pairs are symmetric, and failed transactions are excluded
+- [x] `make eval-parsers`: ≥ 95% of synthetic SMS fully correct, run on held-out template variants **(Gate 4)** — 99.98% on 20 Nov 2026 (see DECISIONS_LOG for the method)
+- [x] Loader invariants are tested: transfer pairs are symmetric, and failed transactions are excluded
 
 ## M3 — Ledger and money maths (B)
 
@@ -75,7 +75,7 @@ Owners: **B** = Backend, **A** = AI, **M** = Mobile. One agent can do all three;
 - Ranking: severity first, then money impact. Titles and bodies come from i18n templates, never from the LLM.
 
 **Done when:**
-- [ ] `make eval-insights`: recall ≥ 0.90 and precision ≥ 0.80 on the six planted types **(Gate 1)**
+- [x] `make eval-insights`: recall ≥ 0.90 and precision ≥ 0.80 on the six planted types **(Gate 1)** — recall 1.000, precision 0.996 on 206 users, 20 Nov 2026
 
 ## M5 — App shell and fixed screens (M) — *parallel with M3–M4 once M2 is done*
 

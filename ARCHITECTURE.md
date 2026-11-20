@@ -316,6 +316,8 @@ Every tool calls a `core-api` internal endpoint. Tools marked **write** create a
   - idle cash;
   - expensive card balance (finance charges).
 - Linking a persona **generates it fresh** with `end_date = yesterday`, so the data is always current.
+- **SMS path as built (20 Nov 2026):** `core_api/ingest/sms.py` parses one SMS (per-bank families plus a generic fallback; integer paise; OTPs, promotions and statement notices are skipped). `core_api/ingest/pipeline.py` then finds the account, skips a duplicate (account + ref no + direction + amount), matches the merchant, classifies and stores the transaction with `source = sms`; every SMS is kept in `sms_messages` with what the parser made of it.
+- **Demo presets go through that path.** `POST /v1/demo/inject {preset}` writes a synthetic SMS in the wording of the user's own bank, ingests it, and returns `{transaction, sms: {sender_id, body}, nudges}`. The app shows the SMS and what Pocket read it as. Nothing reads the SMS on the phone.
 
 ---
 

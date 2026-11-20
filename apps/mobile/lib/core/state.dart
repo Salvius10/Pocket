@@ -213,10 +213,12 @@ class AppNotifier extends Notifier<AppState> {
     return ok != null;
   }
 
-  Future<bool> inject(String preset) async {
-    final ok = await _guard(() => _api.post('/v1/demo/inject', {'preset': preset}));
+  /// Adds a demo transaction. Returns the server's answer (the new transaction and the synthetic
+  /// bank SMS it was read from), or null if it failed.
+  Future<Json?> inject(String preset) async {
+    final res = await _guard(() => _api.post('/v1/demo/inject', {'preset': preset}));
     await sync();
-    return ok != null;
+    return res;
   }
 
   Future<bool> send(String method, String path, [Json? body]) async {
