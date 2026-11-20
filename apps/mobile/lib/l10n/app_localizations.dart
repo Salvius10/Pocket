@@ -1416,6 +1416,108 @@ abstract class L {
   /// In en, this message translates to:
   /// **'See it on Home'**
   String get smsSeeHome;
+
+  /// No description provided for @layoutMetaA2ui.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent as A2UI {protocol} · layout {version}'**
+  String layoutMetaA2ui(String protocol, int version);
+
+  /// No description provided for @layoutMetaPlain.
+  ///
+  /// In en, this message translates to:
+  /// **'Drawn from the plain layout · layout {version}'**
+  String layoutMetaPlain(int version);
+
+  /// No description provided for @reportTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly report'**
+  String get reportTitle;
+
+  /// No description provided for @reportInShort.
+  ///
+  /// In en, this message translates to:
+  /// **'In short'**
+  String get reportInShort;
+
+  /// No description provided for @reportMonthWent.
+  ///
+  /// In en, this message translates to:
+  /// **'Where the month went'**
+  String get reportMonthWent;
+
+  /// No description provided for @reportLeftOver.
+  ///
+  /// In en, this message translates to:
+  /// **'Left over'**
+  String get reportLeftOver;
+
+  /// No description provided for @reportOverspent.
+  ///
+  /// In en, this message translates to:
+  /// **'Spent more than came in'**
+  String get reportOverspent;
+
+  /// No description provided for @reportCameIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Came in'**
+  String get reportCameIn;
+
+  /// No description provided for @reportSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get reportSaved;
+
+  /// No description provided for @reportOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything else'**
+  String get reportOther;
+
+  /// No description provided for @reportSpentOfIncome.
+  ///
+  /// In en, this message translates to:
+  /// **'{pct}% of what came in was spent'**
+  String reportSpentOfIncome(int pct);
+
+  /// No description provided for @reportAgainst.
+  ///
+  /// In en, this message translates to:
+  /// **'Against {month}'**
+  String reportAgainst(String month);
+
+  /// No description provided for @reportLess.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} less'**
+  String reportLess(String amount);
+
+  /// No description provided for @reportMore.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} more'**
+  String reportMore(String amount);
+
+  /// No description provided for @reportSame.
+  ///
+  /// In en, this message translates to:
+  /// **'About the same'**
+  String get reportSame;
+
+  /// No description provided for @reportFootnote.
+  ///
+  /// In en, this message translates to:
+  /// **'Every figure here is added up from your transactions.'**
+  String get reportFootnote;
+
+  /// No description provided for @reportNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No complete month yet'**
+  String get reportNone;
 }
 
 class _LDelegate extends LocalizationsDelegate<L> {

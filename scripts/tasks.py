@@ -172,7 +172,28 @@ def apk() -> None:
 
 
 def serve_web() -> None:
-    run([sys.executable, "-m", "http.server", "5173", "--bind", "127.0.0.1", "--directory", str(MOBILE / "build" / "web")])
+    """Serve a web build on this laptop only, at http://localhost:5173.
+
+    POCKET_WEB_DIR picks the folder (default: apps/mobile/build/web). Every reply says
+    `Cache-Control: no-cache`, so the browser checks for a newer build on each load: without it
+    Chrome kept showing the previous main.dart.js after a rebuild."""
+    import functools
+    from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+
+    folder = Path(os.environ.get("POCKET_WEB_DIR") or MOBILE / "build" / "web")
+    if not (folder / "index.html").exists():
+        sys.exit(f"no web build in {folder}: run `make web` first, or set POCKET_WEB_DIR")
+
+    class Handler(SimpleHTTPRequestHandler):
+        def end_headers(self) -> None:
+            self.send_header("Cache-Control", "no-cache")
+            super().end_headers()
+
+        def log_message(self, *args: object) -> None:  # quiet
+            pass
+
+    print(f"serving {folder} at http://localhost:5173", flush=True)
+    ThreadingHTTPServer(("127.0.0.1", 5173), functools.partial(Handler, directory=str(folder))).serve_forever()
 
 
 def eval_target(name: str) -> None:

@@ -5,8 +5,11 @@
 Every SMS is kept in `sms_messages` with what the parser made of it. The parser is code, so is
 everything here: no model sees the SMS, and every amount stays in integer paise.
 
-Limits (MVP): a reversal SMS is stored as an excluded credit and is not linked back to the debit
-it reverses; recurring items are not linked from an SMS.
+A payee the user has paid before keeps the category, merchant and bill of the last payment to
+them, so a correction the user made once carries forward.
+
+Limit (MVP): a reversal SMS is stored as an excluded credit and is not linked back to the debit
+it reverses.
 """
 
 from __future__ import annotations
@@ -77,6 +80,22 @@ def _find_account(ctx: Ctx, parsed: ParsedSms) -> m.Account | None:
     return hits[0] if len(hits) == 1 else None
 
 
+def _from_history(ctx: Ctx, parsed: ParsedSms) -> m.Transaction | None:
+    """The user's latest earlier payment to (or from) the same VPA or the same name. What they paid
+    this payee for before is the best guide to what this payment is: it carries the category
+    (including one the user corrected), the merchant and the bill it belongs to."""
+    name = _norm(parsed.counterparty) if parsed.counterparty else None
+    vpa = parsed.vpa.lower() if parsed.vpa else None
+    for old in reversed(ctx.txns):
+        if old.direction != parsed.kind or old.status != "success":
+            continue
+        if vpa and old.counterparty_vpa and old.counterparty_vpa.lower() == vpa:
+            return old
+        if name and old.counterparty_name and _norm(old.counterparty_name) == name:
+            return old
+    return None
+
+
 def _result_json(parsed: ParsedSms) -> dict[str, Any]:
     out = asdict(parsed)
     out["txn_date"] = parsed.txn_date.isoformat() if parsed.txn_date else None
@@ -113,13 +132,23 @@ async def ingest_sms(
             return Ingested("duplicate", sms, parsed, old)
 
     merchant = match_merchant(merchants, parsed.counterparty, parsed.vpa)
+    before = _from_history(ctx, parsed)
     is_reversal = parsed.kind == "credit" and "revers" in body.lower()
-    category_id = merchant.category_id if merchant else ("other_income" if parsed.kind == "credit" else "uncategorised")
-    if parsed.kind == "credit" and merchant is not None and ctx.categories[merchant.category_id].kind == "expense":
-        category_id = "refund" if "refund" in ctx.categories else category_id  # money back from a shop
+    item = next((r for r in ctx.recurring if before is not None and r.id == before.recurring_item_id and r.status == "active"), None)
+    if before is not None:  # the same payee as before: same category, merchant and bill
+        category_id = before.category
+        merchant_key: str | None = before.merchant or (merchant.key if merchant else None)
+        name = before.merchant_name or _title(parsed.counterparty or "") or (parsed.vpa or "")
+    else:
+        category_id = merchant.category_id if merchant else ("other_income" if parsed.kind == "credit" else "uncategorised")
+        if parsed.kind == "credit" and merchant is not None and ctx.categories[merchant.category_id].kind == "expense":
+            category_id = "refund" if "refund" in ctx.categories else category_id  # money back from a shop
+        elif parsed.kind == "credit" and merchant is None and account.type == "credit_card" and "card_payment" in ctx.categories:
+            category_id = "card_payment"  # money arriving on a card with no shop named is the bill being paid
+        merchant_key = merchant.key if merchant else None
+        name = merchant.name if merchant else _title(parsed.counterparty or "") or (parsed.vpa or "")
     category = ctx.categories.get(category_id) or ctx.categories["uncategorised"]
     local = parsed.txn_date or received_at.astimezone(IST).date()
-    name = merchant.name if merchant else _title(parsed.counterparty or "") or (parsed.vpa or "")
 
     if parsed.balance_paise is not None and account.type != "credit_card":
         account.balance_paise = parsed.balance_paise  # the bank's own figure
@@ -134,11 +163,12 @@ async def ingest_sms(
         user_id=ctx.user.id, account_id=account.id, occurred_at=received_at, local_date=local,
         budget_month=budget_month_for(local, category.id in SALARY_CATEGORIES), amount_paise=amount,
         personal_amount_paise=amount, direction=parsed.kind, mode=mode, status="success",
-        kind="upi_reversal" if is_reversal else KINDS.get((mode, parsed.kind), "netbanking" if parsed.kind == "debit" else "neft_in"),
-        merchant=merchant.key if merchant else None, merchant_name=name, counterparty_name=parsed.counterparty,
-        counterparty_vpa=parsed.vpa, category=category.id,
+        kind="upi_reversal" if is_reversal else (before.kind if before is not None and before.kind else None)
+        or KINDS.get((mode, parsed.kind), "netbanking" if parsed.kind == "debit" else "neft_in"),
+        merchant=merchant_key, merchant_name=name, counterparty_name=parsed.counterparty,
+        counterparty_vpa=parsed.vpa, category=category.id, recurring_item_id=item.id if item else None,
         spend_class=spend_class(status="success", hidden=False, is_reversal=is_reversal, category_kind=category.kind,
-                                category_default_class=category.default_class, recurring_kind=None),
+                                category_default_class=category.default_class, recurring_kind=item.kind if item else None),
         narration=f"SMS/{(parsed.counterparty or parsed.vpa or mode).upper()}/{parsed.ref_no or ''}".rstrip("/"),
         ref_no=parsed.ref_no, balance_after_paise=account.balance_paise if account.type != "credit_card" else None,
         source="sms", hidden=False,

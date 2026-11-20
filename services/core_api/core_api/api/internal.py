@@ -28,6 +28,7 @@ from core_api.ledger.context import Ctx, load_ctx
 from core_api.nudges import planner as nudges
 from core_api.proposals import service as proposals
 from core_api.pulse import service as pulse
+from core_api.seed.loader import TOLD_BY_USER
 
 router = APIRouter(prefix="/internal", dependencies=[Depends(require_internal)])
 
@@ -162,9 +163,9 @@ async def run_tool(session: Session, user: m.User, name: str, args: dict[str, An
                 continue
             row = existing.get(key)
             if row is None:
-                session.add(m.ProfileFact(user_id=user.id, key=key, value=str(value)[:500], source="onboarding", language=lang))
-            else:
-                row.value = str(value)[:500]
+                session.add(m.ProfileFact(user_id=user.id, key=key, value=str(value)[:500], source=TOLD_BY_USER, language=lang))
+            else:  # their own words replace the persona's line, and survive switching persona
+                row.value, row.source, row.language = str(value)[:500], TOLD_BY_USER, lang
         if user.onboarding_step in ("language", "voice", "talk"):
             user.onboarding_step = "persona"
         await session.commit()
@@ -303,6 +304,26 @@ async def job_insights(session: Session) -> dict[str, Any]:
     for u in users:
         await refresh(session, u)
     return {"users": len(users)}
+
+
+@router.post("/jobs/drip")
+async def job_drip(session: Session) -> dict[str, Any]:
+    """Synthetic drip (00:30 daily): add yesterday's transactions for every demo profile, as SMS
+    through the parser. The app also does this on sync, so the job only keeps idle profiles warm."""
+    from core_api.demo import drip
+    from core_api.insights.engine import load_merchants
+    from core_api.seed import loader
+
+    merchants = await load_merchants(session)
+    created = 0
+    users = await _each_linked_user(session)
+    for u in users:
+        added = await drip.catch_up(session, await load_ctx(session, u), merchants, loader.data_end())
+        await session.commit()
+        if added:
+            created += added
+            await refresh(session, u)
+    return {"users": len(users), "transactions": created, "at": now_utc().isoformat()}
 
 
 @router.post("/jobs/nudges")

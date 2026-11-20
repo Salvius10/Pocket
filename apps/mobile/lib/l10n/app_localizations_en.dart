@@ -703,4 +703,67 @@ class LEn extends L {
 
   @override
   String get smsSeeHome => 'See it on Home';
+
+  @override
+  String layoutMetaA2ui(String protocol, int version) {
+    return 'Sent as A2UI $protocol · layout $version';
+  }
+
+  @override
+  String layoutMetaPlain(int version) {
+    return 'Drawn from the plain layout · layout $version';
+  }
+
+  @override
+  String get reportTitle => 'Monthly report';
+
+  @override
+  String get reportInShort => 'In short';
+
+  @override
+  String get reportMonthWent => 'Where the month went';
+
+  @override
+  String get reportLeftOver => 'Left over';
+
+  @override
+  String get reportOverspent => 'Spent more than came in';
+
+  @override
+  String get reportCameIn => 'Came in';
+
+  @override
+  String get reportSaved => 'Saved';
+
+  @override
+  String get reportOther => 'Everything else';
+
+  @override
+  String reportSpentOfIncome(int pct) {
+    return '$pct% of what came in was spent';
+  }
+
+  @override
+  String reportAgainst(String month) {
+    return 'Against $month';
+  }
+
+  @override
+  String reportLess(String amount) {
+    return '$amount less';
+  }
+
+  @override
+  String reportMore(String amount) {
+    return '$amount more';
+  }
+
+  @override
+  String get reportSame => 'About the same';
+
+  @override
+  String get reportFootnote => 'Every figure here is added up from your transactions.';
+
+  @override
+  String get reportNone => 'No complete month yet';
 }

@@ -703,4 +703,67 @@ class LTa extends L {
 
   @override
   String get smsSeeHome => 'முகப்பில் பார்க்க';
+
+  @override
+  String layoutMetaA2ui(String protocol, int version) {
+    return 'A2UI $protocol ஆக அனுப்பப்பட்டது · அமைப்பு $version';
+  }
+
+  @override
+  String layoutMetaPlain(int version) {
+    return 'எளிய அமைப்பிலிருந்து வரையப்பட்டது · அமைப்பு $version';
+  }
+
+  @override
+  String get reportTitle => 'மாத அறிக்கை';
+
+  @override
+  String get reportInShort => 'சுருக்கமாக';
+
+  @override
+  String get reportMonthWent => 'மாதம் எங்கே போனது';
+
+  @override
+  String get reportLeftOver => 'மீதம்';
+
+  @override
+  String get reportOverspent => 'வரவை விட அதிக செலவு';
+
+  @override
+  String get reportCameIn => 'வந்தது';
+
+  @override
+  String get reportSaved => 'சேமிப்பு';
+
+  @override
+  String get reportOther => 'மற்றவை';
+
+  @override
+  String reportSpentOfIncome(int pct) {
+    return 'வந்ததில் $pct% செலவானது';
+  }
+
+  @override
+  String reportAgainst(String month) {
+    return '$month உடன் ஒப்பிட்டால்';
+  }
+
+  @override
+  String reportLess(String amount) {
+    return '$amount குறைவு';
+  }
+
+  @override
+  String reportMore(String amount) {
+    return '$amount அதிகம்';
+  }
+
+  @override
+  String get reportSame => 'ஏறக்குறைய அதே';
+
+  @override
+  String get reportFootnote => 'இங்குள்ள ஒவ்வொரு எண்ணும் உங்கள் பரிவர்த்தனைகளிலிருந்து கூட்டப்பட்டது.';
+
+  @override
+  String get reportNone => 'இன்னும் முழு மாதம் இல்லை';
 }

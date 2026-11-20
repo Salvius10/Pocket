@@ -7,6 +7,7 @@ import 'core/theme.dart';
 import 'features/collab/collab_screen.dart';
 import 'features/onboarding/onboarding_screens.dart';
 import 'features/profile/profile_screen.dart';
+import 'features/report/report_screen.dart';
 import 'features/shell/shell.dart';
 import 'l10n/app_localizations.dart';
 
@@ -30,6 +31,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/personas', builder: (_, _) => const PersonaScreen()),
       GoRoute(path: '/building', builder: (_, _) => const BuildingScreen()),
       GoRoute(path: '/profile', builder: (_, _) => const ProfileScreen()),
+      GoRoute(path: '/report', builder: (_, _) => const ReportScreen()),
       GoRoute(path: '/group/:id', builder: (_, s) => GroupScreen(groupId: s.pathParameters['id']!)),
     ],
   );

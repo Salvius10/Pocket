@@ -168,5 +168,833 @@
     ]
    }
   }
+ ],
+ "ideal_layouts": [
+  {
+   "persona_id": "student",
+   "spec": {
+    "widgets": [
+     {
+      "type": "safe_to_spend",
+      "variant": "hero",
+      "params": {}
+     },
+     {
+      "type": "pockets",
+      "variant": "default",
+      "params": {
+       "max_items": 4,
+       "sort": "risk"
+      }
+     },
+     {
+      "type": "insight_card",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "goals",
+      "variant": "default",
+      "params": {
+       "max_items": 2
+      }
+     },
+     {
+      "type": "spend_by_category",
+      "variant": "default",
+      "params": {
+       "period": "this_month",
+       "chart": "donut",
+       "top_n": 5
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "widget_index": 0,
+      "text": "இன்று எவ்வளவு செலவழிக்கலாம் என்பது எப்போதும் முதலில்."
+     },
+     {
+      "widget_index": 1,
+      "text": "உணவு டெலிவரி பாக்கெட் வேகமாக நிரம்புகிறது, அதனால் பாக்கெட்டுகள் அடுத்து."
+     },
+     {
+      "widget_index": 2,
+      "text": "நான் கவனித்த முக்கியமான விஷயம் இங்கே."
+     },
+     {
+      "widget_index": 3,
+      "text": "லேப்டாப் இலக்கு உங்களுக்கு முக்கியம் என்று சொன்னீர்கள்."
+     },
+     {
+      "widget_index": 4,
+      "text": "பணம் எங்கே போகிறது என்று ஒரே பார்வையில்."
+     }
+    ],
+    "summary": "உங்கள் செலவு, லேப்டாப் இலக்கு, பாண்டி ட்ரிப் ஆகியவற்றைச் சுற்றி முகப்பை அமைத்தேன்."
+   },
+   "messages": [
+    {
+     "version": "1.0",
+     "createSurface": {
+      "surfaceId": "home",
+      "catalogId": "https://pocket.in/a2ui/catalogs/home/v1"
+     }
+    },
+    {
+     "version": "1.0",
+     "updateComponents": {
+      "surfaceId": "home",
+      "components": [
+       {
+        "id": "root",
+        "component": "PocketHomeColumn",
+        "children": [
+         "w0",
+         "w1",
+         "w2",
+         "w3",
+         "w4"
+        ],
+        "summary": "உங்கள் செலவு, லேப்டாப் இலக்கு, பாண்டி ட்ரிப் ஆகியவற்றைச் சுற்றி முகப்பை அமைத்தேன்."
+       },
+       {
+        "id": "w0",
+        "component": "SafeToSpend",
+        "variant": "hero",
+        "reason": "இன்று எவ்வளவு செலவழிக்கலாம் என்பது எப்போதும் முதலில்."
+       },
+       {
+        "id": "w1",
+        "component": "Pockets",
+        "variant": "default",
+        "maxItems": 4,
+        "sort": "risk",
+        "reason": "உணவு டெலிவரி பாக்கெட் வேகமாக நிரம்புகிறது, அதனால் பாக்கெட்டுகள் அடுத்து."
+       },
+       {
+        "id": "w2",
+        "component": "InsightCard",
+        "variant": "default",
+        "reason": "நான் கவனித்த முக்கியமான விஷயம் இங்கே."
+       },
+       {
+        "id": "w3",
+        "component": "Goals",
+        "variant": "default",
+        "maxItems": 2,
+        "reason": "லேப்டாப் இலக்கு உங்களுக்கு முக்கியம் என்று சொன்னீர்கள்."
+       },
+       {
+        "id": "w4",
+        "component": "SpendByCategory",
+        "variant": "default",
+        "period": "this_month",
+        "chart": "donut",
+        "topN": 5,
+        "reason": "பணம் எங்கே போகிறது என்று ஒரே பார்வையில்."
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "persona_id": "first_job",
+   "spec": {
+    "widgets": [
+     {
+      "type": "safe_to_spend",
+      "variant": "hero",
+      "params": {}
+     },
+     {
+      "type": "pockets",
+      "variant": "default",
+      "params": {
+       "max_items": 4,
+       "sort": "risk"
+      }
+     },
+     {
+      "type": "insight_card",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "goals",
+      "variant": "default",
+      "params": {
+       "max_items": 2
+      }
+     },
+     {
+      "type": "bills_emis",
+      "variant": "compact",
+      "params": {
+       "window_days": 14
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "widget_index": 0,
+      "text": "Safe-to-spend always comes first."
+     },
+     {
+      "widget_index": 1,
+      "text": "Food delivery is running ahead of its pocket, so pockets come next."
+     },
+     {
+      "widget_index": 2,
+      "text": "There's something worth your attention this week."
+     },
+     {
+      "widget_index": 3,
+      "text": "You told me the bike is what you're saving for."
+     },
+     {
+      "widget_index": 4,
+      "text": "Rent and subscriptions are due soon."
+     }
+    ],
+    "summary": "I built Home around your pockets, your bike goal and the flat's shared bills."
+   },
+   "messages": [
+    {
+     "version": "1.0",
+     "createSurface": {
+      "surfaceId": "home",
+      "catalogId": "https://pocket.in/a2ui/catalogs/home/v1"
+     }
+    },
+    {
+     "version": "1.0",
+     "updateComponents": {
+      "surfaceId": "home",
+      "components": [
+       {
+        "id": "root",
+        "component": "PocketHomeColumn",
+        "children": [
+         "w0",
+         "w1",
+         "w2",
+         "w3",
+         "w4"
+        ],
+        "summary": "I built Home around your pockets, your bike goal and the flat's shared bills."
+       },
+       {
+        "id": "w0",
+        "component": "SafeToSpend",
+        "variant": "hero",
+        "reason": "Safe-to-spend always comes first."
+       },
+       {
+        "id": "w1",
+        "component": "Pockets",
+        "variant": "default",
+        "maxItems": 4,
+        "sort": "risk",
+        "reason": "Food delivery is running ahead of its pocket, so pockets come next."
+       },
+       {
+        "id": "w2",
+        "component": "InsightCard",
+        "variant": "default",
+        "reason": "There's something worth your attention this week."
+       },
+       {
+        "id": "w3",
+        "component": "Goals",
+        "variant": "default",
+        "maxItems": 2,
+        "reason": "You told me the bike is what you're saving for."
+       },
+       {
+        "id": "w4",
+        "component": "BillsEmis",
+        "variant": "compact",
+        "windowDays": 14,
+        "reason": "Rent and subscriptions are due soon."
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "persona_id": "family",
+   "spec": {
+    "widgets": [
+     {
+      "type": "safe_to_spend",
+      "variant": "hero",
+      "params": {}
+     },
+     {
+      "type": "bills_emis",
+      "variant": "default",
+      "params": {
+       "window_days": 14
+      }
+     },
+     {
+      "type": "pockets",
+      "variant": "default",
+      "params": {
+       "max_items": 4,
+       "sort": "risk"
+      }
+     },
+     {
+      "type": "goals",
+      "variant": "default",
+      "params": {
+       "max_items": 2
+      }
+     },
+     {
+      "type": "cash_flow",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "net_worth",
+      "variant": "default",
+      "params": {}
+     }
+    ],
+    "reasons": [
+     {
+      "widget_index": 0,
+      "text": "இன்று எவ்வளவு செலவழிக்கலாம் என்பது எப்போதும் முதலில்."
+     },
+     {
+      "widget_index": 1,
+      "text": "ஹோம் லோன் EMI மற்றும் பள்ளிக் கட்டணம் போன்ற பெரிய செலவுகள் இங்கே."
+     },
+     {
+      "widget_index": 2,
+      "text": "மளிகை, டெலிவரி போன்ற மாதச் செலவுகள்."
+     },
+     {
+      "widget_index": 3,
+      "text": "குழந்தைகள் படிப்பு மற்றும் கொடைக்கானல் பயணம்."
+     },
+     {
+      "widget_index": 4,
+      "text": "வருமானமும் செலவும் மாதா மாதம் எப்படி மாறுகிறது."
+     },
+     {
+      "widget_index": 5,
+      "text": "சேமிப்பு, தங்கம், கடன் எல்லாம் சேர்த்து உங்கள் நிகர மதிப்பு."
+     }
+    ],
+    "summary": "EMI, குடும்பச் செலவு, பிள்ளைகளின் படிப்பு ஆகியவற்றை மையமாக வைத்து முகப்பை அமைத்தேன்."
+   },
+   "messages": [
+    {
+     "version": "1.0",
+     "createSurface": {
+      "surfaceId": "home",
+      "catalogId": "https://pocket.in/a2ui/catalogs/home/v1"
+     }
+    },
+    {
+     "version": "1.0",
+     "updateComponents": {
+      "surfaceId": "home",
+      "components": [
+       {
+        "id": "root",
+        "component": "PocketHomeColumn",
+        "children": [
+         "w0",
+         "w1",
+         "w2",
+         "w3",
+         "w4",
+         "w5"
+        ],
+        "summary": "EMI, குடும்பச் செலவு, பிள்ளைகளின் படிப்பு ஆகியவற்றை மையமாக வைத்து முகப்பை அமைத்தேன்."
+       },
+       {
+        "id": "w0",
+        "component": "SafeToSpend",
+        "variant": "hero",
+        "reason": "இன்று எவ்வளவு செலவழிக்கலாம் என்பது எப்போதும் முதலில்."
+       },
+       {
+        "id": "w1",
+        "component": "BillsEmis",
+        "variant": "default",
+        "windowDays": 14,
+        "reason": "ஹோம் லோன் EMI மற்றும் பள்ளிக் கட்டணம் போன்ற பெரிய செலவுகள் இங்கே."
+       },
+       {
+        "id": "w2",
+        "component": "Pockets",
+        "variant": "default",
+        "maxItems": 4,
+        "sort": "risk",
+        "reason": "மளிகை, டெலிவரி போன்ற மாதச் செலவுகள்."
+       },
+       {
+        "id": "w3",
+        "component": "Goals",
+        "variant": "default",
+        "maxItems": 2,
+        "reason": "குழந்தைகள் படிப்பு மற்றும் கொடைக்கானல் பயணம்."
+       },
+       {
+        "id": "w4",
+        "component": "CashFlow",
+        "variant": "default",
+        "reason": "வருமானமும் செலவும் மாதா மாதம் எப்படி மாறுகிறது."
+       },
+       {
+        "id": "w5",
+        "component": "NetWorth",
+        "variant": "default",
+        "reason": "சேமிப்பு, தங்கம், கடன் எல்லாம் சேர்த்து உங்கள் நிகர மதிப்பு."
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "persona_id": "gig",
+   "spec": {
+    "widgets": [
+     {
+      "type": "safe_to_spend",
+      "variant": "hero",
+      "params": {}
+     },
+     {
+      "type": "cash_flow",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "pockets",
+      "variant": "default",
+      "params": {
+       "max_items": 4,
+       "sort": "risk"
+      }
+     },
+     {
+      "type": "bills_emis",
+      "variant": "compact",
+      "params": {
+       "window_days": 14
+      }
+     },
+     {
+      "type": "goals",
+      "variant": "default",
+      "params": {
+       "max_items": 2
+      }
+     },
+     {
+      "type": "insight_card",
+      "variant": "default",
+      "params": {}
+     }
+    ],
+    "reasons": [
+     {
+      "widget_index": 0,
+      "text": "आज कितना खर्च कर सकते हैं और आज की कमाई, सबसे ऊपर।"
+     },
+     {
+      "widget_index": 1,
+      "text": "रोज़ की कमाई हफ़्ते-दर-हफ़्ते कैसे बदल रही है।"
+     },
+     {
+      "widget_index": 2,
+      "text": "पेट्रोल और खाने के पॉकेट।"
+     },
+     {
+      "widget_index": 3,
+      "text": "किराया और बाइक की EMI कब कटेगी।"
+     },
+     {
+      "widget_index": 4,
+      "text": "बहन की शादी और इमरजेंसी फंड।"
+     },
+     {
+      "widget_index": 5,
+      "text": "इस हफ़्ते की एक ज़रूरी बात।"
+     }
+    ],
+    "summary": "रोज़ की कमाई, पेट्रोल और EMI के हिसाब से होम बनाया है।"
+   },
+   "messages": [
+    {
+     "version": "1.0",
+     "createSurface": {
+      "surfaceId": "home",
+      "catalogId": "https://pocket.in/a2ui/catalogs/home/v1"
+     }
+    },
+    {
+     "version": "1.0",
+     "updateComponents": {
+      "surfaceId": "home",
+      "components": [
+       {
+        "id": "root",
+        "component": "PocketHomeColumn",
+        "children": [
+         "w0",
+         "w1",
+         "w2",
+         "w3",
+         "w4",
+         "w5"
+        ],
+        "summary": "रोज़ की कमाई, पेट्रोल और EMI के हिसाब से होम बनाया है।"
+       },
+       {
+        "id": "w0",
+        "component": "SafeToSpend",
+        "variant": "hero",
+        "reason": "आज कितना खर्च कर सकते हैं और आज की कमाई, सबसे ऊपर।"
+       },
+       {
+        "id": "w1",
+        "component": "CashFlow",
+        "variant": "default",
+        "reason": "रोज़ की कमाई हफ़्ते-दर-हफ़्ते कैसे बदल रही है।"
+       },
+       {
+        "id": "w2",
+        "component": "Pockets",
+        "variant": "default",
+        "maxItems": 4,
+        "sort": "risk",
+        "reason": "पेट्रोल और खाने के पॉकेट।"
+       },
+       {
+        "id": "w3",
+        "component": "BillsEmis",
+        "variant": "compact",
+        "windowDays": 14,
+        "reason": "किराया और बाइक की EMI कब कटेगी।"
+       },
+       {
+        "id": "w4",
+        "component": "Goals",
+        "variant": "default",
+        "maxItems": 2,
+        "reason": "बहन की शादी और इमरजेंसी फंड।"
+       },
+       {
+        "id": "w5",
+        "component": "InsightCard",
+        "variant": "default",
+        "reason": "इस हफ़्ते की एक ज़रूरी बात।"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "persona_id": "shop",
+   "spec": {
+    "widgets": [
+     {
+      "type": "safe_to_spend",
+      "variant": "hero",
+      "params": {}
+     },
+     {
+      "type": "cash_flow",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "transactions",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "bills_emis",
+      "variant": "compact",
+      "params": {
+       "window_days": 14
+      }
+     },
+     {
+      "type": "pockets",
+      "variant": "default",
+      "params": {
+       "max_items": 4,
+       "sort": "risk"
+      }
+     },
+     {
+      "type": "insight_card",
+      "variant": "default",
+      "params": {}
+     }
+    ],
+    "reasons": [
+     {
+      "widget_index": 0,
+      "text": "आज घर के लिए कितना खर्च कर सकती हैं, सबसे ऊपर।"
+     },
+     {
+      "widget_index": 1,
+      "text": "दुकान की आमदनी और खर्च हफ़्ते-दर-हफ़्ते।"
+     },
+     {
+      "widget_index": 2,
+      "text": "हाल के लेन-देन, सेटलमेंट और सप्लायर पेमेंट।"
+     },
+     {
+      "widget_index": 3,
+      "text": "दुकान का किराया, बिज़नेस लोन की EMI और बिल।"
+     },
+     {
+      "widget_index": 4,
+      "text": "घर के खर्च के पॉकेट।"
+     },
+     {
+      "widget_index": 5,
+      "text": "कार्ड के बिल पर एक ज़रूरी बात।"
+     }
+    ],
+    "summary": "दुकान की आमदनी, सप्लायर पेमेंट और घर के खर्च को अलग-अलग दिखाया है।"
+   },
+   "messages": [
+    {
+     "version": "1.0",
+     "createSurface": {
+      "surfaceId": "home",
+      "catalogId": "https://pocket.in/a2ui/catalogs/home/v1"
+     }
+    },
+    {
+     "version": "1.0",
+     "updateComponents": {
+      "surfaceId": "home",
+      "components": [
+       {
+        "id": "root",
+        "component": "PocketHomeColumn",
+        "children": [
+         "w0",
+         "w1",
+         "w2",
+         "w3",
+         "w4",
+         "w5"
+        ],
+        "summary": "दुकान की आमदनी, सप्लायर पेमेंट और घर के खर्च को अलग-अलग दिखाया है।"
+       },
+       {
+        "id": "w0",
+        "component": "SafeToSpend",
+        "variant": "hero",
+        "reason": "आज घर के लिए कितना खर्च कर सकती हैं, सबसे ऊपर।"
+       },
+       {
+        "id": "w1",
+        "component": "CashFlow",
+        "variant": "default",
+        "reason": "दुकान की आमदनी और खर्च हफ़्ते-दर-हफ़्ते।"
+       },
+       {
+        "id": "w2",
+        "component": "Transactions",
+        "variant": "default",
+        "reason": "हाल के लेन-देन, सेटलमेंट और सप्लायर पेमेंट।"
+       },
+       {
+        "id": "w3",
+        "component": "BillsEmis",
+        "variant": "compact",
+        "windowDays": 14,
+        "reason": "दुकान का किराया, बिज़नेस लोन की EMI और बिल।"
+       },
+       {
+        "id": "w4",
+        "component": "Pockets",
+        "variant": "default",
+        "maxItems": 4,
+        "sort": "risk",
+        "reason": "घर के खर्च के पॉकेट।"
+       },
+       {
+        "id": "w5",
+        "component": "InsightCard",
+        "variant": "default",
+        "reason": "कार्ड के बिल पर एक ज़रूरी बात।"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "persona_id": "investor",
+   "spec": {
+    "widgets": [
+     {
+      "type": "safe_to_spend",
+      "variant": "hero",
+      "params": {}
+     },
+     {
+      "type": "net_worth",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "investments",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "pulse_card",
+      "variant": "default",
+      "params": {
+       "max_items": 2
+      }
+     },
+     {
+      "type": "cash_flow",
+      "variant": "default",
+      "params": {}
+     },
+     {
+      "type": "goals",
+      "variant": "default",
+      "params": {
+       "max_items": 2
+      }
+     },
+     {
+      "type": "insight_card",
+      "variant": "default",
+      "params": {}
+     }
+    ],
+    "reasons": [
+     {
+      "widget_index": 0,
+      "text": "Safe-to-spend always comes first."
+     },
+     {
+      "widget_index": 1,
+      "text": "Everything you own and owe in one number."
+     },
+     {
+      "widget_index": 2,
+      "text": "How your funds moved this week."
+     },
+     {
+      "widget_index": 3,
+      "text": "News that touches your loans and holdings, with sources."
+     },
+     {
+      "widget_index": 4,
+      "text": "Income and spending over the last six months."
+     },
+     {
+      "widget_index": 5,
+      "text": "Your daughter's education and the Europe trip."
+     },
+     {
+      "widget_index": 6,
+      "text": "Something worth a look: money sitting idle and your card balance."
+     }
+    ],
+    "summary": "I built Home around your net worth, your funds and the news that affects them."
+   },
+   "messages": [
+    {
+     "version": "1.0",
+     "createSurface": {
+      "surfaceId": "home",
+      "catalogId": "https://pocket.in/a2ui/catalogs/home/v1"
+     }
+    },
+    {
+     "version": "1.0",
+     "updateComponents": {
+      "surfaceId": "home",
+      "components": [
+       {
+        "id": "root",
+        "component": "PocketHomeColumn",
+        "children": [
+         "w0",
+         "w1",
+         "w2",
+         "w3",
+         "w4",
+         "w5",
+         "w6"
+        ],
+        "summary": "I built Home around your net worth, your funds and the news that affects them."
+       },
+       {
+        "id": "w0",
+        "component": "SafeToSpend",
+        "variant": "hero",
+        "reason": "Safe-to-spend always comes first."
+       },
+       {
+        "id": "w1",
+        "component": "NetWorth",
+        "variant": "default",
+        "reason": "Everything you own and owe in one number."
+       },
+       {
+        "id": "w2",
+        "component": "Investments",
+        "variant": "default",
+        "reason": "How your funds moved this week."
+       },
+       {
+        "id": "w3",
+        "component": "PulseCard",
+        "variant": "default",
+        "maxItems": 2,
+        "reason": "News that touches your loans and holdings, with sources."
+       },
+       {
+        "id": "w4",
+        "component": "CashFlow",
+        "variant": "default",
+        "reason": "Income and spending over the last six months."
+       },
+       {
+        "id": "w5",
+        "component": "Goals",
+        "variant": "default",
+        "maxItems": 2,
+        "reason": "Your daughter's education and the Europe trip."
+       },
+       {
+        "id": "w6",
+        "component": "InsightCard",
+        "variant": "default",
+        "reason": "Something worth a look: money sitting idle and your card balance."
+       }
+      ]
+     }
+    }
+   ]
+  }
  ]
 }

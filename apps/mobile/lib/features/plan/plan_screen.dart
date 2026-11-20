@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../core/format.dart';
@@ -62,6 +63,20 @@ class PlanScreen extends ConsumerWidget {
                   SectionLabel(l.wGoals, trailing: _AddLink(l.newGoal, () => _newGoal(context))),
                   const SizedBox(height: 14),
                   GoalRows(items: s.l('goals')),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(Pk.pad, Pk.gap, Pk.pad, 0),
+            child: PCard(
+              onTap: () => context.push('/report'),
+              child: Row(
+                children: [
+                  const Icon(Icons.insert_chart_outlined, size: 20, color: Pk.lime),
+                  const SizedBox(width: 12),
+                  Expanded(child: Text(l.reportTitle, style: Pk.text(15.5, w: FontWeight.w600))),
+                  const Icon(Icons.arrow_outward, size: 16, color: Pk.muted),
                 ],
               ),
             ),

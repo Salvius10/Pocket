@@ -220,5 +220,22 @@
   "smsTitle": "ஒரு வங்கி SMS இப்போது வந்தது",
   "smsReadAs": "பாக்கெட் இதை இப்படிப் படித்தது",
   "smsSynthetic": "இந்தச் செய்தி டெமோவுக்காக உருவாக்கப்பட்டது. பாக்கெட் உங்கள் போனில் உள்ள SMS-ஐப் படிப்பதில்லை.",
-  "smsSeeHome": "முகப்பில் பார்க்க"
+  "smsSeeHome": "முகப்பில் பார்க்க",
+  "layoutMetaA2ui": "A2UI {protocol} ஆக அனுப்பப்பட்டது · அமைப்பு {version}",
+  "layoutMetaPlain": "எளிய அமைப்பிலிருந்து வரையப்பட்டது · அமைப்பு {version}",
+  "reportTitle": "மாத அறிக்கை",
+  "reportInShort": "சுருக்கமாக",
+  "reportMonthWent": "மாதம் எங்கே போனது",
+  "reportLeftOver": "மீதம்",
+  "reportOverspent": "வரவை விட அதிக செலவு",
+  "reportCameIn": "வந்தது",
+  "reportSaved": "சேமிப்பு",
+  "reportOther": "மற்றவை",
+  "reportSpentOfIncome": "வந்ததில் {pct}% செலவானது",
+  "reportAgainst": "{month} உடன் ஒப்பிட்டால்",
+  "reportLess": "{amount} குறைவு",
+  "reportMore": "{amount} அதிகம்",
+  "reportSame": "ஏறக்குறைய அதே",
+  "reportFootnote": "இங்குள்ள ஒவ்வொரு எண்ணும் உங்கள் பரிவர்த்தனைகளிலிருந்து கூட்டப்பட்டது.",
+  "reportNone": "இன்னும் முழு மாதம் இல்லை"
 }

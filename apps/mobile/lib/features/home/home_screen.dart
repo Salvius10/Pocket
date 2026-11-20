@@ -79,10 +79,8 @@ class HomeScreen extends ConsumerWidget {
             const SizedBox(height: 16),
             if (app.offline) ...[_OfflineBanner(text: l.offlineBanner(asOfText(context, app.asOf))), const SizedBox(height: Pk.gap)],
             if (nudge != null) ...[_NudgeCard(nudge: nudge), const SizedBox(height: Pk.gap)],
-            for (final (i, e) in entries.indexed) ...[
-              Rise(key: ValueKey('${app.home.i('version')}-${e.type}-$i'), index: i, child: e.widget),
-              const SizedBox(height: Pk.gap),
-            ],
+            // Drawn by a2ui_flutter from the stored A2UI messages; the direct renderer is the fallback.
+            HomeSurface(home: app.home),
             const SizedBox(height: 6),
             Row(
               children: [
@@ -128,6 +126,12 @@ class HomeScreen extends ConsumerWidget {
                 ],
               ),
             ),
+          const SizedBox(height: 10),
+          // How this layout reached the screen: as A2UI messages drawn by a2ui_flutter, or the plain fallback.
+          Text(
+            (checkA2uiSurface(home).ok ? l.layoutMetaA2ui(home.l('a2ui').first.s('version'), home.i('version')) : l.layoutMetaPlain(home.i('version'))).toUpperCase(),
+            style: Pk.label(c: Pk.faint, size: 10),
+          ),
           const SizedBox(height: 14),
           GhostButton(
             label: l.askPokoChange,

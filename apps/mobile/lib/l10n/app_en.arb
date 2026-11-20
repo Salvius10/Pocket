@@ -351,5 +351,67 @@
   "smsTitle": "A bank SMS just arrived",
   "smsReadAs": "Pocket read it as",
   "smsSynthetic": "This message is made up for the demo. Pocket does not read the SMS on your phone.",
-  "smsSeeHome": "See it on Home"
+  "smsSeeHome": "See it on Home",
+  "layoutMetaA2ui": "Sent as A2UI {protocol} · layout {version}",
+  "@layoutMetaA2ui": {
+    "placeholders": {
+      "protocol": {
+        "type": "String"
+      },
+      "version": {
+        "type": "int"
+      }
+    }
+  },
+  "layoutMetaPlain": "Drawn from the plain layout · layout {version}",
+  "@layoutMetaPlain": {
+    "placeholders": {
+      "version": {
+        "type": "int"
+      }
+    }
+  },
+  "reportTitle": "Monthly report",
+  "reportInShort": "In short",
+  "reportMonthWent": "Where the month went",
+  "reportLeftOver": "Left over",
+  "reportOverspent": "Spent more than came in",
+  "reportCameIn": "Came in",
+  "reportSaved": "Saved",
+  "reportOther": "Everything else",
+  "reportSpentOfIncome": "{pct}% of what came in was spent",
+  "@reportSpentOfIncome": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "reportAgainst": "Against {month}",
+  "@reportAgainst": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "reportLess": "{amount} less",
+  "@reportLess": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "reportMore": "{amount} more",
+  "@reportMore": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "reportSame": "About the same",
+  "reportFootnote": "Every figure here is added up from your transactions.",
+  "reportNone": "No complete month yet"
 }

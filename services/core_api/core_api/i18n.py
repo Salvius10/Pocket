@@ -445,7 +445,36 @@ _T: dict[str, dict[str, str]] = {
     "label.loans": {"en": "Loans", "hi": "कर्ज़", "ta": "கடன்கள்"},
     "label.card_bill": {"en": "{bank} card bill", "hi": "{bank} कार्ड बिल", "ta": "{bank} கார்டு பில்"},
     "label.cash": {"en": "Cash", "hi": "नकद", "ta": "ரொக்கம்"},
+    # monthly report: every figure is put in by code
+    "report.spent.less": {"en": "You spent {spend} in {month}, {delta} less than in {prev}.",
+                          "hi": "{month} में आपने {spend} खर्च किए, {prev} से {delta} कम।",
+                          "ta": "{month} மாதத்தில் {spend} செலவழித்தீர்கள். இது {prev} மாதத்தை விட {delta} குறைவு."},
+    "report.spent.more": {"en": "You spent {spend} in {month}, {delta} more than in {prev}.",
+                          "hi": "{month} में आपने {spend} खर्च किए, {prev} से {delta} ज़्यादा।",
+                          "ta": "{month} மாதத்தில் {spend} செலவழித்தீர்கள். இது {prev} மாதத்தை விட {delta} அதிகம்."},
+    "report.spent.same": {"en": "You spent {spend} in {month}, the same as in {prev}.",
+                          "hi": "{month} में आपने {spend} खर्च किए, {prev} जितना ही।",
+                          "ta": "{month} மாதத்தில் {spend} செலவழித்தீர்கள். {prev} மாதத்தைப் போலவே."},
+    "report.spent.first": {"en": "You spent {spend} in {month}.", "hi": "{month} में आपने {spend} खर्च किए।",
+                           "ta": "{month} மாதத்தில் {spend} செலவழித்தீர்கள்."},
+    "report.kept": {"en": "{net} of what came in was left over.", "hi": "जो आया उसमें से {net} बचा।",
+                    "ta": "வந்த பணத்தில் {net} மீதமிருந்தது."},
+    "report.short": {"en": "That is {net} more than came in.", "hi": "यह आमदनी से {net} ज़्यादा है।",
+                     "ta": "இது வந்த பணத்தை விட {net} அதிகம்."},
+    "report.top": {"en": "Most of it went to {category}.", "hi": "सबसे ज़्यादा {category} पर गया।",
+                   "ta": "அதிகம் சென்றது {category}-க்கு."},
 }
+
+_MONTHS_FULL = {
+    "en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "hi": ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"],
+    "ta": ["ஜனவரி", "பிப்ரவரி", "மார்ச்", "ஏப்ரல்", "மே", "ஜூன்", "ஜூலை", "ஆகஸ்ட்", "செப்டம்பர்", "அக்டோபர்", "நவம்பர்", "டிசம்பர்"],
+}
+
+
+def month_name(lang: str, month: int) -> str:
+    """Full month name: 'October'."""
+    return _MONTHS_FULL.get(lang, _MONTHS_FULL["en"])[month - 1]
 
 _MONTHS = {
     "en": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],

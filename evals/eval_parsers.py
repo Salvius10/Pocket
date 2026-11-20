@@ -29,6 +29,7 @@ from pathlib import Path
 from typing import Any
 
 from core_api.config import get_settings
+from core_api.ingest.aa import parse_account
 from core_api.ingest.sms import ParsedSms, parse_sms
 
 GATE = 0.95
@@ -76,6 +77,97 @@ def wrong_fields(got: ParsedSms, want: dict[str, Any]) -> list[str]:
     return bad
 
 
+def statements(root: Path, which: str) -> Iterator[tuple[str, dict[str, Any]]]:
+    """(user_id, statement) for every account statement in the dataset."""
+    if which in ("demo", "all"):
+        users = {}
+        with (root / "demo" / "db" / "accounts.csv").open(encoding="utf-8", newline="") as f:
+            for row in csv.DictReader(f):
+                users[row["masked_number"][-4:]] = row["user_id"]
+        for path in sorted((root / "demo" / "sources").glob("*/account_aggregator/*.json")):
+            doc = json.loads(path.read_text(encoding="utf-8"))
+            account = doc["Account"]
+            masked = str(account.get("maskedCardNumber") or account.get("maskedAccNumber") or "")
+            yield users.get(masked[-4:], ""), doc
+    if which in ("eval", "all"):
+        with gzip.open(root / "eval" / "sources" / "account_aggregator.jsonl.gz", "rt", encoding="utf-8") as f:
+            for line in f:
+                row = json.loads(line)
+                yield row["user_id"], row["statement"]
+
+
+def norm(text: str | None) -> str:
+    return " ".join((text or "").upper().split())
+
+
+def aa_report(root: Path, which: str, sms_keys: Counter[tuple[str, str, str, str, int]] | None) -> None:
+    """The account-feed parser against `transactions.csv`. The plan sets no gate for it: the numbers are reported."""
+    truth: dict[str, tuple[str, ...]] = {}
+    for name in (("demo", "eval") if which == "all" else (which,)):
+        with (root / name / "db" / "transactions.csv").open(encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                truth[r["txn_id"]] = (r["amount_paise"], r["direction"], r["occurred_at"], r["balance_after_paise"], r["ref_no"],
+                                      r["counterparty_vpa"], r["counterparty_name"], r["mode"])
+    n = structured = 0
+    field_ok: Counter[str] = Counter()
+    name_exact = name_close = name_any = vpa_printed = vpa_right = 0
+    mode_n: Counter[str] = Counter()
+    mode_ok: Counter[str] = Counter()
+    name_misses: dict[str, str] = {}
+    aa_keys: Counter[tuple[str, str, str, str, int]] = Counter()
+    t0 = time.perf_counter()
+    for user_id, doc in statements(root, which):
+        account = parse_account(doc)
+        for t in account.transactions:
+            want = truth.get(t.txn_id)
+            if want is None:
+                continue
+            n += 1
+            checks = {
+                "amount": str(t.amount_paise) == want[0], "direction": t.direction == want[1],
+                "time": t.occurred_at == datetime.fromisoformat(want[2]),
+                "balance": account.kind == "credit_card" or str(t.balance_paise) == want[3],
+                "ref_no": (t.ref_no or "") == want[4],
+            }
+            field_ok.update(k for k, ok in checks.items() if ok)
+            structured += all(checks.values())
+            if t.vpa:
+                vpa_printed += 1
+                vpa_right += t.vpa == want[5]
+            got, real = norm(t.counterparty), norm(want[6])
+            if real:
+                name_any += 1
+                name_exact += got == real
+                shared = next((i for i, (a, b) in enumerate(zip(got, real, strict=False)) if a != b), min(len(got), len(real)))
+                close = bool(got) and (real.startswith(got) or got.startswith(real) or shared >= 10)
+                name_close += close
+                if not close:
+                    name_misses.setdefault(want[7], f"{t.narration[:70]!r} -> {t.counterparty!r}, real {want[6][:34]!r}")
+            mode_n[want[7]] += 1
+            mode_ok[want[7]] += t.mode == want[7]
+            if t.ref_no:
+                aa_keys[(user_id, account.last4, t.ref_no, t.direction, t.amount_paise)] += 1
+
+    def pct(a: int, b: int) -> str:
+        return f"{100 * a / b:.2f}%" if b else "n/a"
+
+    print(f"\nAccount-feed parser vs transactions.csv: {n:,} rows in {time.perf_counter() - t0:.0f}s")
+    print(f"structured fields all correct (amount, direction, time, balance, reference): {pct(structured, n)}")
+    print("   " + "  ".join(f"{k} {pct(field_ok[k], n)}" for k in ("amount", "direction", "time", "balance", "ref_no")))
+    print(f"VPA: printed in {vpa_printed:,} narrations, read correctly in {pct(vpa_right, vpa_printed)}")
+    print(f"name of the other party: {pct(name_close, name_any)} are recognisably the real name (it, a cut-short form of it, or the same first ten letters) ({pct(name_exact, name_any)} exactly)")
+    print("channel: " + "  ".join(f"{m} {pct(mode_ok[m], mode_n[m])}" for m in sorted(mode_n)))
+    if name_misses:
+        print(f"names that do not match ({name_any - name_close:,}), one per channel:")
+        for channel, line in sorted(name_misses.items()):
+            print(f"   {channel:<9} {line}")
+    if sms_keys is not None:
+        with_ref = sum(sms_keys.values())
+        paired = sum(c for key, c in sms_keys.items() if aa_keys.get(key))
+        print("SMS and account feed describing the same payment (same account, reference, direction, amount): "
+              f"{pct(paired, with_ref)} of {with_ref:,} SMS that carry a reference find their account-feed row")
+
+
 def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")  # type: ignore[union-attr]
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
@@ -83,7 +175,11 @@ def main() -> int:
     ap.add_argument("--show", type=int, default=0, help="print this many wrong messages")
     ap.add_argument("--template", default=None, help="only this template id (or prefix)")
     ap.add_argument("--seen-only", action="store_true", help="with --show: skip held-out wordings")
+    ap.add_argument("--aa-only", action="store_true", help="only the account-feed parser (skips the SMS run and the gate)")
     args = ap.parse_args()
+    if args.aa_only:
+        aa_report(get_settings().data_path, args.set, None)
+        return 0
 
     root = get_settings().data_path
     accounts = linked_accounts(root)
@@ -94,6 +190,7 @@ def main() -> int:
     field_misses: dict[str, Counter[str]] = defaultdict(Counter)
     extra_ok: Counter[str] = Counter()
     extra_n = 0
+    sms_keys: Counter[tuple[str, str, str, str, int]] = Counter()  # for the same-payment join with the account feed
     shown = 0
     t0 = time.perf_counter()
 
@@ -105,6 +202,8 @@ def main() -> int:
         known = accounts.get(sms["user_id"], set())
         received = datetime.fromisoformat(sms["received_at"])
         got = parse_sms(sms["sender_id"], sms["body"], received, known)
+        if got.kind != "ignore" and got.ref_no and got.account_last4 and got.amount_paise:
+            sms_keys[(sms["user_id"], got.account_last4, got.ref_no, got.kind, got.amount_paise)] += 1
         bad = wrong_fields(got, want)
         group = "holdout" if sms["holdout"] else "seen"
         total[group] += 1
@@ -148,9 +247,11 @@ def main() -> int:
     if extra_n:
         print("not scored:           " + "  ".join(f"{f} {pct(extra_ok[f], extra_n).strip()}" for f in EXTRA))
 
+    if not args.template:
+        aa_report(root, args.set, sms_keys)
     if total["holdout"] == 0:
         print("\nGate 4: no held-out SMS in this selection, so the gate was not measured.")
-        return 0 if not args.template else 0
+        return 0
     rate = correct["holdout"] / total["holdout"]
     ok = rate >= GATE
     print(f"\nGate 4 (held-out wordings fully correct >= {GATE:.0%}): {'PASS' if ok else 'FAIL'} at {rate:.2%}")

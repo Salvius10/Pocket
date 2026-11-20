@@ -101,8 +101,8 @@ Owners: **B** = Backend, **A** = AI, **M** = Mobile. One agent can do all three;
 - "Why this layout?" sheet.
 
 **Done when:**
-- [ ] The 6 default persona layouts render identically through both renderers
-- [ ] Safe-to-spend is pinned at the top
+- [x] The 6 default persona layouts render identically through both renderers (`apps/mobile/test/home_surface_test.dart`)
+- [x] Safe-to-spend is pinned at the top
 
 ## M7 — UI composer (A)
 

@@ -16,4 +16,5 @@ job pocket-nav      "30 23 * * *" "$CORE/internal/jobs/nav"        # AMFI NAV in
 job pocket-insights "0 6 * * *"   "$CORE/internal/jobs/insights"   # insight run
 job pocket-pulse    "0 7 * * *"   "$AGENT/internal/jobs/pulse"     # Pulse build
 job pocket-nudges   "0 * * * *"   "$CORE/internal/jobs/nudges"     # nudge planning, hourly
-# Not scheduled yet: the synthetic daily drip (00:30) and the monthly report (1st, 08:00). See DECISIONS_LOG.md.
+job pocket-drip     "30 0 * * *"  "$CORE/internal/jobs/drip"       # synthetic drip: yesterday's transactions, as SMS through the parser
+# The monthly report needs no job: it is computed when the screen asks for it.

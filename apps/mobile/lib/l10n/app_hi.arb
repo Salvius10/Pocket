@@ -220,5 +220,22 @@
   "smsTitle": "अभी एक बैंक SMS आया",
   "smsReadAs": "पॉकेट ने इसे ऐसे पढ़ा",
   "smsSynthetic": "यह संदेश डेमो के लिए बनाया गया है। पॉकेट आपके फ़ोन के SMS नहीं पढ़ता।",
-  "smsSeeHome": "होम पर देखें"
+  "smsSeeHome": "होम पर देखें",
+  "layoutMetaA2ui": "A2UI {protocol} के रूप में भेजा गया · लेआउट {version}",
+  "layoutMetaPlain": "सादे लेआउट से बनाया गया · लेआउट {version}",
+  "reportTitle": "महीने की रिपोर्ट",
+  "reportInShort": "संक्षेप में",
+  "reportMonthWent": "महीना कहाँ गया",
+  "reportLeftOver": "बचा",
+  "reportOverspent": "आमदनी से ज़्यादा खर्च",
+  "reportCameIn": "आया",
+  "reportSaved": "बचत",
+  "reportOther": "बाकी सब",
+  "reportSpentOfIncome": "जो आया उसका {pct}% खर्च हुआ",
+  "reportAgainst": "{month} के मुकाबले",
+  "reportLess": "{amount} कम",
+  "reportMore": "{amount} ज़्यादा",
+  "reportSame": "लगभग बराबर",
+  "reportFootnote": "यहाँ का हर आँकड़ा आपके लेन-देन से जोड़ा गया है।",
+  "reportNone": "अभी कोई पूरा महीना नहीं"
 }

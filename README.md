@@ -62,13 +62,16 @@ Working end to end today, verified against the demo data:
 - Mascot: painted Poko with 8 moods and lip-sync; text chat everywhere. Live voice runs against `gemini-3.8-live` (checked with typed questions: tool call, spoken answer with the right numbers, refusal on "should I buy this fund"). The browser microphone path has not been tried by a person yet.
 - Guardrail: number check and advice check on every transcript sentence, stop-audio and self-correction.
 - App: onboarding, five tabs, Profile, English / Hindi / Tamil, offline snapshot with an "as of" time.
+- Account-feed (AA) parser: structured fields 100% on 235,963 statement rows, VPA 99.98% where printed; names are the bank's cut-short spelling. The SMS and the account-feed row for the same payment pair up 100% of the time by account, reference, direction and amount.
+- Home is drawn by `a2ui_flutter` 0.4.0 from the stored A2UI v1.0 messages; the direct renderer is the fallback. The six default layouts draw identically through both.
+- Monthly report (Plan tab): figures, comparison with the month before and the sentences are all computed by core-api.
+- Data stays current: for each day after the dataset's last day the synthetic drip repeats that person's own pattern as bank SMS through the parser (on sync, and as a daily job).
 
 Not done yet (see `DECISIONS_LOG.md` for why):
 
-- **Account-feed (AA) parser.** Persona link still loads the processed dataset; only the SMS half of M2 is written. A reversal SMS is stored but not linked back to the payment it reverses.
+- **Loading through the parsers.** Both parsers are written and measured, but persona link still loads the processed dataset instead of running the account feed through the parser. A reversal SMS is stored but not linked back to the payment it reverses.
 - **Gates 2 and 3 on the live model.** `eval-chats` passes both in fake mode; it has not been run against Gemini.
 - **Deploy.** `infra/deploy.ps1` has never been run.
 - **Android APK.** It builds (`./make.ps1 apk`) but has not been installed on a phone.
-- `a2ui_flutter`'s own surface widget is not mounted yet; Home reads the stored A2UI messages through our adapter.
-- drift (the cache is a snapshot in shared_preferences), the Rive file (H3), the daily data drip, the monthly report screen, Cloud Scheduler set-up, CI, and widget tests for the app.
+- drift (the cache is a snapshot in shared_preferences), the Rive file (H3), Cloud Scheduler set-up and CI.
 - Hindi and Tamil strings are agent-written and need a native-speaker review (H4).

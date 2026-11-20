@@ -111,6 +111,8 @@ async def link(body: LinkIn, session: Session, user: CurrentUser) -> dict[str, A
     user.onboarding_step = "done"
     await session.commit()
     ctx = await refresh(session, user)
+    if await keep_current(session, ctx):
+        ctx = await refresh(session, user)
     # Build this person's Home now: the composer sees their features and what they told the mascot.
     # If it cannot answer, compose() leaves the persona's default layout in place.
     layout, outcome = await home.compose(session, ctx, None)
@@ -118,10 +120,23 @@ async def link(body: LinkIn, session: Session, user: CurrentUser) -> dict[str, A
     return {"linked": counts, "me": me_view(user, ctx.settings), "home": home.layout_view(layout), "home_outcome": outcome}
 
 
+async def keep_current(session: Session, ctx: Ctx) -> bool:
+    """Demo data only: add the days between the dataset's last day and yesterday (the synthetic
+    drip). Cheap when there is nothing to add. True if transactions were created."""
+    from core_api.demo import drip
+    from core_api.insights.engine import load_merchants
+
+    created = await drip.catch_up(session, ctx, await load_merchants(session), loader.data_end())
+    await session.commit()
+    return created > 0
+
+
 # ---------- the bundle the app caches ----------
 @router.get("/sync")
 async def sync(session: Session, ctx: UserCtx, since: str | None = None) -> dict[str, Any]:
     user = ctx.user
+    if user.persona_id is not None and await keep_current(session, ctx):
+        ctx = await refresh(session, user)  # a new day's transactions arrived: redo insights and nudges
     cursor = f"{user.data_version}:{ctx.today.isoformat()}:{user.language}"
     if user.persona_id is None:
         return {"changed": True, "cursor": cursor, "as_of": now_utc().isoformat(), "me": me_view(user, ctx.settings), "linked": False}
@@ -392,17 +407,13 @@ async def dismiss_nudge(nudge_id: str, session: Session, user: CurrentUser) -> d
 
 @router.get("/reports/monthly")
 async def monthly_report(ctx: UserCtx, month: str | None = None) -> dict[str, Any]:
-    """Numbers for the monthly report screen. Any LLM summary uses {{placeholders}} only."""
-    from core_api.ledger import mathx
+    """The monthly report screen: every figure and every sentence is computed in code."""
+    from core_api.reports.monthly import MONTH_KEY
+    from core_api.reports.monthly import monthly_report as build
 
-    key = month or mathx.shift_month_key(ctx.month, -1)
-    prev = mathx.shift_month_key(key, -1)
-    inc, spend = summary.income_in_month(ctx, key), max(0, summary.expense_in_month(ctx, key))
-    p_spend = max(0, summary.expense_in_month(ctx, prev))
-    saved = sum(x.amount_paise for x in ctx.txns if x.budget_month == key and x.spend_class == "saving" and x.direction == "debit")
-    return {"month": key, "income": summary.M(ctx, inc), "spend": summary.M(ctx, spend), "saved": summary.M(ctx, saved),
-            "net": summary.M(ctx, inc - spend - saved), "previous_spend": summary.M(ctx, p_spend),
-            "spend_delta": summary.M(ctx, spend - p_spend), "categories": summary._category_rows(ctx, summary.category_totals(ctx, key))[:8]}
+    if month is not None and not MONTH_KEY.match(month):
+        raise HTTPException(422, "month must look like 2026-10")
+    return build(ctx, month)
 
 
 # ---------- home ----------

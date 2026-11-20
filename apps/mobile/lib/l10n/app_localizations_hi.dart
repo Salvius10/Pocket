@@ -703,4 +703,67 @@ class LHi extends L {
 
   @override
   String get smsSeeHome => 'होम पर देखें';
+
+  @override
+  String layoutMetaA2ui(String protocol, int version) {
+    return 'A2UI $protocol के रूप में भेजा गया · लेआउट $version';
+  }
+
+  @override
+  String layoutMetaPlain(int version) {
+    return 'सादे लेआउट से बनाया गया · लेआउट $version';
+  }
+
+  @override
+  String get reportTitle => 'महीने की रिपोर्ट';
+
+  @override
+  String get reportInShort => 'संक्षेप में';
+
+  @override
+  String get reportMonthWent => 'महीना कहाँ गया';
+
+  @override
+  String get reportLeftOver => 'बचा';
+
+  @override
+  String get reportOverspent => 'आमदनी से ज़्यादा खर्च';
+
+  @override
+  String get reportCameIn => 'आया';
+
+  @override
+  String get reportSaved => 'बचत';
+
+  @override
+  String get reportOther => 'बाकी सब';
+
+  @override
+  String reportSpentOfIncome(int pct) {
+    return 'जो आया उसका $pct% खर्च हुआ';
+  }
+
+  @override
+  String reportAgainst(String month) {
+    return '$month के मुकाबले';
+  }
+
+  @override
+  String reportLess(String amount) {
+    return '$amount कम';
+  }
+
+  @override
+  String reportMore(String amount) {
+    return '$amount ज़्यादा';
+  }
+
+  @override
+  String get reportSame => 'लगभग बराबर';
+
+  @override
+  String get reportFootnote => 'यहाँ का हर आँकड़ा आपके लेन-देन से जोड़ा गया है।';
+
+  @override
+  String get reportNone => 'अभी कोई पूरा महीना नहीं';
 }

@@ -28,6 +28,8 @@ from core_api.ledger.classify import RECURRING_KIND_MAP, SALARY_CATEGORIES, next
 from core_api.ledger.mathx import budget_month_for
 
 PERSONAS = ("student", "first_job", "family", "gig", "shop", "investor")
+# `profile_facts.source` for what the user said to the mascot themselves (the persona's own lines are "onboarding").
+TOLD_BY_USER = "mascot"
 
 CATEGORY_I18N: dict[str, tuple[str, str, str]] = {
     # id: (hi, ta, emoji)  — agent-written translations, x-review (BUILD_PLAN H4)
@@ -394,6 +396,13 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
     def nid(old: str | None) -> str | None:
         return str(uuid5(ns, old)) if old else None
 
+    # What this person told the mascot is theirs, not the persona's: keep it across the wipe.
+    told = [
+        {"key": f.key, "value": f.value, "language": f.language}
+        for f in (await session.execute(
+            select(m.ProfileFact).where(m.ProfileFact.user_id == user.id, m.ProfileFact.source == TOLD_BY_USER)
+        )).scalars()
+    ]
     await wipe_user_data(session, user.id)
 
     user.persona_id = persona_id
@@ -406,11 +415,18 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
 
     built = build_user_rows(data, src_uid, user.id, today, nid)
     my_groups = built.my_groups
+    # Their own words replace the persona's line for the same thing (what they save for, what worries them).
+    told_keys = {row["key"] for row in told}
+    facts = [f for f in built.facts if f["key"] not in told_keys] + [
+        {"id": str(uuid5(ns, f"told:{row['key']}")), "user_id": user.id, "key": row["key"], "value": row["value"],
+         "source": TOLD_BY_USER, "language": row["language"]}
+        for row in told
+    ]
 
     for table, payload in (
         (m.Account, built.accounts), (m.RecurringItem, built.recurring), (m.Transaction, built.txns), (m.Loan, built.loans),
         (m.Holding, built.holdings), (m.Pocket, built.pockets), (m.Goal, built.goals), (m.GoalContribution, built.contributions),
-        (m.ProfileFact, built.facts), (m.PlantedPattern, built.planted), (m.CardStatement, built.statements),
+        (m.ProfileFact, facts), (m.PlantedPattern, built.planted), (m.CardStatement, built.statements),
     ):
         for chunk_start in range(0, len(payload), 500):
             await session.execute(insert(table), payload[chunk_start : chunk_start + 500])
