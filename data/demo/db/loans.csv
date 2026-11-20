@@ -1,0 +1,6 @@
+user_id,key,lender,loan_type,rate_type,principal_paise,outstanding_paise,interest_rate_bps,tenure_months,emi_paise,emi_day,start_date,end_date,emis_paid,months_left,zero_cost_emi
+ef24f3be-39c4-58ad-9f99-4207acb7e427,home_loan,SBI Home Loan,home,floating,480000000,411167540,815,240,4059800,5,2021-04-05,2041-03-05,68,172,False
+3b7f1216-52af-5525-a9df-aaea0f629781,bike_loan,Hero FinCorp,vehicle,fixed,7200000,991513,1150,24,337300,7,2025-03-07,2027-02-07,21,3,False
+3b7f1216-52af-5525-a9df-aaea0f629781,phone_emi,Bajaj Finance,consumer_durable,fixed,1349100,0,0,9,149900,2,2026-03-02,2026-11-02,9,0,True
+455ffda9-e220-5bd1-a832-ecdfe243caad,biz_loan,Bajaj Finance,business,fixed,40000000,22445334,1650,36,1416200,5,2025-06-05,2028-05-05,18,18,False
+6ba019b9-c89e-5c70-88e2-68900c9763cd,car_loan,HDFC Bank Car Loan,vehicle,fixed,95000000,46482904,910,60,1976700,7,2024-02-07,2029-01-07,34,26,False

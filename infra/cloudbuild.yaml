@@ -1,0 +1,11 @@
+# Builds one service image from the monorepo root.
+#   gcloud builds submit . --config infra/cloudbuild.yaml --substitutions=_SERVICE=core_api,_IMAGE=<region>-docker.pkg.dev/<project>/pocket/core-api
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-f", "services/${_SERVICE}/Dockerfile", "-t", "${_IMAGE}", "."]
+images: ["${_IMAGE}"]
+substitutions:
+  _SERVICE: core_api
+  _IMAGE: ""
+options:
+  logging: CLOUD_LOGGING_ONLY

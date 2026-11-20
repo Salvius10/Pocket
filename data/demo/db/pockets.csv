@@ -1,0 +1,34 @@
+pocket_id,user_id,name,emoji,monthly_limit_paise,category_ids,status,sort_order,created_by,created_at
+0176f7dc-e58c-54db-8b44-ce69b395e067,c282e400-dfa4-5c9d-9175-1f6089c85555,Food delivery,🍔,250000,food_delivery,active,0,loader,2026-06-01
+c4276840-e3e7-5a78-9baf-d675258fc565,c282e400-dfa4-5c9d-9175-1f6089c85555,Snacks & eating out,☕,150000,eating_out,active,1,loader,2026-06-01
+6c66e13b-464e-5aad-9653-b8d2dac2597c,c282e400-dfa4-5c9d-9175-1f6089c85555,Travel,🛵,90000,transport,active,2,loader,2026-06-01
+618a12f3-59e0-5a5d-b2aa-393c5474165f,c282e400-dfa4-5c9d-9175-1f6089c85555,Fun & shopping,🎬,150000,shopping|entertainment,active,3,loader,2026-06-01
+4b719cf7-1539-5b40-9b6e-b5d387a7a575,c282e400-dfa4-5c9d-9175-1f6089c85555,Phone & apps,📱,60000,mobile_internet|subscriptions,active,4,loader,2026-06-01
+d95f21e9-46e0-5209-af81-e5f3521142b3,914b3ba0-dff9-566f-919d-c3b66de91b72,Food delivery,🛵,420000,food_delivery,active,0,loader,2026-06-01
+6804e327-026b-5a1a-b87a-4aa75b86bf30,914b3ba0-dff9-566f-919d-c3b66de91b72,Eating out,🍽️,500000,eating_out,active,1,loader,2026-06-01
+c2c60dec-1601-55f0-b384-fbde3b9356dd,914b3ba0-dff9-566f-919d-c3b66de91b72,Groceries,🛒,350000,groceries,active,2,loader,2026-06-01
+02dadac9-df6b-5eca-afa0-827dfea61275,914b3ba0-dff9-566f-919d-c3b66de91b72,Cabs,🚕,350000,transport,active,3,loader,2026-06-01
+deaa902b-f3e5-5d6e-8d57-e8fcf7fe27d1,914b3ba0-dff9-566f-919d-c3b66de91b72,Shopping & care,🛍️,400000,shopping|personal_care,active,4,loader,2026-06-01
+3db5f69e-eed8-5531-ad84-7affd107c1f9,914b3ba0-dff9-566f-919d-c3b66de91b72,Fun,🎟️,150000,entertainment,active,5,loader,2026-06-01
+62f66c4f-0f40-553e-bc22-77bb77ab51b7,ef24f3be-39c4-58ad-9f99-4207acb7e427,Groceries,🛒,1600000,groceries,active,0,loader,2026-06-01
+cc5d44af-d426-52b6-bfcb-77b3787cf7fb,ef24f3be-39c4-58ad-9f99-4207acb7e427,Food delivery,🍱,400000,food_delivery,active,1,loader,2026-06-01
+b230229a-b542-57d3-934e-10c979c324e2,ef24f3be-39c4-58ad-9f99-4207acb7e427,Eating out,🍛,300000,eating_out,active,2,loader,2026-06-01
+ded89547-1b6b-5177-9fa3-dd8338a33286,ef24f3be-39c4-58ad-9f99-4207acb7e427,Car & travel,🚗,550000,fuel|transport,active,3,loader,2026-06-01
+00eae950-40bd-5c5c-a119-a7f7de2968e4,ef24f3be-39c4-58ad-9f99-4207acb7e427,Shopping,🛍️,600000,shopping|personal_care,active,4,loader,2026-06-01
+185e19a2-6f2e-51e0-a0f8-58093966aac2,ef24f3be-39c4-58ad-9f99-4207acb7e427,Health,💊,250000,health,active,5,loader,2026-06-01
+6eb86cfc-6f2a-545d-82dc-9ca1e79f8bc3,3b7f1216-52af-5525-a9df-aaea0f629781,Petrol,⛽,550000,fuel,active,0,loader,2026-06-01
+52e8fd61-e642-527e-8257-12bee00bf3f3,3b7f1216-52af-5525-a9df-aaea0f629781,Food delivery,🍲,250000,food_delivery,active,1,loader,2026-06-01
+24f0206a-844e-59b7-a651-07f82ae4cf0e,3b7f1216-52af-5525-a9df-aaea0f629781,Chai-nashta,☕,200000,eating_out,active,2,loader,2026-06-01
+0d2838bc-30f9-5f1c-9648-7b5ade6b004b,3b7f1216-52af-5525-a9df-aaea0f629781,Ghar ka saman,🧺,150000,groceries,active,3,loader,2026-06-01
+ec0cb583-a959-5154-8240-84b6e50b003f,3b7f1216-52af-5525-a9df-aaea0f629781,Mobile,📱,50000,mobile_internet|subscriptions,active,4,loader,2026-06-01
+8ccf2c17-97e4-5fad-8c3c-9d9285ffaa86,455ffda9-e220-5bd1-a832-ecdfe243caad,Ghar ka kharcha,🏠,800000,groceries|home_services,active,0,loader,2026-06-01
+1fa8fc46-fbb1-5b3c-af96-acb8ee8ef611,455ffda9-e220-5bd1-a832-ecdfe243caad,Food delivery,🍕,300000,food_delivery,active,1,loader,2026-06-01
+8354622d-64e4-5c1c-bb58-a6c900fb3fc9,455ffda9-e220-5bd1-a832-ecdfe243caad,Bahar khana,🍽️,250000,eating_out,active,2,loader,2026-06-01
+94e39a2c-0f71-5620-a501-6a888ca1d38f,455ffda9-e220-5bd1-a832-ecdfe243caad,Shopping,🛍️,400000,shopping|personal_care,active,3,loader,2026-06-01
+24e8770d-7cc2-5850-ae85-5add83a0f662,455ffda9-e220-5bd1-a832-ecdfe243caad,Petrol & auto,🛺,250000,fuel|transport,active,4,loader,2026-06-01
+fad44f66-4079-5662-85c5-f6347be01bbb,6ba019b9-c89e-5c70-88e2-68900c9763cd,Food delivery,🥡,600000,food_delivery,active,0,loader,2026-06-01
+303ecfc7-75b4-5d9c-98b2-9b1691a8d3ac,6ba019b9-c89e-5c70-88e2-68900c9763cd,Eating out,🍷,1000000,eating_out,active,1,loader,2026-06-01
+8c00a5c0-3033-51f9-ac0c-0d06409f2a46,6ba019b9-c89e-5c70-88e2-68900c9763cd,Groceries,🛒,1400000,groceries,active,2,loader,2026-06-01
+7923f4c9-885c-5bd0-87ed-e60a1ca3152a,6ba019b9-c89e-5c70-88e2-68900c9763cd,Shopping,🛍️,1200000,shopping,active,3,loader,2026-06-01
+50ee91a9-5762-51f6-9a52-e164a45cf733,6ba019b9-c89e-5c70-88e2-68900c9763cd,Fun,🎭,400000,entertainment,active,4,loader,2026-06-01
+d8da6748-d57b-5c58-851c-e13dfb4ec0bb,6ba019b9-c89e-5c70-88e2-68900c9763cd,Cabs & fuel,🚘,900000,transport|fuel,active,5,loader,2026-06-01

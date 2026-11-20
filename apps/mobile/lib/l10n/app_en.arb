@@ -1,0 +1,351 @@
+{
+  "@@locale": "en",
+  "appName": "Pocket",
+  "tabHome": "Home",
+  "tabMoney": "Money",
+  "tabMascot": "Poko",
+  "tabPlan": "Plan",
+  "tabCollab": "Collab",
+  "retry": "Try again",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "notNow": "Not now",
+  "done": "Done",
+  "save": "Save",
+  "add": "Add",
+  "continueLabel": "Continue",
+  "skip": "Skip",
+  "offlineBanner": "Offline. Showing your numbers as of {time}.",
+  "@offlineBanner": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "asOf": "As of {time}",
+  "@asOf": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "errorTitle": "Something went wrong",
+  "errorBody": "We couldn't load this. Check your connection and try again.",
+  "onbTagline": "Money that explains itself.",
+  "onbPickLanguage": "Choose your language",
+  "onbLangHint": "You can change this later in Profile.",
+  "onbTryDemo": "Try a demo persona",
+  "onbDemoNote": "Demo data only. No real bank is connected.",
+  "onbVoiceTitle": "Pick Poko's voice",
+  "voiceWarm": "Warm",
+  "voiceBright": "Bright",
+  "voiceCalm": "Calm",
+  "voiceClear": "Clear",
+  "onbTalkTitle": "Tell Poko about your money",
+  "onbTalkHint": "Four quick questions. Type or talk.",
+  "onbSkipTalk": "Skip the chat",
+  "onbPickPersona": "Pick the profile closest to you",
+  "onbPersonaNote": "Each one is invented, with a year of realistic money.",
+  "onbSuggested": "Closest match",
+  "onbBuild": "Build my Home",
+  "onbBuilding": "Building your Home",
+  "onbStep": "Step {n} of {total}",
+  "@onbStep": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "greetMorning": "Good morning",
+  "greetAfternoon": "Good afternoon",
+  "greetEvening": "Good evening",
+  "safeToSpend": "Safe to spend today",
+  "perDay": "a day",
+  "leftToday": "Left today",
+  "spentToday": "Spent today",
+  "daysLeft": "{n} days left",
+  "@daysLeft": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "overToday": "Over today's amount by {amount}",
+  "@overToday": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "nothingLeft": "Nothing left to spend freely this month",
+  "stsIncome": "Income",
+  "stsCommitted": "Bills & EMIs",
+  "stsGoals": "Goals",
+  "stsSpent": "Spent",
+  "stsFormula": "Income, minus bills and goals, minus what you've spent, shared over the days left.",
+  "wPockets": "Pockets",
+  "wGoals": "Goals",
+  "wSpend": "Where it goes",
+  "wCashFlow": "Cash flow",
+  "wTransactions": "Recent",
+  "wBills": "Bills & EMIs",
+  "wNetWorth": "Net worth",
+  "wInvestments": "Investments",
+  "wInsight": "Noticed",
+  "wPulse": "Pulse",
+  "wGroup": "Group",
+  "whyLayout": "Why this layout?",
+  "whyLayoutTitle": "Why your Home looks like this",
+  "editHome": "Edit Home",
+  "editHomeHint": "Drag to reorder. Safe-to-spend stays on top.",
+  "resetHome": "Reset to Poko's layout",
+  "askPokoChange": "Ask Poko to change it",
+  "homeSaved": "Home saved",
+  "ofLimit": "of {limit}",
+  "@ofLimit": {
+    "placeholders": {
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "leftLabel": "{amount} left",
+  "@leftLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "overLabel": "{amount} over",
+  "@overLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "statusOver": "Over",
+  "statusWatch": "Watch",
+  "statusOk": "On track",
+  "statusBehind": "Behind",
+  "statusReached": "Reached",
+  "statusPaused": "Paused",
+  "thisMonth": "This month",
+  "income": "In",
+  "spend": "Out",
+  "dueIn": "in {n} days",
+  "@dueIn": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dueToday": "today",
+  "dueTomorrow": "tomorrow",
+  "overdue": "overdue",
+  "autopay": "Auto",
+  "assets": "You have",
+  "liabilities": "You owe",
+  "weekChange": "This week",
+  "viewOnly": "View only. Pocket never asks you to buy or sell.",
+  "noInsights": "Nothing new to flag",
+  "noInsightsBody": "Poko is watching. Patterns will show up here.",
+  "forYou": "For you",
+  "youOwe": "You owe {amount}",
+  "@youOwe": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "youAreOwed": "You are owed {amount}",
+  "@youAreOwed": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "allSettled": "All settled",
+  "dismiss": "Dismiss",
+  "moneyTitle": "Money",
+  "segTransactions": "Transactions",
+  "segAccounts": "Accounts",
+  "segBills": "Bills & EMIs",
+  "segInvestments": "Investments",
+  "searchHint": "Search merchant or note",
+  "filterAll": "All",
+  "filterOut": "Spent",
+  "filterIn": "Received",
+  "addCash": "Add cash entry",
+  "amountRupees": "Amount (₹)",
+  "whatWasIt": "What was it?",
+  "category": "Category",
+  "changeCategory": "Change category",
+  "splitWithGroup": "Split with a group",
+  "noTransactions": "No transactions found",
+  "owedOnCard": "Owed",
+  "limitLabel": "Limit",
+  "emisLeft": "{n} EMIs left",
+  "@emisLeft": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "outstanding": "Outstanding",
+  "invested": "Invested",
+  "approx": "approx.",
+  "noBills": "Nothing due soon",
+  "noInvestments": "No investments linked",
+  "mascotTalk": "Talk",
+  "mascotNoticed": "Noticed",
+  "mascotPulse": "Pulse",
+  "typeHint": "Ask about your money",
+  "micStart": "Tap to talk",
+  "micStop": "Tap to stop",
+  "connecting": "Connecting",
+  "voiceOffNote": "Voice comes on when the live key is set. Type to chat.",
+  "mascotOffline": "Poko needs the internet. Your numbers are still here.",
+  "confirmCardNote": "Nothing happens until you tap Confirm.",
+  "proposalDone": "Done. Your numbers are updated.",
+  "proposalFailed": "That couldn't be done. Nothing was changed.",
+  "promptToday": "How much can I spend today?",
+  "promptSpend": "Where is my money going?",
+  "promptNotice": "What did you notice?",
+  "promptFund": "Should I buy this fund?",
+  "promptBills": "Put my bills first",
+  "pulseEmpty": "No Pulse yet today",
+  "pulseEmptyBody": "Markets and world news with sources will appear here.",
+  "planTitle": "Plan",
+  "suggested": "Suggested moves",
+  "newPocket": "New pocket",
+  "newGoal": "New goal",
+  "nameLabel": "Name",
+  "monthlyLimit": "Monthly limit (₹)",
+  "targetAmount": "Target (₹)",
+  "pausePocket": "Pause",
+  "resumePocket": "Resume",
+  "needPerMonth": "Needs {amount} a month",
+  "@needPerMonth": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "byDate": "by {date}",
+  "@byDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noPockets": "No pockets yet",
+  "noGoals": "No goals yet",
+  "collabTitle": "Collab",
+  "newGroup": "New group",
+  "joinGroup": "Join with a code",
+  "inviteCode": "Invite code",
+  "groupName": "Group name",
+  "typeFamily": "Family",
+  "typeTrip": "Trip",
+  "typeFlatmates": "Flatmates",
+  "typeCustom": "Custom",
+  "members": "Members",
+  "expenses": "Expenses",
+  "settleUp": "Settle up",
+  "addExpense": "Add expense",
+  "paidBy": "Paid by",
+  "splitEqual": "Split equally",
+  "addGuest": "Add a guest",
+  "guestUpi": "UPI ID (optional)",
+  "payByUpi": "Pay by UPI",
+  "openUpiApp": "Open UPI app",
+  "copyUpiId": "Copy UPI ID",
+  "copied": "Copied",
+  "markPaid": "I've paid",
+  "confirmReceived": "Confirm received",
+  "pays": "{from} pays {to}",
+  "@pays": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "pocketNeverHolds": "Pocket never holds money. You pay in your own UPI app.",
+  "demoUpiNote": "Demo UPI IDs (@pocketdemo) are not real, so no money will move.",
+  "sharedBudget": "Shared budget",
+  "pot": "Pot",
+  "addToPot": "Add to pot",
+  "privacyGroup": "What this group sees",
+  "privacyGroupNote": "Nothing of yours is shared unless you turn it on.",
+  "shareNothing": "Sharing nothing",
+  "noGroups": "No groups yet",
+  "noGroupsBody": "Start one for a trip, your flat or your family.",
+  "you": "You",
+  "guest": "Guest",
+  "statusPending": "Pending",
+  "statusLinkOpened": "Link opened",
+  "statusMarkedPaid": "Marked paid",
+  "statusConfirmed": "Confirmed",
+  "yourShare": "Your share {amount}",
+  "@yourShare": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "membersCount": "{n} members",
+  "@membersCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "profileTitle": "Profile",
+  "language": "Language",
+  "mascotVoice": "Poko's voice",
+  "nudgesTitle": "Nudges",
+  "nudgesPerDay": "Nudges a day",
+  "quietHours": "Quiet hours",
+  "privacy": "Privacy",
+  "exportData": "Export my data",
+  "deleteData": "Delete my data",
+  "deleteConfirm": "This removes everything about you from Pocket. It can't be undone.",
+  "disclaimerTitle": "Data, not advice",
+  "disclaimerBody": "Pocket shows your own numbers and general explanations. It never tells you to buy, sell or switch any investment. All data in this build is synthetic.",
+  "switchPersona": "Switch demo profile",
+  "demoTools": "Demo tools",
+  "injectSwiggy": "Add a Swiggy order now",
+  "linkedAccounts": "Linked accounts",
+  "startOver": "Start over",
+  "exported": "Export ready: {n} transactions",
+  "@exported": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "muteVoice": "Mute voice"
+}

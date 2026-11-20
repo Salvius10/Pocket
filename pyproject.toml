@@ -1,0 +1,45 @@
+[project]
+name = "pocket"
+version = "0.1.0"
+description = "Pocket MVP monorepo (uv workspace root)"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["packages/pocket_common", "packages/pocket_synth", "services/core_api", "services/agent"]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.8",
+  "mypy>=1.13",
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "hypothesis>=6.120",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+extend-exclude = ["packages/pocket_synth", "apps", "data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "ASYNC", "S110"]
+ignore = ["E501", "B008"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["packages/pocket_common/tests", "services/core_api/tests", "services/agent/tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+warn_unused_ignores = true
+exclude = ["packages/pocket_synth", "apps", "data"]
+
+[[tool.mypy.overrides]]
+module = ["pocket_common.money", "core_api.ledger.mathx", "core_api.ingest.*"]
+strict = true

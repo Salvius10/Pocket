@@ -1,0 +1,468 @@
+{
+ "Account": {
+  "type": "credit_card",
+  "maskedCardNumber": "XXXXXXXXXXXX1125",
+  "version": "1.1",
+  "linkedAccRef": "5190fe97-227e-50b7-957f-bade4a3f3c42",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "RAHUL KUMAR",
+      "dob": "1997-02-09",
+      "mobile": "XXXXXX4140",
+      "nominee": "REGISTERED",
+      "email": "rahul.512@example.com",
+      "pan": "XXXXX8962X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "issuerName": "State Bank of India",
+   "cardType": "MASTERCARD",
+   "primary": "YES",
+   "creditLimit": "30000.00",
+   "cashLimit": "6000.00",
+   "availableCredit": "24548.71",
+   "currentDue": "5451.29",
+   "lastStatementDate": "2026-11-08",
+   "dueDate": "2026-11-28",
+   "totalDueAmount": "5251.29",
+   "minDueAmount": "263.00",
+   "previousDueAmount": "5328.77",
+   "financeCharges": "251.29",
+   "loyaltyPoints": "2599",
+   "annualInterestRatePercent": "45.00"
+  },
+  "Statements": [
+   {
+    "statement_date": "2025-11-08",
+    "due_date": "2025-11-28",
+    "total_due_paise": 1160000,
+    "min_due_paise": 58000,
+    "paid_paise": 1160000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2025-12-08",
+    "due_date": "2025-12-28",
+    "total_due_paise": 0,
+    "min_due_paise": 0,
+    "paid_paise": 0,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-01-08",
+    "due_date": "2026-01-28",
+    "total_due_paise": 35000,
+    "min_due_paise": 20000,
+    "paid_paise": 35000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-02-08",
+    "due_date": "2026-02-28",
+    "total_due_paise": 15000,
+    "min_due_paise": 15000,
+    "paid_paise": 15000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-03-08",
+    "due_date": "2026-03-28",
+    "total_due_paise": 25000,
+    "min_due_paise": 20000,
+    "paid_paise": 25000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-04-08",
+    "due_date": "2026-04-28",
+    "total_due_paise": 0,
+    "min_due_paise": 0,
+    "paid_paise": 0,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-05-08",
+    "due_date": "2026-05-28",
+    "total_due_paise": 35000,
+    "min_due_paise": 20000,
+    "paid_paise": 35000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-06-08",
+    "due_date": "2026-06-28",
+    "total_due_paise": 15000,
+    "min_due_paise": 15000,
+    "paid_paise": 15000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-07-08",
+    "due_date": "2026-07-28",
+    "total_due_paise": 30000,
+    "min_due_paise": 20000,
+    "paid_paise": 30000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-08-08",
+    "due_date": "2026-08-28",
+    "total_due_paise": 20000,
+    "min_due_paise": 20000,
+    "paid_paise": 20000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-09-08",
+    "due_date": "2026-09-28",
+    "total_due_paise": 85000,
+    "min_due_paise": 20000,
+    "paid_paise": 20000,
+    "finance_charges_paise": 0,
+    "revolving_after_due_paise": 65000,
+    "finance_charges_next_paise": 2877
+   },
+   {
+    "statement_date": "2026-10-08",
+    "due_date": "2026-10-28",
+    "total_due_paise": 532877,
+    "min_due_paise": 26600,
+    "paid_paise": 30000,
+    "finance_charges_paise": 2877,
+    "revolving_after_due_paise": 502877,
+    "finance_charges_next_paise": 22252
+   },
+   {
+    "statement_date": "2026-11-08",
+    "due_date": "2026-11-28",
+    "total_due_paise": 525129,
+    "min_due_paise": 26300,
+    "paid_paise": null,
+    "finance_charges_paise": 22252,
+    "revolving_after_due_paise": 495129
+   }
+  ],
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "2dd1ed52-74b6-5277-9eaf-c25cc2be6a88",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "11600.00",
+     "txnDate": "2025-11-23T22:56:50+05:30",
+     "valueDate": "2025-11-23",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "532720658402"
+    },
+    {
+     "txnId": "6843dc4d-9634-5b63-92c6-d22038f9eeed",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "200.00",
+     "txnDate": "2025-12-18T19:29:20+05:30",
+     "valueDate": "2025-12-18",
+     "narration": "INDIAN OIL CORPORATION DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "ab74f42b-d5cf-5cb0-a22b-a382ec1cf55e",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "150.00",
+     "txnDate": "2026-01-06T15:53:01+05:30",
+     "valueDate": "2026-01-06",
+     "narration": "BHARAT PETROLEUM CORP DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "8f47c300-5442-510a-a018-99d64d147f87",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "350.00",
+     "txnDate": "2026-01-24T01:30:02+05:30",
+     "valueDate": "2026-01-24",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "602322132071"
+    },
+    {
+     "txnId": "22cd05e5-0ff9-5585-b3c1-04466e79857c",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "150.00",
+     "txnDate": "2026-01-26T12:19:37+05:30",
+     "valueDate": "2026-01-26",
+     "narration": "HINDUSTAN PETROLEUM CO DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "32a1fa35-7886-503f-9648-2c02cb719528",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "150.00",
+     "txnDate": "2026-02-22T19:42:23+05:30",
+     "valueDate": "2026-02-22",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "605318581788"
+    },
+    {
+     "txnId": "55a5ff77-c21a-51c0-8dcb-2bf89f3067f7",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "250.00",
+     "txnDate": "2026-03-05T16:34:48+05:30",
+     "valueDate": "2026-03-05",
+     "narration": "HINDUSTAN PETROLEUM CO DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "62497d52-fddd-5303-860b-d890f367a72f",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "250.00",
+     "txnDate": "2026-03-22T20:38:38+05:30",
+     "valueDate": "2026-03-22",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "608119963400"
+    },
+    {
+     "txnId": "9db0ce25-f50a-5ce4-af62-1ec8988cc005",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "350.00",
+     "txnDate": "2026-04-11T12:04:39+05:30",
+     "valueDate": "2026-04-11",
+     "narration": "BHARAT PETROLEUM CORP DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "c8b8ea12-4dc2-5c15-aa08-b311e4b05afc",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "350.00",
+     "txnDate": "2026-05-24T16:42:55+05:30",
+     "valueDate": "2026-05-24",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "614416385562"
+    },
+    {
+     "txnId": "c532ef33-d0c2-5c19-ba51-708f87c116eb",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "150.00",
+     "txnDate": "2026-05-26T07:20:13+05:30",
+     "valueDate": "2026-05-26",
+     "narration": "HINDUSTAN PETROLEUM CO DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d8f7c1a7-8aba-5671-a260-62c6d15dafd8",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "150.00",
+     "txnDate": "2026-06-20T14:38:09+05:30",
+     "valueDate": "2026-06-20",
+     "narration": "BHARAT PETROLEUM CORP DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b3d11e07-32b6-5b13-8e66-b633ba15185d",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "150.00",
+     "txnDate": "2026-06-26T20:07:50+05:30",
+     "valueDate": "2026-06-26",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "617716256253"
+    },
+    {
+     "txnId": "320a3b23-cfec-51c8-a500-d6371ebaa88e",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "150.00",
+     "txnDate": "2026-07-07T19:26:33+05:30",
+     "valueDate": "2026-07-07",
+     "narration": "HINDUSTAN PETROLEUM CO DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "eb8a0074-02a9-5b26-86a3-6a2bf431d2e1",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "300.00",
+     "txnDate": "2026-07-23T22:13:00+05:30",
+     "valueDate": "2026-07-23",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "620421171252"
+    },
+    {
+     "txnId": "a9b7c3b9-d889-5a95-9da0-419e2aac62cc",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "200.00",
+     "txnDate": "2026-07-30T18:14:46+05:30",
+     "valueDate": "2026-07-30",
+     "narration": "IOCL DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "4f5ebbf9-299d-506b-a5f2-cf1d9bfae3a5",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "150.00",
+     "txnDate": "2026-08-14T13:10:05+05:30",
+     "valueDate": "2026-08-14",
+     "narration": "HINDUSTAN PETROLEUM CO DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e43c3b61-2942-57fc-8a74-541806c8018d",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "200.00",
+     "txnDate": "2026-08-14T13:17:37+05:30",
+     "valueDate": "2026-08-14",
+     "narration": "BHARAT PETROLEUM CORP DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "20e5f741-986d-5265-978d-c6ed78556303",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "200.00",
+     "txnDate": "2026-08-23T17:47:12+05:30",
+     "valueDate": "2026-08-23",
+     "narration": "HINDUSTAN PETROLEUM CO DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "fde80602-4d7e-5815-a903-7d918c613606",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "200.00",
+     "txnDate": "2026-08-24T19:59:55+05:30",
+     "valueDate": "2026-08-24",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "623618809231"
+    },
+    {
+     "txnId": "385d3216-4ae4-5ad9-a489-60370f666cb7",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "300.00",
+     "txnDate": "2026-08-28T09:12:55+05:30",
+     "valueDate": "2026-08-28",
+     "narration": "INDIAN OIL CORPORATION DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "92c5ebbf-8053-58bf-92af-837dc9cfceda",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "4200.00",
+     "txnDate": "2026-09-24T21:31:32+05:30",
+     "valueDate": "2026-09-24",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "21b7ae2f-e395-57a3-b70d-0484f4dd82dd",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "200.00",
+     "txnDate": "2026-09-25T19:57:25+05:30",
+     "valueDate": "2026-09-25",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "626819912103"
+    },
+    {
+     "txnId": "49ae0f0d-9602-5031-aa84-78a4f11d87c5",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "250.00",
+     "txnDate": "2026-09-26T12:44:01+05:30",
+     "valueDate": "2026-09-26",
+     "narration": "HINDUSTAN PETROLEUM CO DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "ae6c0e31-45e8-51cd-9d1c-d8f11fbd5989",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "200.00",
+     "txnDate": "2026-09-28T22:24:50+05:30",
+     "valueDate": "2026-09-28",
+     "narration": "HINDUSTAN PETROLEUM CO DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2eee3244-5749-50e8-8760-089da0a7217b",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "24.38",
+     "txnDate": "2026-10-08T20:15:00+05:30",
+     "valueDate": "2026-10-08",
+     "narration": "FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "b1ce6864-682c-576f-ab70-1149960a5fd8",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "4.39",
+     "txnDate": "2026-10-08T20:15:01+05:30",
+     "valueDate": "2026-10-08",
+     "narration": "IGST ON FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "f6288203-66fc-5263-ba0f-f718e6f90340",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "300.00",
+     "txnDate": "2026-10-22T18:25:56+05:30",
+     "valueDate": "2026-10-22",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "629518978638"
+    },
+    {
+     "txnId": "837abf8a-f813-5521-8649-d91e4414af22",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "188.58",
+     "txnDate": "2026-11-08T20:15:00+05:30",
+     "valueDate": "2026-11-08",
+     "narration": "FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "5ab6823e-4166-51fe-a3f1-3f4d82aec968",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "33.94",
+     "txnDate": "2026-11-08T20:15:01+05:30",
+     "valueDate": "2026-11-08",
+     "narration": "IGST ON FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "9d5504c3-25e6-5699-835c-c1f3864beb5a",
+     "txnType": "DEBIT",
+     "mcc": 5541,
+     "amount": "200.00",
+     "txnDate": "2026-11-17T11:30:00+05:30",
+     "valueDate": "2026-11-17",
+     "narration": "SHELL INDIA MARKETS DELHI IN",
+     "reference": ""
+    }
+   ]
+  }
+ }
+}

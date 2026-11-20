@@ -1,0 +1,486 @@
+[
+ {
+  "id": "variant_student_1",
+  "persona_id": "student",
+  "language": "en",
+  "instruction": "Put my laptop goal first",
+  "base": "ideal_student",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "goals@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_student_2",
+  "persona_id": "student",
+  "language": "en",
+  "instruction": "Show where my money goes",
+  "base": "ideal_student",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "spend_by_category@<=3"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_student_3",
+  "persona_id": "student",
+  "language": "tanglish",
+  "instruction": "Pondy trip group-ah eduthudu",
+  "base": "ideal_student",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "!group_pot"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_student_4",
+  "persona_id": "student",
+  "language": "ta",
+  "instruction": "ரொம்ப சிம்பிளா வை",
+  "base": "ideal_student",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "count<=4",
+   "pockets"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_student_5",
+  "persona_id": "student",
+  "language": "tanglish",
+  "instruction": "Scholarship vanthuchu, en savings kaattu",
+  "base": "ideal_student",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "goals"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_first_job_1",
+  "persona_id": "first_job",
+  "language": "en",
+  "instruction": "Put my EMIs first",
+  "base": "ideal_first_job",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "bills_emis@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_first_job_2",
+  "persona_id": "first_job",
+  "language": "en",
+  "instruction": "Remove the flat group",
+  "base": "ideal_first_job",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "!group_pot"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_first_job_3",
+  "persona_id": "first_job",
+  "language": "en",
+  "instruction": "I want to see my recent spends",
+  "base": "ideal_first_job",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "transactions"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_first_job_4",
+  "persona_id": "first_job",
+  "language": "en",
+  "instruction": "Show cash flow for six months",
+  "base": "ideal_first_job",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "cash_flow"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_first_job_5",
+  "persona_id": "first_job",
+  "language": "en",
+  "instruction": "Focus on my bike goal",
+  "base": "ideal_first_job",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "goals@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_family_1",
+  "persona_id": "family",
+  "language": "ta",
+  "instruction": "EMI-யை முதல்ல காட்டு",
+  "base": "ideal_family",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "bills_emis@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_family_2",
+  "persona_id": "family",
+  "language": "en",
+  "instruction": "Remove net worth",
+  "base": "ideal_family",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "!net_worth"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_family_3",
+  "persona_id": "family",
+  "language": "ta",
+  "instruction": "இன்றைய முக்கிய செய்திகள் காட்டு",
+  "base": "ideal_family",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "pulse_card"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_family_4",
+  "persona_id": "family",
+  "language": "en",
+  "instruction": "Add my investments",
+  "base": "ideal_family",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "investments"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_family_5",
+  "persona_id": "family",
+  "language": "en",
+  "instruction": "Too many cards, simplify",
+  "base": "ideal_family",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "count<=5"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_gig_1",
+  "persona_id": "gig",
+  "language": "hi",
+  "instruction": "रोज़ की कमाई ऊपर दिखाओ",
+  "base": "ideal_gig",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "cash_flow@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_gig_2",
+  "persona_id": "gig",
+  "language": "hi",
+  "instruction": "EMI पहले दिखाओ",
+  "base": "ideal_gig",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "bills_emis@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_gig_3",
+  "persona_id": "gig",
+  "language": "hi",
+  "instruction": "कमरे वाला ग्रुप भी दिखाओ",
+  "base": "ideal_gig",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "group_pot"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_gig_4",
+  "persona_id": "gig",
+  "language": "hi",
+  "instruction": "सिर्फ़ ज़रूरी चीज़ें",
+  "base": "ideal_gig",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "count<=4"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_gig_5",
+  "persona_id": "gig",
+  "language": "hi",
+  "instruction": "पेट्रोल का खर्च दिखाओ",
+  "base": "ideal_gig",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "pockets@<=3|spend_by_category@<=3"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_shop_1",
+  "persona_id": "shop",
+  "language": "hi",
+  "instruction": "दुकान का हिसाब ऊपर",
+  "base": "ideal_shop",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "cash_flow@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_shop_2",
+  "persona_id": "shop",
+  "language": "hi",
+  "instruction": "परिवार वाला ग्रुप जोड़ो",
+  "base": "ideal_shop",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "group_pot"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_shop_3",
+  "persona_id": "shop",
+  "language": "hi",
+  "instruction": "लोन की EMI पहले",
+  "base": "ideal_shop",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "bills_emis@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_shop_4",
+  "persona_id": "shop",
+  "language": "hi",
+  "instruction": "नेट वर्थ भी चाहिए",
+  "base": "ideal_shop",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "net_worth"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_shop_5",
+  "persona_id": "shop",
+  "language": "hi",
+  "instruction": "लेन-देन हटा दो",
+  "base": "ideal_shop",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "!transactions"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_investor_1",
+  "persona_id": "investor",
+  "language": "en",
+  "instruction": "Remove investments from home",
+  "base": "ideal_investor",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "!investments"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_investor_2",
+  "persona_id": "investor",
+  "language": "en",
+  "instruction": "Put the news first",
+  "base": "ideal_investor",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "pulse_card@1"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_investor_3",
+  "persona_id": "investor",
+  "language": "en",
+  "instruction": "Show my spending and recent transactions",
+  "base": "ideal_investor",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "spend_by_category",
+   "transactions"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_investor_4",
+  "persona_id": "investor",
+  "language": "en",
+  "instruction": "I only want net worth and goals",
+  "base": "ideal_investor",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "net_worth",
+   "goals",
+   "count<=4"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ },
+ {
+  "id": "variant_investor_5",
+  "persona_id": "investor",
+  "language": "en",
+  "instruction": "Add the college gang trip",
+  "base": "ideal_investor",
+  "constraints": [
+   "safe_to_spend@0",
+   "count>=4",
+   "count<=8",
+   "only_catalog_types",
+   "reasons_have_no_digits",
+   "group_pot"
+  ],
+  "notes": "'x@1' index 1; '!x' absent; 'x@<=3' within first 3; 'a|b' either; 'count<=n' widget count"
+ }
+]

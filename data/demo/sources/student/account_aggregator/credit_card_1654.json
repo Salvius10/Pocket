@@ -1,0 +1,388 @@
+{
+ "Account": {
+  "type": "credit_card",
+  "maskedCardNumber": "XXXXXXXXXXXX1654",
+  "version": "1.1",
+  "linkedAccRef": "13cbddbb-6311-56a6-874f-969b6fba78a5",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "KARTHIK RAMASAMY",
+      "dob": "2006-04-14",
+      "mobile": "XXXXXX8665",
+      "nominee": "REGISTERED",
+      "email": "karthik.919@example.com",
+      "pan": "XXXXX6980X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "issuerName": "Kotak Mahindra Bank",
+   "cardType": "MASTERCARD",
+   "primary": "YES",
+   "creditLimit": "15000.00",
+   "cashLimit": "3000.00",
+   "availableCredit": "4427.77",
+   "currentDue": "10572.23",
+   "lastStatementDate": "2026-11-12",
+   "dueDate": "2026-12-02",
+   "totalDueAmount": "10572.23",
+   "minDueAmount": "529.00",
+   "previousDueAmount": "9593.92",
+   "financeCharges": "419.23",
+   "loyaltyPoints": "6871",
+   "annualInterestRatePercent": "43.20"
+  },
+  "Statements": [
+   {
+    "statement_date": "2025-11-12",
+    "due_date": "2025-12-02",
+    "total_due_paise": 185000,
+    "min_due_paise": 20000,
+    "paid_paise": 185000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2025-12-12",
+    "due_date": "2026-01-01",
+    "total_due_paise": 0,
+    "min_due_paise": 0,
+    "paid_paise": 0,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-01-12",
+    "due_date": "2026-02-01",
+    "total_due_paise": 40400,
+    "min_due_paise": 20000,
+    "paid_paise": 40400,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-02-12",
+    "due_date": "2026-03-04",
+    "total_due_paise": 0,
+    "min_due_paise": 0,
+    "paid_paise": 0,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-03-12",
+    "due_date": "2026-04-01",
+    "total_due_paise": 0,
+    "min_due_paise": 0,
+    "paid_paise": 0,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-04-12",
+    "due_date": "2026-05-02",
+    "total_due_paise": 0,
+    "min_due_paise": 0,
+    "paid_paise": 0,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-05-12",
+    "due_date": "2026-06-01",
+    "total_due_paise": 165000,
+    "min_due_paise": 20000,
+    "paid_paise": 165000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-06-12",
+    "due_date": "2026-07-02",
+    "total_due_paise": 114200,
+    "min_due_paise": 20000,
+    "paid_paise": 114200,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-07-12",
+    "due_date": "2026-08-01",
+    "total_due_paise": 0,
+    "min_due_paise": 0,
+    "paid_paise": 0,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-08-12",
+    "due_date": "2026-09-01",
+    "total_due_paise": 0,
+    "min_due_paise": 0,
+    "paid_paise": 0,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-09-12",
+    "due_date": "2026-10-02",
+    "total_due_paise": 97500,
+    "min_due_paise": 20000,
+    "paid_paise": 20000,
+    "finance_charges_paise": 0,
+    "revolving_after_due_paise": 77500,
+    "finance_charges_next_paise": 3292
+   },
+   {
+    "statement_date": "2026-10-12",
+    "due_date": "2026-11-01",
+    "total_due_paise": 959392,
+    "min_due_paise": 48000,
+    "paid_paise": 50000,
+    "finance_charges_paise": 3292,
+    "revolving_after_due_paise": 909392,
+    "finance_charges_next_paise": 38631
+   },
+   {
+    "statement_date": "2026-11-12",
+    "due_date": "2026-12-02",
+    "total_due_paise": 1057223,
+    "min_due_paise": 52900,
+    "paid_paise": null,
+    "finance_charges_paise": 38631,
+    "revolving_after_due_paise": 1004323
+   }
+  ],
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "64bff5fa-7c26-5982-9de7-772d615636f9",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "1850.00",
+     "txnDate": "2025-11-28T20:25:31+05:30",
+     "valueDate": "2025-11-28",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "533216089479"
+    },
+    {
+     "txnId": "a296799c-9fd8-57fa-ade8-8a36a9dc3269",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "229.00",
+     "txnDate": "2025-12-21T19:06:08+05:30",
+     "valueDate": "2025-12-21",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2c1be164-2f80-5d10-b7d3-4a6af75edfce",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "175.00",
+     "txnDate": "2026-01-06T17:45:52+05:30",
+     "valueDate": "2026-01-06",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "c4e8323b-fa13-5057-821d-92cb200eb254",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "404.00",
+     "txnDate": "2026-01-30T01:17:48+05:30",
+     "valueDate": "2026-01-30",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "602921586909"
+    },
+    {
+     "txnId": "290e90b5-3e5a-5cf2-8187-4e80e8dce8fd",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1650.00",
+     "txnDate": "2026-05-03T18:53:03+05:30",
+     "valueDate": "2026-05-03",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "bc187467-5ae8-5080-bec0-32e3acc895e3",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "955.00",
+     "txnDate": "2026-05-17T22:43:52+05:30",
+     "valueDate": "2026-05-17",
+     "narration": "FASHNEAR TECHNOLOGIES CHENNAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2aebd550-433d-5d38-b7a6-aa3b644611e6",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "1650.00",
+     "txnDate": "2026-05-28T18:33:04+05:30",
+     "valueDate": "2026-05-28",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "614816185801"
+    },
+    {
+     "txnId": "588eb9a1-fcfd-5ccc-b14b-2b9f631adf8c",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "187.00",
+     "txnDate": "2026-06-12T21:17:43+05:30",
+     "valueDate": "2026-06-12",
+     "narration": "KIRANAKART TECHNOLOGIE MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "702588b6-ca7e-5c86-8453-8c70c0536956",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "1142.00",
+     "txnDate": "2026-07-01T22:04:07+05:30",
+     "valueDate": "2026-07-01",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "618218187665"
+    },
+    {
+     "txnId": "340c2b8f-6c8a-50b0-859a-19a672641b7f",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "536.00",
+     "txnDate": "2026-08-18T16:05:19+05:30",
+     "valueDate": "2026-08-18",
+     "narration": "ZEPTO MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b456dce0-1c7a-5af2-a022-4aefb87b32ca",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "439.00",
+     "txnDate": "2026-08-24T10:37:20+05:30",
+     "valueDate": "2026-08-24",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7914b21a-38f6-5569-a917-5e455fb6ff45",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "175.00",
+     "txnDate": "2026-09-20T20:44:30+05:30",
+     "valueDate": "2026-09-20",
+     "narration": "ZEPTONOW MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "1bca8ce1-174e-5ec2-955d-f53104c716ff",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "6499.00",
+     "txnDate": "2026-09-25T19:53:05+05:30",
+     "valueDate": "2026-09-25",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9f7b5d8c-4018-53d0-bce4-ce8e2129bbeb",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "813.00",
+     "txnDate": "2026-09-29T23:15:55+05:30",
+     "valueDate": "2026-09-29",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "4d7b7c63-3a13-501c-9b14-151673c01c1f",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "200.00",
+     "txnDate": "2026-09-30T20:08:25+05:30",
+     "valueDate": "2026-09-30",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "627319329051"
+    },
+    {
+     "txnId": "d625b04d-108a-58a0-aded-658a4c71d9cf",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1299.00",
+     "txnDate": "2026-10-03T21:42:25+05:30",
+     "valueDate": "2026-10-03",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0a4e20bb-5ee1-5c3b-8380-d7a4ecb5c8fe",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "27.90",
+     "txnDate": "2026-10-12T20:15:00+05:30",
+     "valueDate": "2026-10-12",
+     "narration": "FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "564b8383-ebcd-5ed9-8932-0d352c1368b8",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "5.02",
+     "txnDate": "2026-10-12T20:15:01+05:30",
+     "valueDate": "2026-10-12",
+     "narration": "IGST ON FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "54883e65-8ac4-59a5-a4d7-532c71084de8",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "569.00",
+     "txnDate": "2026-10-21T21:04:20+05:30",
+     "valueDate": "2026-10-21",
+     "narration": "FASHNEAR TECHNOLOGIES CHENNAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a1190714-6f4a-5c7a-bc5b-3226be142335",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "500.00",
+     "txnDate": "2026-10-26T20:29:55+05:30",
+     "valueDate": "2026-10-26",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "629917217202"
+    },
+    {
+     "txnId": "0cdaef99-9742-5a95-b105-ba48587f301a",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "523.00",
+     "txnDate": "2026-10-27T18:47:55+05:30",
+     "valueDate": "2026-10-27",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "ba76ade7-0a66-5463-bce0-2f8a508e8b3b",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "327.38",
+     "txnDate": "2026-11-12T20:15:00+05:30",
+     "valueDate": "2026-11-12",
+     "narration": "FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "72d6cb15-c120-54d0-8275-871d266dadef",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "58.93",
+     "txnDate": "2026-11-12T20:15:01+05:30",
+     "valueDate": "2026-11-12",
+     "narration": "IGST ON FINANCE CHARGES",
+     "reference": ""
+    }
+   ]
+  }
+ }
+}

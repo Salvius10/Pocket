@@ -1,0 +1,467 @@
+{
+ "Account": {
+  "type": "deposit",
+  "maskedAccNumber": "XXXXXXXXXX3880",
+  "version": "1.1",
+  "linkedAccRef": "086e5f35-d4b0-5d20-a517-5ab05df5e775",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "LAKSHMI NARAYANAN",
+      "dob": "1988-05-25",
+      "mobile": "XXXXXX8169",
+      "nominee": "REGISTERED",
+      "email": "lakshmi.616@example.com",
+      "pan": "XXXXX6688X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "currentBalance": "17481.43",
+   "currency": "INR",
+   "exchgeRate": "",
+   "balanceDateTime": "2026-11-19T23:59:59+05:30",
+   "type": "SAVINGS",
+   "branch": "MADIPAKKAM, CHENNAI",
+   "facility": "",
+   "ifscCode": "HDFC0005238",
+   "micrCode": "904637129",
+   "openingDate": "2016-09-15",
+   "currentODLimit": "0",
+   "drawingLimit": "0",
+   "status": "ACTIVE",
+   "Pending": {
+    "transactionType": "DEBIT",
+    "amount": "0.00"
+   }
+  },
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "4d39f451-2469-5067-9ae6-dce238255d74",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "36000.00",
+     "transactionTimestamp": "2025-11-04T20:09:17+05:30",
+     "valueDate": "2025-11-04",
+     "narration": "IMPS-530820482463-LAKSHMI NARAYANAN-HDFC-XXXXXXXX1459-SELF",
+     "reference": "530820482463"
+    },
+    {
+     "txnId": "6664b046-2215-5685-9abe-87b4e9562612",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "10000.00",
+     "currentBalance": "26000.00",
+     "transactionTimestamp": "2025-11-06T11:13:00+05:30",
+     "valueDate": "2025-11-06",
+     "narration": "TRF TO FD NO 82328820746",
+     "reference": ""
+    },
+    {
+     "txnId": "981cb993-5352-5b50-9863-0fbb22db138c",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "6240.00",
+     "currentBalance": "19760.00",
+     "transactionTimestamp": "2025-11-20T05:00:34+05:30",
+     "valueDate": "2025-11-20",
+     "narration": "ACH D- LIFE INSURANCE CORPORA-607796542629",
+     "reference": "UMRN2182607796542629"
+    },
+    {
+     "txnId": "559b748c-60d8-5f71-96ea-751b9bfa030b",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "34760.00",
+     "transactionTimestamp": "2025-12-04T19:23:11+05:30",
+     "valueDate": "2025-12-04",
+     "narration": "IMPS-533819648967-LAKSHMI NARAYANAN-HDFC-XXXXXXXX5427-SELF",
+     "reference": "533819648967"
+    },
+    {
+     "txnId": "7c5534f9-ffc9-5219-91ce-3e1a89678281",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "29.50",
+     "currentBalance": "34730.50",
+     "transactionTimestamp": "2025-12-25T03:22:16+05:30",
+     "valueDate": "2025-12-25",
+     "narration": "SMS ALERT CHARGES SMS CHGS OCT-DEC25",
+     "reference": ""
+    },
+    {
+     "txnId": "75c64277-ed33-5eff-a7ae-bb1a17d138b5",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "131.75",
+     "currentBalance": "34862.25",
+     "transactionTimestamp": "2025-12-31T23:30:00+05:30",
+     "valueDate": "2025-12-31",
+     "narration": "INTEREST PAID TILL 31-12-2025",
+     "reference": ""
+    },
+    {
+     "txnId": "9e431f22-b27c-5c6c-bd1f-599bbc01f573",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "49862.25",
+     "transactionTimestamp": "2026-01-04T21:08:06+05:30",
+     "valueDate": "2026-01-04",
+     "narration": "IMPS-600421660037-LAKSHMI NARAYANAN-HDFC-XXXXXXXX7731-SELF",
+     "reference": "600421660037"
+    },
+    {
+     "txnId": "12a4a070-1db3-5a8c-a1c4-a269cee40210",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "20000.00",
+     "currentBalance": "29862.25",
+     "transactionTimestamp": "2026-01-06T11:20:00+05:30",
+     "valueDate": "2026-01-06",
+     "narration": "TRF TO FD NO 48997264879",
+     "reference": ""
+    },
+    {
+     "txnId": "e203d3bd-1140-52f2-ab2d-4746563c0a20",
+     "type": "CREDIT",
+     "mode": "UPI",
+     "amount": "36000.00",
+     "currentBalance": "65862.25",
+     "transactionTimestamp": "2026-01-10T18:39:39+05:30",
+     "valueDate": "2026-01-10",
+     "narration": "UPI-RAMESH NARAYANAN-ramesh2002@okaxis-UTIB0000544-601018586900-SENT",
+     "reference": "601018586900"
+    },
+    {
+     "txnId": "e5d99d25-3cb2-5272-9422-1e0a63bcecf2",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "63000.00",
+     "currentBalance": "2862.25",
+     "transactionTimestamp": "2026-01-10T19:17:39+05:30",
+     "valueDate": "2026-01-10",
+     "narration": "NETBANKING TRF-SRI VIDYA MANDIR MATRI-IB9886794298",
+     "reference": "IB9886794298"
+    },
+    {
+     "txnId": "e82f7497-65fb-5c42-84f4-090bf42def5e",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "17862.25",
+     "transactionTimestamp": "2026-02-04T20:59:05+05:30",
+     "valueDate": "2026-02-04",
+     "narration": "IMPS-603520193149-LAKSHMI NARAYANAN-HDFC-XXXXXXXX7121-SELF",
+     "reference": "603520193149"
+    },
+    {
+     "txnId": "eddecc64-c80d-5d2f-af89-bc535c4bd890",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "6240.00",
+     "currentBalance": "11622.25",
+     "transactionTimestamp": "2026-02-20T01:31:10+05:30",
+     "valueDate": "2026-02-20",
+     "narration": "ACH D- LIFE INSURANCE CORPORA-295106967190",
+     "reference": "UMRN3985295106967190"
+    },
+    {
+     "txnId": "fe4548fc-1a8f-5910-81aa-295a82ed65bf",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "26622.25",
+     "transactionTimestamp": "2026-03-04T18:34:03+05:30",
+     "valueDate": "2026-03-04",
+     "narration": "IMPS-606318213114-LAKSHMI NARAYANAN-HDFC-XXXXXXXX4658-SELF",
+     "reference": "606318213114"
+    },
+    {
+     "txnId": "e95cbabd-55ee-56d7-840e-1847ad1373a5",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "29.50",
+     "currentBalance": "26592.75",
+     "transactionTimestamp": "2026-03-22T05:59:40+05:30",
+     "valueDate": "2026-03-22",
+     "narration": "SMS ALERT CHARGES SMS CHGS JAN-MAR26",
+     "reference": ""
+    },
+    {
+     "txnId": "a232fbd6-cd00-5415-90f1-897b3e08560a",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "117.96",
+     "currentBalance": "26710.71",
+     "transactionTimestamp": "2026-03-31T23:30:00+05:30",
+     "valueDate": "2026-03-31",
+     "narration": "INTEREST PAID TILL 31-03-2026",
+     "reference": ""
+    },
+    {
+     "txnId": "a357a9b9-b29d-52a3-b934-32f32a680c0d",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "41710.71",
+     "transactionTimestamp": "2026-04-04T17:56:54+05:30",
+     "valueDate": "2026-04-04",
+     "narration": "IMPS-609417046749-LAKSHMI NARAYANAN-HDFC-XXXXXXXX4776-SELF",
+     "reference": "609417046749"
+    },
+    {
+     "txnId": "ebf5e9fd-a7d0-5843-b9ac-2af6e8cf20cf",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "15000.00",
+     "currentBalance": "26710.71",
+     "transactionTimestamp": "2026-04-06T11:31:00+05:30",
+     "valueDate": "2026-04-06",
+     "narration": "TRF TO FD NO 22853083962",
+     "reference": ""
+    },
+    {
+     "txnId": "7c3e70c3-b77b-579a-b37e-252577fc7c54",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "41710.71",
+     "transactionTimestamp": "2026-05-04T16:55:56+05:30",
+     "valueDate": "2026-05-04",
+     "narration": "IMPS-612416760040-LAKSHMI NARAYANAN-HDFC-XXXXXXXX6810-SELF",
+     "reference": "612416760040"
+    },
+    {
+     "txnId": "6bb58a47-b21d-5679-9efc-022e6e3f028e",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "15000.00",
+     "currentBalance": "26710.71",
+     "transactionTimestamp": "2026-05-06T11:17:00+05:30",
+     "valueDate": "2026-05-06",
+     "narration": "TRF TO FD NO 53990729768",
+     "reference": ""
+    },
+    {
+     "txnId": "9d864085-af5e-523e-a8f5-35f49b8922fb",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "6240.00",
+     "currentBalance": "20470.71",
+     "transactionTimestamp": "2026-05-20T04:45:59+05:30",
+     "valueDate": "2026-05-20",
+     "narration": "ACH D- LIFE INSURANCE CORPORA-370153560444",
+     "reference": "UMRN3777370153560444"
+    },
+    {
+     "txnId": "fb72a5a6-7d56-51cc-b938-fc9c07749162",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "35470.71",
+     "transactionTimestamp": "2026-06-04T16:39:08+05:30",
+     "valueDate": "2026-06-04",
+     "narration": "IMPS-615516749229-LAKSHMI NARAYANAN-HDFC-XXXXXXXX6409-SELF",
+     "reference": "615516749229"
+    },
+    {
+     "txnId": "29951188-4be4-599d-9d7a-63f3d6bff385",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "10000.00",
+     "currentBalance": "25470.71",
+     "transactionTimestamp": "2026-06-06T11:16:00+05:30",
+     "valueDate": "2026-06-06",
+     "narration": "TRF TO FD NO 12371852426",
+     "reference": ""
+    },
+    {
+     "txnId": "db4670d8-ac07-5cf4-b106-493c3c031895",
+     "type": "CREDIT",
+     "mode": "UPI",
+     "amount": "40000.00",
+     "currentBalance": "65470.71",
+     "transactionTimestamp": "2026-06-10T18:20:14+05:30",
+     "valueDate": "2026-06-10",
+     "narration": "UPI-RAMESH NARAYANAN-rameshn82@ptaxis-UTIB0000290-616118881685-UPI",
+     "reference": "616118881685"
+    },
+    {
+     "txnId": "c6706c1f-7150-5f11-811a-2796592ecded",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "63000.00",
+     "currentBalance": "2470.71",
+     "transactionTimestamp": "2026-06-10T18:45:14+05:30",
+     "valueDate": "2026-06-10",
+     "narration": "NETBANKING TRF-SRI VIDYA MANDIR MATRI-IB5780493400",
+     "reference": "IB5780493400"
+    },
+    {
+     "txnId": "1c0736c8-869c-510c-8b6e-040cce308df8",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "29.50",
+     "currentBalance": "2441.21",
+     "transactionTimestamp": "2026-06-20T03:17:19+05:30",
+     "valueDate": "2026-06-20",
+     "narration": "SMS ALERT CHARGES SMS CHGS APR-JUN26",
+     "reference": ""
+    },
+    {
+     "txnId": "3b9b0c14-8d46-5252-80c4-d0979a1ae62d",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "143.17",
+     "currentBalance": "2584.38",
+     "transactionTimestamp": "2026-06-30T23:30:00+05:30",
+     "valueDate": "2026-06-30",
+     "narration": "INTEREST PAID TILL 30-06-2026",
+     "reference": ""
+    },
+    {
+     "txnId": "c9ed98e8-878a-5ec2-b9ca-3e07642e62d2",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "17584.38",
+     "transactionTimestamp": "2026-07-04T20:03:15+05:30",
+     "valueDate": "2026-07-04",
+     "narration": "IMPS-618520065651-LAKSHMI NARAYANAN-HDFC-XXXXXXXX3019-SELF",
+     "reference": "618520065651"
+    },
+    {
+     "txnId": "37e4054c-6707-5925-9505-b46c56542bb4",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "32584.38",
+     "transactionTimestamp": "2026-08-04T22:18:16+05:30",
+     "valueDate": "2026-08-04",
+     "narration": "IMPS-621622774105-LAKSHMI NARAYANAN-HDFC-XXXXXXXX5891-SELF",
+     "reference": "621622774105"
+    },
+    {
+     "txnId": "fb918c38-f812-586f-a0f2-924bd16b48c3",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "6240.00",
+     "currentBalance": "26344.38",
+     "transactionTimestamp": "2026-08-20T01:11:37+05:30",
+     "valueDate": "2026-08-20",
+     "narration": "ACH D- LIFE INSURANCE CORPORA-506028431538",
+     "reference": "UMRN9353506028431538"
+    },
+    {
+     "txnId": "42d5b8c9-1983-52d2-bcc9-3cb12d682604",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "41344.38",
+     "transactionTimestamp": "2026-09-04T21:05:49+05:30",
+     "valueDate": "2026-09-04",
+     "narration": "IMPS-624721117461-LAKSHMI NARAYANAN-HDFC-XXXXXXXX4666-SELF",
+     "reference": "624721117461"
+    },
+    {
+     "txnId": "b4c394ba-ff7f-50f3-a3c5-d9e8d8791f09",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "15000.00",
+     "currentBalance": "26344.38",
+     "transactionTimestamp": "2026-09-06T11:43:00+05:30",
+     "valueDate": "2026-09-06",
+     "narration": "TRF TO FD NO 15901111091",
+     "reference": ""
+    },
+    {
+     "txnId": "0b57e202-64e4-5d47-b450-9747e3008d58",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "29.50",
+     "currentBalance": "26314.88",
+     "transactionTimestamp": "2026-09-26T05:28:59+05:30",
+     "valueDate": "2026-09-26",
+     "narration": "SMS ALERT CHARGES SMS CHGS JUL-SEP26",
+     "reference": ""
+    },
+    {
+     "txnId": "d21c56f0-6521-5d33-8ec8-361a36f46abc",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "166.55",
+     "currentBalance": "26481.43",
+     "transactionTimestamp": "2026-09-30T23:30:00+05:30",
+     "valueDate": "2026-09-30",
+     "narration": "INTEREST PAID TILL 30-09-2026",
+     "reference": ""
+    },
+    {
+     "txnId": "de841ba2-ae61-5a25-9c2d-3fa8f2fa3fa8",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "41481.43",
+     "transactionTimestamp": "2026-10-04T17:31:46+05:30",
+     "valueDate": "2026-10-04",
+     "narration": "IMPS-627717858486-LAKSHMI NARAYANAN-HDFC-XXXXXXXX1223-SELF",
+     "reference": "627717858486"
+    },
+    {
+     "txnId": "22ad423a-0f72-584a-b5e3-75cdddea97ea",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "15000.00",
+     "currentBalance": "26481.43",
+     "transactionTimestamp": "2026-10-06T11:57:00+05:30",
+     "valueDate": "2026-10-06",
+     "narration": "TRF TO FD NO 35321297440",
+     "reference": ""
+    },
+    {
+     "txnId": "67226f30-4a73-54cc-8e38-fbaa867584bc",
+     "type": "CREDIT",
+     "mode": "UPI",
+     "amount": "39000.00",
+     "currentBalance": "65481.43",
+     "transactionTimestamp": "2026-10-10T20:50:41+05:30",
+     "valueDate": "2026-10-10",
+     "narration": "UPI-RAMESH NARAYANAN-rameshn71@ptyes-YESB0000899-628320356230-SENT",
+     "reference": "628320356230"
+    },
+    {
+     "txnId": "41727d3f-0767-574e-bf4d-5c9853eeb655",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "63000.00",
+     "currentBalance": "2481.43",
+     "transactionTimestamp": "2026-10-10T21:28:41+05:30",
+     "valueDate": "2026-10-10",
+     "narration": "NETBANKING TRF-SRI VIDYA MANDIR MATRI-IB8366199514",
+     "reference": "IB8366199514"
+    },
+    {
+     "txnId": "9144060d-f8be-52ba-97a2-ad9ff982fd29",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "15000.00",
+     "currentBalance": "17481.43",
+     "transactionTimestamp": "2026-11-04T17:19:53+05:30",
+     "valueDate": "2026-11-04",
+     "narration": "IMPS-630817979068-LAKSHMI NARAYANAN-HDFC-XXXXXXXX3248-SELF",
+     "reference": "630817979068"
+    }
+   ]
+  }
+ }
+}

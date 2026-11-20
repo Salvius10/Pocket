@@ -1,0 +1,31 @@
+user_id,key,value,source,language
+c282e400-dfa4-5c9d-9175-1f6089c85555,occupation,B.Com இரண்டாம் ஆண்டு மாணவன்,onboarding,ta
+c282e400-dfa4-5c9d-9175-1f6089c85555,income,அப்பா மாசம் ஆறாயிரம் ரூபாய் தருவார். வாரத்துக்கு ரெண்டு நாள் டியூஷன் எடுத்து கொஞ்சம் சம்பாதிக்கிறேன்.,onboarding,ta
+c282e400-dfa4-5c9d-9175-1f6089c85555,saving_for,அடுத்த வருஷம் ஜூனுக்குள் ஒரு லேப்டாப் வாங்கணும். டிசம்பரில் நண்பர்களோட பாண்டிச்சேரி ட்ரிப்.,onboarding,ta
+c282e400-dfa4-5c9d-9175-1f6089c85555,worries,மாச கடைசியில் காசு தீர்ந்துடுது. ஸ்விக்கியில் ரொம்ப செலவு பண்றேன்னு தோணுது.,onboarding,ta
+c282e400-dfa4-5c9d-9175-1f6089c85555,household,"அப்பா, அம்மா, தங்கையுடன் வீட்டில் இருக்கிறேன்",onboarding,ta
+914b3ba0-dff9-566f-919d-c3b66de91b72,occupation,"Software engineer, first job (joined July 2025)",onboarding,en
+914b3ba0-dff9-566f-919d-c3b66de91b72,income,"I get around 67 thousand a month after tax, on the last working day.",onboarding,en
+914b3ba0-dff9-566f-919d-c3b66de91b72,saving_for,"A Royal Enfield by next March, and an emergency fund.",onboarding,en
+914b3ba0-dff9-566f-919d-c3b66de91b72,worries,I order food way too much and I'm not sure where the rest goes. My card bill also got big after the sale.,onboarding,en
+914b3ba0-dff9-566f-919d-c3b66de91b72,household,Shares a 2BHK in HSR Layout with two flatmates,onboarding,en
+ef24f3be-39c4-58ad-9f99-4207acb7e427,occupation,"கணக்கு அதிகாரி, தனியார் நிறுவனம்",onboarding,ta
+ef24f3be-39c4-58ad-9f99-4207acb7e427,income,"எனக்கு மாசம் எண்பத்தி நாலாயிரம் சம்பளம், ஒன்றாம் தேதி வரும். கணவர் வீட்டு செலவுக்கு நாற்பத்தைந்தாயிரம் அனுப்புவார்.",onboarding,ta
+ef24f3be-39c4-58ad-9f99-4207acb7e427,saving_for,பிள்ளைகளின் படிப்புக்கு சேமிக்கணும். அடுத்த மே மாதம் கொடைக்கானல் போக திட்டம்.,onboarding,ta
+ef24f3be-39c4-58ad-9f99-4207acb7e427,worries,"ஹோம் லோன் EMI பெருசா இருக்கு. தீபாவளி ஷாப்பிங் கார்டில் போட்டேன், அது எவ்வளவு ஆகும்னு பயமா இருக்கு.",onboarding,ta
+ef24f3be-39c4-58ad-9f99-4207acb7e427,household,"கணவர், இரண்டு பிள்ளைகள், மாமியார்",onboarding,ta
+3b7f1216-52af-5525-a9df-aaea0f629781,occupation,डिलीवरी पार्टनर (दो ऐप पर काम),onboarding,hi
+3b7f1216-52af-5525-a9df-aaea0f629781,income,"रोज़ का पेमेंट आता है, सात सौ से पंद्रह सौ तक, और हफ़्ते में एक बार दूसरे ऐप से। महीने में लगभग तीस-पैंतीस हज़ार।",onboarding,hi
+3b7f1216-52af-5525-a9df-aaea0f629781,saving_for,"फरवरी में बहन की शादी है, उसके लिए पचास हज़ार जोड़ने हैं। थोड़ा इमरजेंसी के लिए भी।",onboarding,hi
+3b7f1216-52af-5525-a9df-aaea0f629781,worries,पेट्रोल में बहुत पैसा जाता है। कभी कमाई कम होती है तो किराया और EMI की चिंता होती है।,onboarding,hi
+3b7f1216-52af-5525-a9df-aaea0f629781,household,दो दोस्तों के साथ कमरे में रहता है; माँ बिहार में,onboarding,hi
+455ffda9-e220-5bd1-a832-ecdfe243caad,occupation,किराना और स्टेशनरी की दुकान चलाती हैं,onboarding,hi
+455ffda9-e220-5bd1-a832-ecdfe243caad,income,"रोज़ फ़ोनपे का सेटलमेंट आता है, पाँच-सात हज़ार, और हफ़्ते में कैश जमा करती हूँ। घर खर्च के लिए महीने में पैंतालीस हज़ार निकालती हूँ।",onboarding,hi
+455ffda9-e220-5bd1-a832-ecdfe243caad,saving_for,"अगले साल दुकान का रेनोवेशन, और बेटी की कॉलेज की फीस।",onboarding,hi
+455ffda9-e220-5bd1-a832-ecdfe243caad,worries,"दिवाली का स्टॉक कार्ड से लिया था, बिल पूरा नहीं भर पाई। बिज़नेस लोन की EMI भी है।",onboarding,hi
+455ffda9-e220-5bd1-a832-ecdfe243caad,household,"पति, बेटी (कोचिंग में), बेटा",onboarding,hi
+6ba019b9-c89e-5c70-88e2-68900c9763cd,occupation,"Senior manager, analytics firm",onboarding,en
+6ba019b9-c89e-5c70-88e2-68900c9763cd,income,"Salary is about three lakh a month after tax, plus an annual bonus in June.",onboarding,en
+6ba019b9-c89e-5c70-88e2-68900c9763cd,saving_for,"My daughter's education in 2034, and a Europe trip next summer.",onboarding,en
+6ba019b9-c89e-5c70-88e2-68900c9763cd,worries,Markets have been choppy. I have money sitting in my Kotak account and I'm not sure my card is being paid in full.,onboarding,en
+6ba019b9-c89e-5c70-88e2-68900c9763cd,household,"Wife, one daughter (11)",onboarding,en

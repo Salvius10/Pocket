@@ -1,0 +1,16 @@
+city,state,region,power_board,power_billing,petrol_per_litre_approx,lpg_cylinder_approx,metro,areas
+Chennai,TN,tamil,tneb,bimonthly,100.8,868,cmrl,Velachery|Anna Nagar|Tambaram|Madipakkam|Mylapore|Porur|T Nagar|Adyar
+Coimbatore,TN,tamil,tneb,bimonthly,101.2,871,,RS Puram|Gandhipuram|Peelamedu|Saibaba Colony
+Madurai,TN,tamil,tneb,bimonthly,101.0,873,,Anna Nagar|KK Nagar|Tallakulam|Thirunagar
+Bengaluru,KA,south,bescom,monthly,102.9,856,bmrcl,HSR Layout|Koramangala|Indiranagar|Whitefield|Jayanagar|Marathahalli|BTM Layout
+Hyderabad,TG,south,tgspdcl,monthly,107.5,906,hmrl,Gachibowli|Madhapur|Kukatpally|Ameerpet|Kondapur
+Kochi,KL,south,kseb,bimonthly,107.4,861,kmrl,Kakkanad|Edappally|Kaloor|Vyttila
+Delhi,DL,hindi,bses_r,monthly,94.8,853,dmrc,Laxmi Nagar|Dwarka|Rohini|Saket|Mayur Vihar|Karol Bagh
+Jaipur,RJ,hindi,jvvnl,monthly,104.7,856,jmrc,Malviya Nagar|Vaishali Nagar|Mansarovar|Raja Park|C Scheme
+Lucknow,UP,hindi,mvvnl,monthly,94.7,890,lmrc,Gomti Nagar|Aliganj|Indira Nagar|Hazratganj
+Patna,BR,hindi,sbpdcl,monthly,105.6,951,,Kankarbagh|Boring Road|Rajendra Nagar|Patliputra
+Indore,MP,hindi,mppkvvcl,monthly,106.5,881,,Vijay Nagar|Palasia|Rajwada|Bhawarkuan
+Mumbai,MH,west,adani,monthly,103.5,852,mmone,Andheri West|Powai|Goregaon|Thane West|Chembur|Borivali|Bandra West
+Pune,MH,west,msedcl,monthly,104.1,856,punemetro,Kothrud|Baner|Hinjewadi|Viman Nagar|Hadapsar
+Ahmedabad,GJ,west,torrent,monthly,94.5,860,,Satellite|Navrangpura|Bopal|Maninagar
+Kolkata,WB,east,cesc,monthly,105.0,879,kolmetro,Salt Lake|Behala|New Town|Ballygunge|Dum Dum

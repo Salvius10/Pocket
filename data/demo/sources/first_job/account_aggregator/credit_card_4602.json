@@ -1,0 +1,2258 @@
+{
+ "Account": {
+  "type": "credit_card",
+  "maskedCardNumber": "XXXXXXXXXXXX4602",
+  "version": "1.1",
+  "linkedAccRef": "b51d833d-a66a-5ed4-ac44-42ebb052d16d",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "ANANYA SRINIVASAN",
+      "dob": "2002-09-24",
+      "mobile": "XXXXXX7750",
+      "nominee": "REGISTERED",
+      "email": "ananya.530@example.com",
+      "pan": "XXXXX3302X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "issuerName": "ICICI Bank",
+   "cardType": "RUPAY",
+   "primary": "YES",
+   "creditLimit": "120000.00",
+   "cashLimit": "24000.00",
+   "availableCredit": "61817.24",
+   "currentDue": "58182.76",
+   "lastStatementDate": "2026-11-18",
+   "dueDate": "2026-12-08",
+   "totalDueAmount": "58182.76",
+   "minDueAmount": "2909.00",
+   "previousDueAmount": "51976.17",
+   "financeCharges": "2181.76",
+   "loyaltyPoints": "4969",
+   "annualInterestRatePercent": "42.00"
+  },
+  "Statements": [
+   {
+    "statement_date": "2025-11-18",
+    "due_date": "2025-12-08",
+    "total_due_paise": 1114700,
+    "min_due_paise": 55700,
+    "paid_paise": 1114700,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2025-12-18",
+    "due_date": "2026-01-07",
+    "total_due_paise": 426800,
+    "min_due_paise": 21300,
+    "paid_paise": 426800,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-01-18",
+    "due_date": "2026-02-07",
+    "total_due_paise": 401400,
+    "min_due_paise": 20100,
+    "paid_paise": 401400,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-02-18",
+    "due_date": "2026-03-10",
+    "total_due_paise": 886700,
+    "min_due_paise": 44300,
+    "paid_paise": 886700,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-03-18",
+    "due_date": "2026-04-07",
+    "total_due_paise": 198800,
+    "min_due_paise": 20000,
+    "paid_paise": 198800,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-04-18",
+    "due_date": "2026-05-08",
+    "total_due_paise": 845700,
+    "min_due_paise": 42300,
+    "paid_paise": 845700,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-05-18",
+    "due_date": "2026-06-07",
+    "total_due_paise": 957400,
+    "min_due_paise": 47900,
+    "paid_paise": 957400,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-06-18",
+    "due_date": "2026-07-08",
+    "total_due_paise": 509500,
+    "min_due_paise": 25500,
+    "paid_paise": 509500,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-07-18",
+    "due_date": "2026-08-07",
+    "total_due_paise": 665400,
+    "min_due_paise": 33300,
+    "paid_paise": 665400,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-08-18",
+    "due_date": "2026-09-07",
+    "total_due_paise": 557200,
+    "min_due_paise": 27900,
+    "paid_paise": 557200,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-09-18",
+    "due_date": "2026-10-08",
+    "total_due_paise": 415900,
+    "min_due_paise": 20800,
+    "paid_paise": 20800,
+    "finance_charges_paise": 0,
+    "revolving_after_due_paise": 395100,
+    "finance_charges_next_paise": 16317
+   },
+   {
+    "statement_date": "2026-10-18",
+    "due_date": "2026-11-07",
+    "total_due_paise": 5197617,
+    "min_due_paise": 259900,
+    "paid_paise": 310000,
+    "finance_charges_paise": 16317,
+    "revolving_after_due_paise": 4887617,
+    "finance_charges_next_paise": 201859
+   },
+   {
+    "statement_date": "2026-11-18",
+    "due_date": "2026-12-08",
+    "total_due_paise": 5818276,
+    "min_due_paise": 290900,
+    "paid_paise": null,
+    "finance_charges_paise": 201859,
+    "revolving_after_due_paise": 5468276
+   }
+  ],
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "152c7f1c-ee88-5ff2-9646-27b8330dc0d8",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "179.00",
+     "txnDate": "2025-11-07T19:52:37+05:30",
+     "valueDate": "2025-11-07",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2fbc0e0d-4aeb-568f-b08b-eaa810d54c02",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "2160.00",
+     "txnDate": "2025-11-11T14:22:26+05:30",
+     "valueDate": "2025-11-11",
+     "narration": "TRENT LTD ZUDIO BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "31338736-bd14-5897-abc5-b726be23c2fb",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "408.00",
+     "txnDate": "2025-11-17T20:38:14+05:30",
+     "valueDate": "2025-11-17",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "36309cc0-d2e0-51c0-adff-835b210ea25c",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "256.00",
+     "txnDate": "2025-11-21T19:52:28+05:30",
+     "valueDate": "2025-11-21",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7b77f5b0-3ca1-5ae2-a3cc-0a9f3a608095",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2025-11-22T10:40:32+05:30",
+     "valueDate": "2025-11-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "4c349a95-e662-510d-a299-6745ce70facc",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "362.00",
+     "txnDate": "2025-11-24T23:54:44+05:30",
+     "valueDate": "2025-11-24",
+     "narration": "ETERNAL LIMITED GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b495345e-6d5d-54ad-9783-12b045b33896",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "381.00",
+     "txnDate": "2025-11-27T12:04:45+05:30",
+     "valueDate": "2025-11-27",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "6d5e1aa2-05d3-564a-8274-1dee33dc74f6",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "434.00",
+     "txnDate": "2025-11-27T18:57:56+05:30",
+     "valueDate": "2025-11-27",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "db3ab1fd-8283-593a-a31b-3ae8fcc32a5b",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "368.00",
+     "txnDate": "2025-11-28T19:31:51+05:30",
+     "valueDate": "2025-11-28",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "f2d63f60-4d7d-55da-a6ff-d9af249cea58",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "399.00",
+     "txnDate": "2025-11-28T21:27:03+05:30",
+     "valueDate": "2025-11-28",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a3a7e5f3-3fc0-5e33-aac0-22c0bc2e23bb",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "11147.00",
+     "txnDate": "2025-12-02T20:00:24+05:30",
+     "valueDate": "2025-12-02",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "533618178055"
+    },
+    {
+     "txnId": "3f776e5f-72ff-5375-af64-3576a0659f97",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "270.00",
+     "txnDate": "2025-12-02T20:47:35+05:30",
+     "valueDate": "2025-12-02",
+     "narration": "NATURALS ICE CREAM BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "75330849-7888-5e78-a3b3-53b8c2b60f74",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "123.00",
+     "txnDate": "2025-12-05T17:00:18+05:30",
+     "valueDate": "2025-12-05",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9aaa7b5b-3377-5ae4-8d1d-fbeb1b85e3f0",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "160.00",
+     "txnDate": "2025-12-06T22:04:55+05:30",
+     "valueDate": "2025-12-06",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e0327588-32fb-5b04-88ec-67eb4afcacee",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "443.00",
+     "txnDate": "2025-12-07T17:54:15+05:30",
+     "valueDate": "2025-12-07",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "64e1a32c-c327-51fb-8ece-81e1b2e886a4",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "340.00",
+     "txnDate": "2025-12-07T20:51:53+05:30",
+     "valueDate": "2025-12-07",
+     "narration": "SWIGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0c5e0e44-a237-50cf-a43c-738b1146d1ba",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "123.00",
+     "txnDate": "2025-12-08T17:00:18+05:30",
+     "valueDate": "2025-12-08",
+     "narration": "REFUND ZEPTO KIRANAKART",
+     "reference": ""
+    },
+    {
+     "txnId": "ad35c05f-06ef-5aac-bc03-495203d1bab8",
+     "txnType": "DEBIT",
+     "mcc": 4722,
+     "amount": "656.00",
+     "txnDate": "2025-12-10T14:28:48+05:30",
+     "valueDate": "2025-12-10",
+     "narration": "IRCTC NEW DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "da520460-eaf7-578a-b70e-1069c12995a0",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2025-12-22T14:44:24+05:30",
+     "valueDate": "2025-12-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7aa9e196-59eb-546a-b1fa-16499f3ad884",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "319.00",
+     "txnDate": "2025-12-23T20:08:03+05:30",
+     "valueDate": "2025-12-23",
+     "narration": "JUBILANT FOODWORKS DOM BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3d8ad574-7294-5b6d-ae15-12174078d333",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "587.00",
+     "txnDate": "2025-12-25T18:19:55+05:30",
+     "valueDate": "2025-12-25",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "abcbabf1-5332-54ff-aa3c-16545b0f083d",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "146.00",
+     "txnDate": "2025-12-28T22:30:55+05:30",
+     "valueDate": "2025-12-28",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "bceed54a-4767-5cd4-a279-4ba57844540b",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "176.00",
+     "txnDate": "2025-12-30T17:26:03+05:30",
+     "valueDate": "2025-12-30",
+     "narration": "UBER TRIP GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "026087db-b996-546b-aab2-218c71914b5a",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "150.00",
+     "txnDate": "2025-12-31T20:17:04+05:30",
+     "valueDate": "2025-12-31",
+     "narration": "PVR INOX LTD BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "f70b41ee-d81a-5715-82a4-f38e34de1eee",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "4268.00",
+     "txnDate": "2026-01-01T22:53:40+05:30",
+     "valueDate": "2026-01-01",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "600119836665"
+    },
+    {
+     "txnId": "6ef4f240-866e-514e-8e49-dc268e1f6cb4",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "437.00",
+     "txnDate": "2026-01-06T17:32:48+05:30",
+     "valueDate": "2026-01-06",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "401a213e-e5ea-5aaf-b651-ab29324c0d0c",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1007.00",
+     "txnDate": "2026-01-06T20:16:22+05:30",
+     "valueDate": "2026-01-06",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "691c4191-91a9-5271-b3ce-e761ab555d30",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "350.00",
+     "txnDate": "2026-01-08T22:41:32+05:30",
+     "valueDate": "2026-01-08",
+     "narration": "RESTAURANT BRANDS ASIA BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "171cf932-6727-530b-9c9c-6d8b20df4f7e",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "235.00",
+     "txnDate": "2026-01-11T23:04:48+05:30",
+     "valueDate": "2026-01-11",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a9fc1892-cd54-5026-a06c-539d3fce2a6e",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "152.00",
+     "txnDate": "2026-01-16T20:30:27+05:30",
+     "valueDate": "2026-01-16",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "02baf360-9136-500b-9e6a-ac35acae317c",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "90.00",
+     "txnDate": "2026-01-16T22:28:30+05:30",
+     "valueDate": "2026-01-16",
+     "narration": "INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "fc86af93-7114-5dd0-9c03-d9f0260a808a",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "166.00",
+     "txnDate": "2026-01-18T23:28:01+05:30",
+     "valueDate": "2026-01-18",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0d6e0966-b3b1-56a4-ba50-0fe85cbab353",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-01-22T20:57:18+05:30",
+     "valueDate": "2026-01-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a5cbf2c7-7d23-513b-910c-de2c67ab90f1",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "163.00",
+     "txnDate": "2026-01-22T20:58:15+05:30",
+     "valueDate": "2026-01-22",
+     "narration": "ROPPEN TRANSPORTATION BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "90a04cd3-0575-57b1-814a-fc628dba76b7",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "120.00",
+     "txnDate": "2026-01-27T14:45:22+05:30",
+     "valueDate": "2026-01-27",
+     "narration": "SUBWAY BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "efb68aea-df87-5a3e-8e77-8dbd576cd4d8",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "134.00",
+     "txnDate": "2026-02-02T18:34:07+05:30",
+     "valueDate": "2026-02-02",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9893a63b-9e11-5acb-843f-c05b34525683",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "578.00",
+     "txnDate": "2026-02-02T23:47:32+05:30",
+     "valueDate": "2026-02-02",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9889b938-9c1b-5aca-9610-c830c3c810fd",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "283.00",
+     "txnDate": "2026-02-04T02:47:32+05:30",
+     "valueDate": "2026-02-04",
+     "narration": "REFUND FLIPKART INTERNET PVT ",
+     "reference": ""
+    },
+    {
+     "txnId": "1ee70245-5197-55b3-923e-363d6370dd53",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "4014.00",
+     "txnDate": "2026-02-04T19:00:14+05:30",
+     "valueDate": "2026-02-04",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "603518118921"
+    },
+    {
+     "txnId": "184697ac-103f-5404-b689-c4609c8ebd63",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "462.00",
+     "txnDate": "2026-02-05T18:40:09+05:30",
+     "valueDate": "2026-02-05",
+     "narration": "OLACABS BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "940412d9-1463-51d8-803c-32c2849a98b2",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "899.00",
+     "txnDate": "2026-02-05T19:30:39+05:30",
+     "valueDate": "2026-02-05",
+     "narration": "SWIGGY INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "dcc95ba2-f2c1-5011-af89-ba0dbe0bfb79",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "215.00",
+     "txnDate": "2026-02-06T20:19:32+05:30",
+     "valueDate": "2026-02-06",
+     "narration": "ROPPEN TRANSPORTATION BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2b053670-8e90-580f-842d-b7144e7047e1",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "146.00",
+     "txnDate": "2026-02-06T23:02:27+05:30",
+     "valueDate": "2026-02-06",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d51cfeed-cf35-5c42-b357-5d3b178ddb93",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "361.00",
+     "txnDate": "2026-02-12T13:21:48+05:30",
+     "valueDate": "2026-02-12",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "45db86a8-138b-522e-85ed-8ca7ec600f17",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "191.00",
+     "txnDate": "2026-02-12T20:29:24+05:30",
+     "valueDate": "2026-02-12",
+     "narration": "SWIGGY INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2da71e27-2fd9-56f9-918d-c3e6c07b6fb9",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "564.00",
+     "txnDate": "2026-02-13T20:15:55+05:30",
+     "valueDate": "2026-02-13",
+     "narration": "DISTRICT BY ZOMATO BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d4a24cab-b018-5f1f-ba1d-495db6643f2e",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "180.00",
+     "txnDate": "2026-02-15T16:05:13+05:30",
+     "valueDate": "2026-02-15",
+     "narration": "SWIGGY IM BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "ae1d9176-1757-5430-b10c-a092cbfe66a4",
+     "txnType": "DEBIT",
+     "mcc": 4722,
+     "amount": "4357.00",
+     "txnDate": "2026-02-16T20:45:05+05:30",
+     "valueDate": "2026-02-16",
+     "narration": "IBIBO GROUP GOIBIBO BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e069525a-98a4-5d59-84de-081eb7fff78e",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "244.00",
+     "txnDate": "2026-02-17T11:22:49+05:30",
+     "valueDate": "2026-02-17",
+     "narration": "RELIANCE RETAIL TRENDS BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "ce0a20d3-ce47-575c-ac79-ea3b36249f20",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "337.00",
+     "txnDate": "2026-02-17T11:28:09+05:30",
+     "valueDate": "2026-02-17",
+     "narration": "FLIPKRT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d86afad0-ba52-555b-bac7-5e80f30a983d",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-02-22T13:45:19+05:30",
+     "valueDate": "2026-02-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e75184bf-ddc8-5350-91d6-ddfc325216a4",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "267.00",
+     "txnDate": "2026-02-26T17:44:50+05:30",
+     "valueDate": "2026-02-26",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "c22f753c-a544-5254-8f51-7f21bda4b9f1",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "439.00",
+     "txnDate": "2026-02-27T18:39:15+05:30",
+     "valueDate": "2026-02-27",
+     "narration": "TIMEZONE ENTERTAINMENT BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "76aab33e-70ce-5b29-bb70-7cc57d101029",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "212.00",
+     "txnDate": "2026-02-28T13:04:41+05:30",
+     "valueDate": "2026-02-28",
+     "narration": "OLACABS BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "257e3e59-17db-597e-a2ab-0584d5419187",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "270.00",
+     "txnDate": "2026-03-04T13:45:01+05:30",
+     "valueDate": "2026-03-04",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d5332ed3-4961-526d-9f20-fd327fcd7e11",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "8867.00",
+     "txnDate": "2026-03-04T21:34:04+05:30",
+     "valueDate": "2026-03-04",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "606319632268"
+    },
+    {
+     "txnId": "40cdc0ae-d0f4-5309-ae75-1fdabdd5ee62",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "383.00",
+     "txnDate": "2026-03-05T09:35:36+05:30",
+     "valueDate": "2026-03-05",
+     "narration": "UBER INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7f210265-6d9a-59f3-81ee-d6c3f372db62",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "98.00",
+     "txnDate": "2026-03-09T08:10:58+05:30",
+     "valueDate": "2026-03-09",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "00e70e35-15c7-524a-91f7-3349763c7f67",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "120.00",
+     "txnDate": "2026-03-13T12:34:29+05:30",
+     "valueDate": "2026-03-13",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "62b5cfbb-34e8-52da-a8d8-d43ee4bce407",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "324.00",
+     "txnDate": "2026-03-21T20:38:36+05:30",
+     "valueDate": "2026-03-21",
+     "narration": "SWIGGY INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b86a374e-b84b-5823-a2f3-a8a040515edd",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-03-22T16:18:09+05:30",
+     "valueDate": "2026-03-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "683080aa-89c4-5842-acc3-7aba087a2c5c",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1328.00",
+     "txnDate": "2026-03-22T17:05:36+05:30",
+     "valueDate": "2026-03-22",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9518f1b8-c2f5-5250-ab96-753d505180a3",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "324.00",
+     "txnDate": "2026-03-23T02:38:36+05:30",
+     "valueDate": "2026-03-23",
+     "narration": "REFUND SWIGGY INSTAMART",
+     "reference": ""
+    },
+    {
+     "txnId": "c8621518-a6e5-5169-839e-1830867c573b",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "269.00",
+     "txnDate": "2026-03-23T09:21:40+05:30",
+     "valueDate": "2026-03-23",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9e17620d-8a43-521b-9dd1-713e2767366d",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "141.00",
+     "txnDate": "2026-03-25T21:51:43+05:30",
+     "valueDate": "2026-03-25",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3178eae0-75a2-59ff-9b64-3240f1b06f9a",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "286.00",
+     "txnDate": "2026-03-27T21:43:11+05:30",
+     "valueDate": "2026-03-27",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b93c074a-795e-528a-8f62-617bc36de47c",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "264.00",
+     "txnDate": "2026-03-29T19:09:41+05:30",
+     "valueDate": "2026-03-29",
+     "narration": "SWIGGY INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "eb71e46a-57b3-56d0-ac64-05fcd75a9e3b",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "315.00",
+     "txnDate": "2026-03-30T13:44:03+05:30",
+     "valueDate": "2026-03-30",
+     "narration": "MEGHANA FOODS BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0622bc16-5567-5ce3-9287-cb2bc444b47e",
+     "txnType": "DEBIT",
+     "mcc": 4722,
+     "amount": "970.00",
+     "txnDate": "2026-03-30T14:17:35+05:30",
+     "valueDate": "2026-03-30",
+     "narration": "IRCTC NEW DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "045d93e2-39fa-5286-8327-48e8e8de992f",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "593.00",
+     "txnDate": "2026-03-31T13:34:40+05:30",
+     "valueDate": "2026-03-31",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "4afc20a1-3ed8-56e7-afbb-e35d7b52bfb2",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "250.00",
+     "txnDate": "2026-04-01T19:14:08+05:30",
+     "valueDate": "2026-04-01",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "852eb35f-8aec-59bb-ace8-09d8803a3e90",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "424.00",
+     "txnDate": "2026-04-04T16:44:08+05:30",
+     "valueDate": "2026-04-04",
+     "narration": "BIGTREE ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b93573ab-f6d0-55c1-9a88-f57e0424ee97",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "1988.00",
+     "txnDate": "2026-04-06T00:36:02+05:30",
+     "valueDate": "2026-04-06",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "609520727676"
+    },
+    {
+     "txnId": "fc29cc30-8f8e-5c3a-8772-217f78dd44b5",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "266.00",
+     "txnDate": "2026-04-06T17:25:52+05:30",
+     "valueDate": "2026-04-06",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "aee5f4ef-c9b2-5d79-9b2c-d245d32e3a59",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "266.00",
+     "txnDate": "2026-04-11T18:25:52+05:30",
+     "valueDate": "2026-04-11",
+     "narration": "REFUND BLINKIT GROFERS INDIA",
+     "reference": ""
+    },
+    {
+     "txnId": "2a3458e0-2e2c-5d48-8f0e-86e516c67506",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "205.00",
+     "txnDate": "2026-04-11T23:24:50+05:30",
+     "valueDate": "2026-04-11",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3d33a753-65fd-5a40-b2a0-926bbd34b8ac",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "159.00",
+     "txnDate": "2026-04-12T13:29:30+05:30",
+     "valueDate": "2026-04-12",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "46512c8d-3523-59d9-a7e4-77aa04322df0",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "60.00",
+     "txnDate": "2026-04-14T12:18:42+05:30",
+     "valueDate": "2026-04-14",
+     "narration": "ANI TECHNOLOGIES OLA BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "08f4768e-0f85-5513-b722-362cdb97cdcf",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "1157.00",
+     "txnDate": "2026-04-14T20:46:19+05:30",
+     "valueDate": "2026-04-14",
+     "narration": "DISTRICT BY ZOMATO BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b8392570-7ca3-55ad-ac55-d40a3fdaaaa4",
+     "txnType": "DEBIT",
+     "mcc": 4722,
+     "amount": "1221.00",
+     "txnDate": "2026-04-14T22:21:35+05:30",
+     "valueDate": "2026-04-14",
+     "narration": "IRCTC NEW DELHI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "26342ef1-50c0-574d-ae1c-6c12b1cc9f57",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "233.00",
+     "txnDate": "2026-04-15T00:26:29+05:30",
+     "valueDate": "2026-04-15",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "ef44f9c3-7784-5dde-8ea8-5de0b6a69394",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "383.00",
+     "txnDate": "2026-04-17T01:36:43+05:30",
+     "valueDate": "2026-04-17",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3d4aff14-4091-59b5-add9-d99a3f9b6d2b",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "519.00",
+     "txnDate": "2026-04-19T21:37:12+05:30",
+     "valueDate": "2026-04-19",
+     "narration": "PVR INOX LTD BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "982aa73b-6f88-5185-9edf-648cc86db15d",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1365.00",
+     "txnDate": "2026-04-20T00:02:10+05:30",
+     "valueDate": "2026-04-20",
+     "narration": "FLIPKRT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a90959a0-4558-5361-b383-44c21f2e36d3",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "751.00",
+     "txnDate": "2026-04-21T20:06:55+05:30",
+     "valueDate": "2026-04-21",
+     "narration": "MYNTRA DESIGNS BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "ca1dc6f0-7c3e-5b01-84ac-512e297ee031",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-04-22T20:37:50+05:30",
+     "valueDate": "2026-04-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a97a8536-41e4-57ad-86bc-c55e104c5b6d",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "977.00",
+     "txnDate": "2026-04-23T20:37:49+05:30",
+     "valueDate": "2026-04-23",
+     "narration": "SWIGGY INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "ee77e1be-a7df-5cda-bcf4-0c1885f92d7f",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "185.00",
+     "txnDate": "2026-04-23T22:55:48+05:30",
+     "valueDate": "2026-04-23",
+     "narration": "BLINKIT GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "19280e6a-d135-591a-b797-b019e2f925da",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "352.00",
+     "txnDate": "2026-04-28T14:52:25+05:30",
+     "valueDate": "2026-04-28",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "8c5b07d7-2e1d-5baa-848f-6d3c46fb8440",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "186.00",
+     "txnDate": "2026-05-03T11:26:07+05:30",
+     "valueDate": "2026-05-03",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "42653833-18f5-5ff7-b554-6f24aef24bbb",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "151.00",
+     "txnDate": "2026-05-04T19:53:18+05:30",
+     "valueDate": "2026-05-04",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7d45b057-3515-563f-9e23-ff6d75f43150",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "8457.00",
+     "txnDate": "2026-05-05T23:03:26+05:30",
+     "valueDate": "2026-05-05",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "612522058000"
+    },
+    {
+     "txnId": "0c5c8959-01e7-5622-ac05-e983b6058844",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "296.00",
+     "txnDate": "2026-05-06T17:36:09+05:30",
+     "valueDate": "2026-05-06",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "4a980431-799b-5852-b4a9-1c8e290a0b51",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "413.00",
+     "txnDate": "2026-05-08T21:23:53+05:30",
+     "valueDate": "2026-05-08",
+     "narration": "RELIANCE RETAIL AJIO BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a853e8cf-84d7-5e08-8f23-1920488ef7fb",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "3951.00",
+     "txnDate": "2026-05-08T23:48:55+05:30",
+     "valueDate": "2026-05-08",
+     "narration": "MYNTRA DESIGNS BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "5d33d710-3674-5451-9614-cd22b752e23a",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "112.00",
+     "txnDate": "2026-05-12T17:35:33+05:30",
+     "valueDate": "2026-05-12",
+     "narration": "ANI TECHNOLOGIES OLA BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "de7999de-96b3-555d-945e-930191d54369",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "117.00",
+     "txnDate": "2026-05-15T10:35:21+05:30",
+     "valueDate": "2026-05-15",
+     "narration": "UBER INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "19ba848d-9ec2-5f9a-819f-f4a6f4097424",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "223.00",
+     "txnDate": "2026-05-21T17:47:31+05:30",
+     "valueDate": "2026-05-21",
+     "narration": "BIGTREE ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "bc6cefc8-eaed-5738-874d-dd05d2aa460f",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-05-22T18:37:35+05:30",
+     "valueDate": "2026-05-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "47a7a144-57e8-5936-be3e-758c2437dc22",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "314.00",
+     "txnDate": "2026-05-24T19:57:22+05:30",
+     "valueDate": "2026-05-24",
+     "narration": "DARSHINI TIFFIN CENTRE BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "74f85e93-3665-5f81-95ba-84275296955a",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "584.00",
+     "txnDate": "2026-05-28T17:10:40+05:30",
+     "valueDate": "2026-05-28",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "12e65350-27e4-556b-be49-71fe43eaad11",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "124.00",
+     "txnDate": "2026-05-29T21:50:03+05:30",
+     "valueDate": "2026-05-29",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "8f3948b6-09e4-56ee-952f-9a305624950b",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "288.00",
+     "txnDate": "2026-05-30T23:38:32+05:30",
+     "valueDate": "2026-05-30",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "44bb5371-83cd-53ad-9d3a-253407a9a851",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "516.00",
+     "txnDate": "2026-06-01T14:30:05+05:30",
+     "valueDate": "2026-06-01",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9694bc09-1639-5324-87f1-a485e224dc7f",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "456.00",
+     "txnDate": "2026-06-02T09:05:27+05:30",
+     "valueDate": "2026-06-02",
+     "narration": "ANI TECHNOLOGIES OLA BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "95825a0f-f602-5fdd-a19d-a8ae464dd642",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "211.00",
+     "txnDate": "2026-06-04T09:30:24+05:30",
+     "valueDate": "2026-06-04",
+     "narration": "OLA CABS BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "941ad55c-00ca-5af9-b6a6-ee9daba26a7f",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "242.00",
+     "txnDate": "2026-06-04T21:45:53+05:30",
+     "valueDate": "2026-06-04",
+     "narration": "ZEPTONOW MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "00af4f25-425b-5b4e-b8b2-5bff90342a85",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "9574.00",
+     "txnDate": "2026-06-05T18:41:00+05:30",
+     "valueDate": "2026-06-05",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "615617777895"
+    },
+    {
+     "txnId": "fdd48b08-6329-5cba-bc55-970a8408e256",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "238.00",
+     "txnDate": "2026-06-08T08:12:34+05:30",
+     "valueDate": "2026-06-08",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "12a01cdc-fc09-596f-b375-3750fd0b6fa1",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "698.00",
+     "txnDate": "2026-06-10T19:43:57+05:30",
+     "valueDate": "2026-06-10",
+     "narration": "PVR INOX LTD BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "6449ec98-b7b0-5873-99a3-9a5b5d1a4857",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "250.00",
+     "txnDate": "2026-06-10T20:58:33+05:30",
+     "valueDate": "2026-06-10",
+     "narration": "REBEL FOODS EATSURE BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "01ec1bf3-866a-5dd8-b2b3-17becc9fad91",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "98.00",
+     "txnDate": "2026-06-16T17:42:17+05:30",
+     "valueDate": "2026-06-16",
+     "narration": "RAPIDO BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "84ebe8fd-93a9-5e1c-b4e5-dec1ee4da95a",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "654.00",
+     "txnDate": "2026-06-18T22:18:02+05:30",
+     "valueDate": "2026-06-18",
+     "narration": "DARSHINI TIFFIN CENTRE BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "41cd5852-669c-5b30-94a4-37dd0e36afb5",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "296.00",
+     "txnDate": "2026-06-19T21:22:45+05:30",
+     "valueDate": "2026-06-19",
+     "narration": "BLINKIT GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "588333ad-1b97-52bf-b9cc-c73c24271668",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "186.00",
+     "txnDate": "2026-06-19T21:33:28+05:30",
+     "valueDate": "2026-06-19",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0848d38a-3a98-5e15-b683-7df1cdbcb797",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "211.00",
+     "txnDate": "2026-06-20T23:04:16+05:30",
+     "valueDate": "2026-06-20",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "c56f6684-9c9d-573a-ba5a-97bd784ff953",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "332.00",
+     "txnDate": "2026-06-21T18:19:24+05:30",
+     "valueDate": "2026-06-21",
+     "narration": "ROPPEN TRANSPORTATION BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a61fb2bc-36b8-5318-a0d6-e4a5243c9630",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "655.00",
+     "txnDate": "2026-06-21T19:31:10+05:30",
+     "valueDate": "2026-06-21",
+     "narration": "STARBUCKS BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9cf8a102-b454-55be-a8a6-df3ddc49847e",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-06-22T12:08:42+05:30",
+     "valueDate": "2026-06-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "37d07090-a232-5c07-a6e7-e4a8e598348b",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "255.00",
+     "txnDate": "2026-06-23T13:12:26+05:30",
+     "valueDate": "2026-06-23",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "001afc18-af4c-5ba5-955b-599dc822c790",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "443.00",
+     "txnDate": "2026-06-24T18:06:09+05:30",
+     "valueDate": "2026-06-24",
+     "narration": "SWIGGY IM BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "8b77304e-f6a8-552b-befe-989c09d31278",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "175.00",
+     "txnDate": "2026-06-26T09:12:44+05:30",
+     "valueDate": "2026-06-26",
+     "narration": "RAPIDO BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "1648c77d-feea-5eeb-875e-557c86127eca",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "284.00",
+     "txnDate": "2026-06-30T14:59:14+05:30",
+     "valueDate": "2026-06-30",
+     "narration": "JUBILANT FOODWORKS DOM BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7cc42d51-7c4b-592b-9a3c-8ad974fda3a8",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "485.00",
+     "txnDate": "2026-07-01T21:12:42+05:30",
+     "valueDate": "2026-07-01",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7431f1e0-51fb-593e-bc6d-552b22eda764",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "307.00",
+     "txnDate": "2026-07-02T13:39:57+05:30",
+     "valueDate": "2026-07-02",
+     "narration": "BUNDL TECHNOLOGIES BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "4373aca6-aeec-5d1c-aa56-b277537d94bd",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "5095.00",
+     "txnDate": "2026-07-03T22:44:27+05:30",
+     "valueDate": "2026-07-03",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "618422606504"
+    },
+    {
+     "txnId": "15a261d1-a4d4-5285-a73a-a10d18312c57",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "374.00",
+     "txnDate": "2026-07-07T16:10:27+05:30",
+     "valueDate": "2026-07-07",
+     "narration": "GROFERS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "98eef080-62bd-52e5-aa03-dbb64d510910",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "243.00",
+     "txnDate": "2026-07-08T22:12:42+05:30",
+     "valueDate": "2026-07-08",
+     "narration": "REFUND ZOMATO LTD",
+     "reference": ""
+    },
+    {
+     "txnId": "13ff14cf-72e2-5fe6-bb45-ff7ca0f57723",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "289.00",
+     "txnDate": "2026-07-09T21:39:34+05:30",
+     "valueDate": "2026-07-09",
+     "narration": "TIMEZONE ENTERTAINMENT BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d391cb29-879e-5baf-8359-523698002400",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1465.00",
+     "txnDate": "2026-07-09T23:53:08+05:30",
+     "valueDate": "2026-07-09",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3fcbd822-a19b-50a4-9391-390d9a4ae9ad",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "328.00",
+     "txnDate": "2026-07-13T01:07:56+05:30",
+     "valueDate": "2026-07-13",
+     "narration": "ZOMATO ORDER GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "f38da071-8924-562c-a844-2edf7914cfba",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "613.00",
+     "txnDate": "2026-07-17T14:27:12+05:30",
+     "valueDate": "2026-07-17",
+     "narration": "SWIGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9ded36d4-8d33-57fa-b161-97596a1556b6",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-07-22T11:29:08+05:30",
+     "valueDate": "2026-07-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "906f4949-b565-50d0-9c06-a2c9ce26a3e0",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "225.00",
+     "txnDate": "2026-07-22T20:52:15+05:30",
+     "valueDate": "2026-07-22",
+     "narration": "IMPRESARIO SOCIAL BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "f8493e1d-a8eb-5cd8-9177-5a0624a9b2d5",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "344.00",
+     "txnDate": "2026-07-24T07:50:47+05:30",
+     "valueDate": "2026-07-24",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b9198ddb-5e39-5d0d-beb1-b6087794134c",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "302.00",
+     "txnDate": "2026-07-24T11:51:04+05:30",
+     "valueDate": "2026-07-24",
+     "narration": "ROPPEN TRANSPORTATION BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "de02d3b7-4a7b-56a0-9226-70ca962be65f",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "900.00",
+     "txnDate": "2026-08-01T19:41:46+05:30",
+     "valueDate": "2026-08-01",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a396da7d-3056-5f69-acce-4f1315562898",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "445.00",
+     "txnDate": "2026-08-02T23:41:28+05:30",
+     "valueDate": "2026-08-02",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "04460477-e98b-5390-bce8-da6aea1d9402",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "47.00",
+     "txnDate": "2026-08-03T19:47:09+05:30",
+     "valueDate": "2026-08-03",
+     "narration": "ANI TECHNOLOGIES OLA BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "5664803b-77d2-5cfd-bc72-41182099d959",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "298.00",
+     "txnDate": "2026-08-03T22:06:08+05:30",
+     "valueDate": "2026-08-03",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "373b2a3c-2850-5436-8a11-cd65cf04fb1b",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "6654.00",
+     "txnDate": "2026-08-06T02:28:50+05:30",
+     "valueDate": "2026-08-06",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "621722458909"
+    },
+    {
+     "txnId": "d224bb7b-8e54-5fc0-a2fc-7ffa873b9ee4",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "382.00",
+     "txnDate": "2026-08-06T20:22:14+05:30",
+     "valueDate": "2026-08-06",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "55a80516-ba78-5927-a460-759e78d47505",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1672.00",
+     "txnDate": "2026-08-15T01:49:58+05:30",
+     "valueDate": "2026-08-15",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e1117ebe-6acd-5ef0-817b-77b2c6887833",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "455.00",
+     "txnDate": "2026-08-15T20:35:54+05:30",
+     "valueDate": "2026-08-15",
+     "narration": "SWIGGY IM BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "5889e43c-37da-5fda-8d31-4d3390b67204",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "303.00",
+     "txnDate": "2026-08-16T20:07:37+05:30",
+     "valueDate": "2026-08-16",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "6a2f05e7-2d50-537b-9e8e-27681cda659b",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "297.00",
+     "txnDate": "2026-08-20T01:34:18+05:30",
+     "valueDate": "2026-08-20",
+     "narration": "ZOMTO GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "bd92a475-36f6-55d8-9a82-3157ef4bea2d",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "549.00",
+     "txnDate": "2026-08-20T22:11:49+05:30",
+     "valueDate": "2026-08-20",
+     "narration": "BRAHMINS COFFEE BAR BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "001f7837-9e26-54e6-a2b5-48cf5d60a0ed",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "247.00",
+     "txnDate": "2026-08-21T14:49:48+05:30",
+     "valueDate": "2026-08-21",
+     "narration": "BOX8 DESI MEALS BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "33302124-60ad-5436-9ea9-0492fdb5ceb1",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-08-22T14:30:39+05:30",
+     "valueDate": "2026-08-22",
+     "narration": "NETFLIX MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "751d9bd4-b9df-5c46-8bdd-a0dc390065e0",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "827.00",
+     "txnDate": "2026-08-27T13:31:03+05:30",
+     "valueDate": "2026-08-27",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "18bb8b2e-ccfb-5ea2-b018-011cc898f9c6",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "210.00",
+     "txnDate": "2026-08-27T20:59:19+05:30",
+     "valueDate": "2026-08-27",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e81010dd-704e-5548-bc0c-c26365a69db3",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "123.00",
+     "txnDate": "2026-08-28T07:17:48+05:30",
+     "valueDate": "2026-08-28",
+     "narration": "BANGALORE METRO RAIL C BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "206cd70e-6234-5e99-bfae-f8a165072ab6",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "827.00",
+     "txnDate": "2026-08-30T18:31:03+05:30",
+     "valueDate": "2026-08-30",
+     "narration": "REFUND AMAZON PAY INDIA PVT L",
+     "reference": ""
+    },
+    {
+     "txnId": "dc110bf2-b7c6-5a6b-9f21-055c2d52838a",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "226.00",
+     "txnDate": "2026-09-02T17:15:21+05:30",
+     "valueDate": "2026-09-02",
+     "narration": "OLACABS BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3951b473-6fe0-53a5-9914-8c0ee1641000",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "232.00",
+     "txnDate": "2026-09-03T19:40:04+05:30",
+     "valueDate": "2026-09-03",
+     "narration": "BUNDL TECHNOLOGIES BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "fc08d850-50ee-52e2-b09b-07c76a1f8863",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "5572.00",
+     "txnDate": "2026-09-06T19:48:51+05:30",
+     "valueDate": "2026-09-06",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "624916371354"
+    },
+    {
+     "txnId": "2c621766-b362-50e8-a072-a8aed7120b4c",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "239.00",
+     "txnDate": "2026-09-10T08:57:27+05:30",
+     "valueDate": "2026-09-10",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "76da05ad-76a8-5bbf-a701-ef0b8dd9c890",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "299.00",
+     "txnDate": "2026-09-14T22:15:29+05:30",
+     "valueDate": "2026-09-14",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "88f1062a-4d28-5066-8349-6f6016829b31",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "970.00",
+     "txnDate": "2026-09-14T22:44:56+05:30",
+     "valueDate": "2026-09-14",
+     "narration": "LIFESTYLE INTERNATIONA BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "6a8da0f2-ca21-5205-bd5e-881983993dc8",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "342.00",
+     "txnDate": "2026-09-15T21:34:15+05:30",
+     "valueDate": "2026-09-15",
+     "narration": "INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "898046b4-acd8-5e2f-ab77-26dfdfbdbe40",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "226.00",
+     "txnDate": "2026-09-18T17:45:38+05:30",
+     "valueDate": "2026-09-18",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "f23d4edf-8c98-5711-8119-1f41af56ad6b",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "193.00",
+     "txnDate": "2026-09-20T14:51:11+05:30",
+     "valueDate": "2026-09-20",
+     "narration": "ZOMATO GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b3707d9c-c550-5ab8-a288-11b94fea22d8",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "239.00",
+     "txnDate": "2026-09-20T21:45:42+05:30",
+     "valueDate": "2026-09-20",
+     "narration": "SWIGGY LIMITED BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "66c18470-996d-53c2-8168-8661a9318f99",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "323.00",
+     "txnDate": "2026-09-21T20:19:03+05:30",
+     "valueDate": "2026-09-21",
+     "narration": "ZOMATO GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2a9f97fc-6aa3-56aa-b38f-89ed6c7ce2b5",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-09-22T18:32:18+05:30",
+     "valueDate": "2026-09-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0c961d4f-df30-5b73-a507-64df9ecca344",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "297.00",
+     "txnDate": "2026-09-23T00:14:29+05:30",
+     "valueDate": "2026-09-23",
+     "narration": "BATA INDIA LTD BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "5fb334fd-c008-51ba-907d-847d1f770798",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "613.00",
+     "txnDate": "2026-09-23T18:06:40+05:30",
+     "valueDate": "2026-09-23",
+     "narration": "BLINKIT GROFERS INDIA GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "14016d29-ca3a-5f78-86e9-7114bc28aad6",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "201.00",
+     "txnDate": "2026-09-26T18:17:33+05:30",
+     "valueDate": "2026-09-26",
+     "narration": "KIRANAKART TECHNOLOGIE MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7f3873ab-eaa7-5147-9b17-44a83cb4c2e9",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "32999.00",
+     "txnDate": "2026-09-26T19:52:54+05:30",
+     "valueDate": "2026-09-26",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "03ef49db-94b3-5ae1-bc20-5672da12e61e",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "255.00",
+     "txnDate": "2026-09-26T21:14:46+05:30",
+     "valueDate": "2026-09-26",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "699900b8-e5a6-54d0-bfd5-1a9a963c7f5d",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "255.00",
+     "txnDate": "2026-09-30T23:04:06+05:30",
+     "valueDate": "2026-09-30",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "735b00ab-b80b-5bef-add3-e4f164bbcee5",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "188.00",
+     "txnDate": "2026-10-02T23:58:17+05:30",
+     "valueDate": "2026-10-02",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "62bccd99-fe06-5688-9f7f-84ef9041f8e1",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "349.00",
+     "txnDate": "2026-10-03T18:15:48+05:30",
+     "valueDate": "2026-10-03",
+     "narration": "BIGTREE ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "730cecc0-9d68-545c-a3fe-cb25e03c3cbb",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "401.00",
+     "txnDate": "2026-10-04T12:34:28+05:30",
+     "valueDate": "2026-10-04",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "4f1488e9-94b8-5da4-a966-c3b84b186bbe",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "4850.00",
+     "txnDate": "2026-10-04T14:50:17+05:30",
+     "valueDate": "2026-10-04",
+     "narration": "MYNTRA DESIGNS BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "26995c26-6258-554d-ae00-7c56abfe5aee",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "208.00",
+     "txnDate": "2026-10-06T18:40:42+05:30",
+     "valueDate": "2026-10-06",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "627916419235"
+    },
+    {
+     "txnId": "65d8e093-35cb-5dc2-a72e-1e8691f26863",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "210.00",
+     "txnDate": "2026-10-07T12:37:18+05:30",
+     "valueDate": "2026-10-07",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "176e516a-0e4f-53c9-bc42-e710add92d5b",
+     "txnType": "DEBIT",
+     "mcc": 5812,
+     "amount": "673.00",
+     "txnDate": "2026-10-07T14:01:46+05:30",
+     "valueDate": "2026-10-07",
+     "narration": "HOTEL SARAVANA BHAVAN BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "9cae8936-bc07-54c9-8d88-fc20ce69c6c1",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "295.00",
+     "txnDate": "2026-10-08T20:04:49+05:30",
+     "valueDate": "2026-10-08",
+     "narration": "BOX8 DESI MEALS BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "730dc7a7-d852-5dff-8caf-08dcf8a1d22a",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "562.00",
+     "txnDate": "2026-10-10T20:57:16+05:30",
+     "valueDate": "2026-10-10",
+     "narration": "INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "f5fcf6c7-14fd-545b-986c-5da9f2d2855a",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1241.00",
+     "txnDate": "2026-10-15T01:17:33+05:30",
+     "valueDate": "2026-10-15",
+     "narration": "MYNTRA JABONG BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "4cf4cbd8-0e9a-5727-883b-76c16a9a6ee7",
+     "txnType": "DEBIT",
+     "mcc": 4722,
+     "amount": "832.00",
+     "txnDate": "2026-10-15T23:48:41+05:30",
+     "valueDate": "2026-10-15",
+     "narration": "REDBUS INDIA BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "8cb8851a-61f8-540b-a603-a8f2dd3f53a9",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "2518.00",
+     "txnDate": "2026-10-18T17:57:58+05:30",
+     "valueDate": "2026-10-18",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "fc5439bc-e151-5523-8d43-c435d7755065",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "138.28",
+     "txnDate": "2026-10-18T20:15:00+05:30",
+     "valueDate": "2026-10-18",
+     "narration": "FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "e2c2c08e-bc8b-5a53-afa0-b6f71e40dd42",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "24.89",
+     "txnDate": "2026-10-18T20:15:01+05:30",
+     "valueDate": "2026-10-18",
+     "narration": "IGST ON FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "6acb7201-99f3-521a-bde8-64434911f333",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "169.00",
+     "txnDate": "2026-10-18T22:05:44+05:30",
+     "valueDate": "2026-10-18",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "be8d605e-a90e-5968-81d3-8eb16eb742e4",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "350.00",
+     "txnDate": "2026-10-20T21:16:46+05:30",
+     "valueDate": "2026-10-20",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "26b51c46-106a-5003-9cda-10fc9e654b9d",
+     "txnType": "DEBIT",
+     "mcc": 5815,
+     "amount": "199.00",
+     "txnDate": "2026-10-22T11:49:23+05:30",
+     "valueDate": "2026-10-22",
+     "narration": "NETFLIX ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "59314855-a8bf-50fb-84b6-cb4ae1d6bf7c",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "677.00",
+     "txnDate": "2026-10-24T11:48:52+05:30",
+     "valueDate": "2026-10-24",
+     "narration": "LENSKART SOLUTIONS BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "df1c9d45-ae74-531a-ae53-a7cb8c4ef0da",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "447.00",
+     "txnDate": "2026-10-24T17:27:55+05:30",
+     "valueDate": "2026-10-24",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "59c16e4e-56a8-55f6-ae81-bb7d020e5c66",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "447.00",
+     "txnDate": "2026-10-24T17:28:50+05:30",
+     "valueDate": "2026-10-24",
+     "narration": "UBER INDIA SYSTEMS GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d2a60711-5123-54b8-a35a-0d1e8d4008b4",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "279.00",
+     "txnDate": "2026-10-26T12:02:04+05:30",
+     "valueDate": "2026-10-26",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2c7aeceb-b262-58f9-821b-23e54d17e1d6",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "177.00",
+     "txnDate": "2026-10-26T22:59:07+05:30",
+     "valueDate": "2026-10-26",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e6f9187b-b1ef-5a40-bbc6-c38bc71c2678",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "300.00",
+     "txnDate": "2026-10-27T01:26:37+05:30",
+     "valueDate": "2026-10-27",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3faba48b-7267-511d-b1fc-7c1dcbec7493",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "535.00",
+     "txnDate": "2026-10-30T22:09:42+05:30",
+     "valueDate": "2026-10-30",
+     "narration": "PVR INOX LTD BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e68cda1b-40a4-5944-b1ac-884efb0b9d39",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "164.00",
+     "txnDate": "2026-11-01T18:26:26+05:30",
+     "valueDate": "2026-11-01",
+     "narration": "ZEPTO KIRANAKART MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7f7a1638-86fd-50e7-9023-6f16cb58a3f8",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "3100.00",
+     "txnDate": "2026-11-01T18:54:58+05:30",
+     "valueDate": "2026-11-01",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "630518305086"
+    },
+    {
+     "txnId": "ddfb6bd5-3a69-5bcb-9181-9509851bf203",
+     "txnType": "DEBIT",
+     "mcc": 4121,
+     "amount": "149.00",
+     "txnDate": "2026-11-02T20:41:06+05:30",
+     "valueDate": "2026-11-02",
+     "narration": "ROPPEN TRANSPORTATION BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "46606f77-b9a7-5c8f-8ed7-e85545bd57c5",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "500.00",
+     "txnDate": "2026-11-05T12:46:21+05:30",
+     "valueDate": "2026-11-05",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d4622086-e7ed-557a-919b-48439fd936ee",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "878.00",
+     "txnDate": "2026-11-05T17:10:30+05:30",
+     "valueDate": "2026-11-05",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3b8c3b55-9126-5e2c-90d0-af01e48b8f9f",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "343.00",
+     "txnDate": "2026-11-06T17:25:27+05:30",
+     "valueDate": "2026-11-06",
+     "narration": "SWIGGY INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "adb48878-96d3-5125-b389-984e6c9ec68b",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "406.00",
+     "txnDate": "2026-11-07T17:21:58+05:30",
+     "valueDate": "2026-11-07",
+     "narration": "BIGTREE ENTERTAINMENT MUMBAI IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e297040c-5367-5b41-b492-13e3e3216b6a",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "289.00",
+     "txnDate": "2026-11-07T23:28:45+05:30",
+     "valueDate": "2026-11-07",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "f1d187af-c0bc-52ff-961a-6c4bc0503c69",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "215.00",
+     "txnDate": "2026-11-08T01:01:23+05:30",
+     "valueDate": "2026-11-08",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "c28fe77d-9798-5fb2-a094-1e224c16e9da",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "166.00",
+     "txnDate": "2026-11-12T21:20:44+05:30",
+     "valueDate": "2026-11-12",
+     "narration": "SWIGGY BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "466520e2-7db2-5e47-84c3-0a1a4fc27707",
+     "txnType": "DEBIT",
+     "mcc": 5814,
+     "amount": "182.00",
+     "txnDate": "2026-11-16T21:30:03+05:30",
+     "valueDate": "2026-11-16",
+     "narration": "ZOMATO LTD GURGAON IN",
+     "reference": ""
+    },
+    {
+     "txnId": "10e8f21d-d73e-5dbf-a39d-4316b44293e8",
+     "txnType": "DEBIT",
+     "mcc": 5411,
+     "amount": "435.00",
+     "txnDate": "2026-11-17T17:32:38+05:30",
+     "valueDate": "2026-11-17",
+     "narration": "INSTAMART BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "2d3fd68f-86b5-50fd-ae3c-80a21213638a",
+     "txnType": "DEBIT",
+     "mcc": 7832,
+     "amount": "150.00",
+     "txnDate": "2026-11-18T18:27:45+05:30",
+     "valueDate": "2026-11-18",
+     "narration": "PVR INOX LTD BENGALURU IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0ab0ed90-dfb4-5b23-a94d-8e3162b7bb3e",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "1710.67",
+     "txnDate": "2026-11-18T20:15:00+05:30",
+     "valueDate": "2026-11-18",
+     "narration": "FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "99718913-9de3-54f9-bf3d-b0ff6d872fb2",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "307.92",
+     "txnDate": "2026-11-18T20:15:01+05:30",
+     "valueDate": "2026-11-18",
+     "narration": "IGST ON FINANCE CHARGES",
+     "reference": ""
+    }
+   ]
+  }
+ }
+}

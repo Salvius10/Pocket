@@ -1,0 +1,148 @@
+{
+ "Account": {
+  "type": "deposit",
+  "maskedAccNumber": "XXXXXX4004",
+  "version": "1.1",
+  "linkedAccRef": "f7576289-32e8-5c01-8040-7b1ad6f5f9dd",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "VIKRAM MEHTA",
+      "dob": "1984-04-14",
+      "mobile": "XXXXXX9889",
+      "nominee": "REGISTERED",
+      "email": "vikram.670@example.com",
+      "pan": "XXXXX8352X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "currentBalance": "445744.98",
+   "currency": "INR",
+   "exchgeRate": "",
+   "balanceDateTime": "2026-11-19T23:59:59+05:30",
+   "type": "SAVINGS",
+   "branch": "ANDHERI WEST, MUMBAI",
+   "facility": "",
+   "ifscCode": "KKBK0004729",
+   "micrCode": "838022699",
+   "openingDate": "2018-04-17",
+   "currentODLimit": "0",
+   "drawingLimit": "0",
+   "status": "ACTIVE",
+   "Pending": {
+    "transactionType": "DEBIT",
+    "amount": "0.00"
+   }
+  },
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "14eb5b95-f194-57a1-bfee-8b185b499b9a",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "23.60",
+     "currentBalance": "139976.40",
+     "transactionTimestamp": "2025-12-25T03:37:43+05:30",
+     "valueDate": "2025-12-25",
+     "narration": "SMS ALERT CHARGES SMS CHGS OCT-DEC25",
+     "reference": ""
+    },
+    {
+     "txnId": "c38ed160-2b39-5259-926f-0f9bf2104b0e",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "643.41",
+     "currentBalance": "140619.81",
+     "transactionTimestamp": "2025-12-31T23:30:00+05:30",
+     "valueDate": "2025-12-31",
+     "narration": "Int.Pd:XX4004:01-10-2025-31-12-2025",
+     "reference": ""
+    },
+    {
+     "txnId": "0f9eaff0-8fb4-512f-8aaf-beeb52313f87",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "23.60",
+     "currentBalance": "140596.21",
+     "transactionTimestamp": "2026-03-23T01:26:10+05:30",
+     "valueDate": "2026-03-23",
+     "narration": "SMS ALERT CHARGES SMS CHGS JAN-MAR26",
+     "reference": ""
+    },
+    {
+     "txnId": "a1336754-a45e-5374-8371-3826515aeb4e",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "953.50",
+     "currentBalance": "141549.71",
+     "transactionTimestamp": "2026-03-31T23:30:00+05:30",
+     "valueDate": "2026-03-31",
+     "narration": "Int.Pd:XX4004:01-01-2026-31-03-2026",
+     "reference": ""
+    },
+    {
+     "txnId": "4bcdb1a5-aade-57c0-9333-11b5abdd9b1f",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "300000.00",
+     "currentBalance": "441549.71",
+     "transactionTimestamp": "2026-06-22T17:53:25+05:30",
+     "valueDate": "2026-06-22",
+     "narration": "IMPS-617317049029-VIKRAM MEHTA-SELF",
+     "reference": "617317049029"
+    },
+    {
+     "txnId": "f00ecff7-ef19-53c5-b8ff-4a7e7b3f357a",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "23.60",
+     "currentBalance": "441526.11",
+     "transactionTimestamp": "2026-06-25T03:58:52+05:30",
+     "valueDate": "2026-06-25",
+     "narration": "SMS ALERT CHARGES SMS CHGS APR-JUN26",
+     "reference": ""
+    },
+    {
+     "txnId": "2f26b551-4af5-5d2b-81a4-2b651402de51",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "1173.90",
+     "currentBalance": "442700.01",
+     "transactionTimestamp": "2026-06-30T23:30:00+05:30",
+     "valueDate": "2026-06-30",
+     "narration": "Int.Pd:XX4004:01-04-2026-30-06-2026",
+     "reference": ""
+    },
+    {
+     "txnId": "fd1f49a1-4673-589e-8014-3571a616597c",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "23.60",
+     "currentBalance": "442676.41",
+     "transactionTimestamp": "2026-09-26T04:30:17+05:30",
+     "valueDate": "2026-09-26",
+     "narration": "SMS ALERT CHARGES SMS CHGS JUL-SEP26",
+     "reference": ""
+    },
+    {
+     "txnId": "fb613bee-f427-51ea-85f6-d091e590212b",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "3068.57",
+     "currentBalance": "445744.98",
+     "transactionTimestamp": "2026-09-30T23:30:00+05:30",
+     "valueDate": "2026-09-30",
+     "narration": "Int.Pd:XX4004:01-07-2026-30-09-2026",
+     "reference": ""
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,39 @@
+category_id,kind,default_class,name_en
+salary,income,income,Salary
+gig_payout,income,income,Gig payouts
+business_income,income,income,Business income
+allowance,income,income,Allowance
+interest_income,income,income,Interest
+other_income,income,income,Other income
+refund,refund,refund,Refund
+self_transfer,transfer,transfer,Own account transfer
+card_payment,transfer,transfer,Card bill payment
+group_settlement,transfer,transfer,Group settle-up
+investment,saving,saving,Investments
+rent,expense,committed,Rent
+emi,expense,committed,EMI
+utilities,expense,flexible,Electricity & utilities
+mobile_internet,expense,flexible,Mobile & internet
+insurance,expense,committed,Insurance
+education,expense,flexible,Education & fees
+subscriptions,expense,flexible,Subscriptions
+groceries,expense,flexible,Groceries
+food_delivery,expense,flexible,Food delivery
+eating_out,expense,flexible,Eating out
+transport,expense,flexible,Travel & cabs
+fuel,expense,flexible,Fuel
+shopping,expense,flexible,Shopping
+entertainment,expense,flexible,Entertainment
+health,expense,flexible,Health
+personal_care,expense,flexible,Personal care
+home_services,expense,flexible,Home services
+travel,expense,flexible,Trips
+family_support,expense,flexible,Family support
+gifts_donations,expense,flexible,Gifts & donations
+fees_charges,expense,flexible,Bank fees & charges
+card_interest,expense,flexible,Card interest
+cash_withdrawal,expense,flexible,Cash withdrawal
+business_supplies,expense,flexible,Business supplies
+business_expenses,expense,flexible,Business expenses
+other_expense,expense,flexible,Other
+uncategorised,expense,flexible,Uncategorised

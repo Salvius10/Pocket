@@ -1,0 +1,36 @@
+user_id,kind,name,scheme_code,units,invested_paise,sip_amount_paise,sip_day,folio_masked,platform,fd_principal_paise,fd_rate_bps,fd_start_date,fd_maturity_date,gold_grams,balance_paise,balance_as_of,booked_by,latest_nav,latest_nav_date,value_at_latest_nav_paise
+914b3ba0-dff9-566f-919d-c3b66de91b72,mutual_fund,UTI Nifty 50 Index Fund - Direct Plan - Growth,120716,266.28,4800000,300000,10,XXXX205/43,BSE StAR MF,,,,,,,,,179.7634,2026-11-19,4786740
+914b3ba0-dff9-566f-919d-c3b66de91b72,mutual_fund,Parag Parikh Flexi Cap Fund - Direct Plan - Growth,122639,375.741,3500000,200000,15,XXXX413/12,NSE NMF II,,,,,,,,,94.1452,2026-11-18,3537421
+ef24f3be-39c4-58ad-9f99-4207acb7e427,mutual_fund,HDFC Flexi Cap Fund - Direct Plan - Growth Option,118955,105.8,20500000,500000,5,XXXX163/48,BSE StAR MF,,,,,,,,,2366.216,2026-11-18,25034565
+ef24f3be-39c4-58ad-9f99-4207acb7e427,mutual_fund,SBI Large Cap Fund - Direct Plan - Growth,119598,1063.2,11100000,300000,10,XXXX387/45,BSE StAR MF,,,,,,,,,108.517,2026-11-19,11537527
+ef24f3be-39c4-58ad-9f99-4207acb7e427,fd,HDFC Bank Fixed Deposit,,,,,,,,1000000,650,2025-11-06,2026-11-06,,,,sweep,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,fd,HDFC Bank Fixed Deposit,,,,,,,,2000000,650,2026-01-06,2027-01-06,,,,sweep,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,fd,HDFC Bank Fixed Deposit,,,,,,,,1500000,725,2026-04-06,2027-04-06,,,,sweep,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,fd,HDFC Bank Fixed Deposit,,,,,,,,1500000,675,2026-05-06,2027-05-06,,,,sweep,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,fd,HDFC Bank Fixed Deposit,,,,,,,,1000000,710,2026-06-06,2027-06-06,,,,sweep,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,fd,HDFC Bank Fixed Deposit,,,,,,,,1500000,675,2026-09-06,2027-09-06,,,,sweep,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,fd,HDFC Bank Fixed Deposit,,,,,,,,1500000,650,2026-10-06,2027-10-06,,,,sweep,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,fd,SBI Fixed Deposit,,,,,,,,20000000,710,2025-03-18,2028-03-18,,,,user,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,gold,Sovereign Gold Bond 2021-22 Series VI,,,,,,,,,,,,20.0,,,,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,ppf,PPF (SBI),,,,,,,,,,,,,48500000,2026-03-31,,,,
+ef24f3be-39c4-58ad-9f99-4207acb7e427,epf,EPF (EPFO),,,,,,,,,,,,,68000000,2026-03-31,,,,
+455ffda9-e220-5bd1-a832-ecdfe243caad,gold,Sovereign Gold Bond 2020-21 Series XII,,,,,,,,,,,,25.0,,,,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,mutual_fund,UTI Nifty 50 Index Fund - Direct Plan - Growth,120716,3363.835,55000000,1000000,5,XXXX625/50,BSE StAR MF,,,,,,,,,179.7634,2026-11-19,60469442
+6ba019b9-c89e-5c70-88e2-68900c9763cd,mutual_fund,HDFC Flexi Cap Fund - Direct Plan - Growth Option,118955,347.98,64000000,1000000,10,XXXX075/47,BSE StAR MF,,,,,,,,,2366.216,2026-11-18,82339584
+6ba019b9-c89e-5c70-88e2-68900c9763cd,mutual_fund,HDFC Mid Cap Fund - Direct Plan - Growth Option,118989,2044.386,40400000,800000,15,XXXX431/97,BSE StAR MF,,,,,,,,,228.631,2026-11-18,46741002
+6ba019b9-c89e-5c70-88e2-68900c9763cd,mutual_fund,Nippon India Small Cap Fund - Direct Plan - Growth Option,118778,1384.71,34400000,700000,20,XXXX895/15,BSE StAR MF,,,,,,,,,201.5371,2026-11-18,27907044
+6ba019b9-c89e-5c70-88e2-68900c9763cd,mutual_fund,Mirae Asset ELSS Tax Saver Fund - Direct Plan - Growth,135781,4995.82,24000000,500000,25,XXXX910/41,BSE StAR MF,,,,,,,,,58.243,2026-11-18,29097154
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,9500000,725,2026-02-06,2027-02-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,5500000,725,2026-03-06,2027-03-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,6500000,710,2026-04-06,2027-04-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,5000000,725,2026-05-06,2027-05-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,10000000,675,2026-06-06,2027-06-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,11500000,650,2026-07-06,2027-07-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,5500000,700,2026-08-06,2027-08-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,6000000,675,2026-09-06,2027-09-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,11000000,710,2026-10-06,2027-10-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,7000000,700,2026-11-06,2027-11-06,,,,sweep,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,fd,HDFC Bank Fixed Deposit,,,,,,,,50000000,725,2025-12-10,2027-12-10,,,,user,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,gold,Sovereign Gold Bond 2019-20 Series IX,,,,,,,,,,,,50.0,,,,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,ppf,PPF (HDFC Bank),,,,,,,,,,,,,118000000,2026-03-31,,,,
+6ba019b9-c89e-5c70-88e2-68900c9763cd,epf,EPF (EPFO),,,,,,,,,,,,,186000000,2026-03-31,,,,

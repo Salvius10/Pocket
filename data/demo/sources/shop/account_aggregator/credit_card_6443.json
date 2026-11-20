@@ -1,0 +1,728 @@
+{
+ "Account": {
+  "type": "credit_card",
+  "maskedCardNumber": "XXXXXXXXXXXX6443",
+  "version": "1.1",
+  "linkedAccRef": "dca3838a-53d6-5360-bfe7-2142c6dd8a35",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "SUNITA AGARWAL",
+      "dob": "1981-10-21",
+      "mobile": "XXXXXX1536",
+      "nominee": "REGISTERED",
+      "email": "sunita.166@example.com",
+      "pan": "XXXXX1105X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "issuerName": "HDFC Bank",
+   "cardType": "VISA",
+   "primary": "YES",
+   "creditLimit": "200000.00",
+   "cashLimit": "40000.00",
+   "availableCredit": "65293.91",
+   "currentDue": "134706.09",
+   "lastStatementDate": "2026-11-02",
+   "dueDate": "2026-11-22",
+   "totalDueAmount": "116814.09",
+   "minDueAmount": "5841.00",
+   "previousDueAmount": "33069.60",
+   "financeCharges": "1847.09",
+   "loyaltyPoints": "3662",
+   "annualInterestRatePercent": "42.00"
+  },
+  "Statements": [
+   {
+    "statement_date": "2025-11-02",
+    "due_date": "2025-11-22",
+    "total_due_paise": 1800000,
+    "min_due_paise": 90000,
+    "paid_paise": 1800000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2025-12-02",
+    "due_date": "2025-12-22",
+    "total_due_paise": 2019400,
+    "min_due_paise": 101000,
+    "paid_paise": 2019400,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-01-02",
+    "due_date": "2026-01-22",
+    "total_due_paise": 205300,
+    "min_due_paise": 20000,
+    "paid_paise": 205300,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-02-02",
+    "due_date": "2026-02-22",
+    "total_due_paise": 1111200,
+    "min_due_paise": 55600,
+    "paid_paise": 1111200,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-03-02",
+    "due_date": "2026-03-22",
+    "total_due_paise": 2441900,
+    "min_due_paise": 122100,
+    "paid_paise": 2441900,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-04-02",
+    "due_date": "2026-04-22",
+    "total_due_paise": 1415800,
+    "min_due_paise": 70800,
+    "paid_paise": 1415800,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-05-02",
+    "due_date": "2026-05-22",
+    "total_due_paise": 1114900,
+    "min_due_paise": 55700,
+    "paid_paise": 1114900,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-06-02",
+    "due_date": "2026-06-22",
+    "total_due_paise": 1122900,
+    "min_due_paise": 56100,
+    "paid_paise": 1122900,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-07-02",
+    "due_date": "2026-07-22",
+    "total_due_paise": 1358500,
+    "min_due_paise": 67900,
+    "paid_paise": 1358500,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-08-02",
+    "due_date": "2026-08-22",
+    "total_due_paise": 1100000,
+    "min_due_paise": 55000,
+    "paid_paise": 1100000,
+    "finance_charges_paise": 0
+   },
+   {
+    "statement_date": "2026-09-02",
+    "due_date": "2026-09-22",
+    "total_due_paise": 1665400,
+    "min_due_paise": 83300,
+    "paid_paise": 170000,
+    "finance_charges_paise": 0,
+    "revolving_after_due_paise": 1495400,
+    "finance_charges_next_paise": 61760
+   },
+   {
+    "statement_date": "2026-10-02",
+    "due_date": "2026-10-22",
+    "total_due_paise": 3306960,
+    "min_due_paise": 165300,
+    "paid_paise": 330000,
+    "finance_charges_paise": 61760,
+    "revolving_after_due_paise": 2976960,
+    "finance_charges_next_paise": 122949
+   },
+   {
+    "statement_date": "2026-11-02",
+    "due_date": "2026-11-22",
+    "total_due_paise": 11681409,
+    "min_due_paise": 584100,
+    "paid_paise": 1170000,
+    "finance_charges_paise": 122949,
+    "revolving_after_due_paise": 10511409
+   }
+  ],
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "a91a74d6-b9e4-5b82-b3d5-35364d8b3ef2",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "2306.00",
+     "txnDate": "2025-11-06T10:06:59+05:30",
+     "valueDate": "2025-11-06",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "43b2fbc2-a62a-55c1-b187-92d8ea5f154d",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "5023.00",
+     "txnDate": "2025-11-14T15:59:39+05:30",
+     "valueDate": "2025-11-14",
+     "narration": "FABINDIA LTD JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "fe9e3bf0-9084-53fd-ae8d-ee6c594d1395",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1033.00",
+     "txnDate": "2025-11-15T15:32:19+05:30",
+     "valueDate": "2025-11-15",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "879e7e31-ef37-5db8-907b-c745c132ad33",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "18000.00",
+     "txnDate": "2025-11-19T22:59:56+05:30",
+     "valueDate": "2025-11-19",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "532319508085"
+    },
+    {
+     "txnId": "d62cbe38-7546-5a10-aec1-aa623643b7cd",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "11832.00",
+     "txnDate": "2025-11-30T19:34:14+05:30",
+     "valueDate": "2025-11-30",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "cac973e2-76c1-5be7-869f-11436ef49ee5",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "761.00",
+     "txnDate": "2025-12-03T14:14:07+05:30",
+     "valueDate": "2025-12-03",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d50f3b27-eac2-50cc-bb72-343ba042f72a",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "323.00",
+     "txnDate": "2025-12-06T13:53:02+05:30",
+     "valueDate": "2025-12-06",
+     "narration": "RELIANCE RETAIL TRENDS JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "1a8d066a-8d67-5297-80bd-ff3970771032",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "20194.00",
+     "txnDate": "2025-12-20T20:18:03+05:30",
+     "valueDate": "2025-12-20",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "535419872356"
+    },
+    {
+     "txnId": "f2c33d8c-985b-5e36-be87-6d117de05cc8",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "969.00",
+     "txnDate": "2025-12-31T11:24:05+05:30",
+     "valueDate": "2025-12-31",
+     "narration": "RELIANCE RETAIL AJIO JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "554c73ed-3e17-5da8-addc-efbd3643840a",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "11112.00",
+     "txnDate": "2026-01-19T12:53:15+05:30",
+     "valueDate": "2026-01-19",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "10fc3928-8141-53fd-b260-e486ec50b757",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "2053.00",
+     "txnDate": "2026-01-21T22:15:06+05:30",
+     "valueDate": "2026-01-21",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "602121143962"
+    },
+    {
+     "txnId": "6315830e-d582-5321-8756-dc262b511153",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "5501.00",
+     "txnDate": "2026-02-06T11:47:49+05:30",
+     "valueDate": "2026-02-06",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "a2b4bc5a-f9ff-5f88-9e0f-80bd7238e4fa",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "13589.00",
+     "txnDate": "2026-02-07T15:59:41+05:30",
+     "valueDate": "2026-02-07",
+     "narration": "RELIANCE RETAIL AJIO JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d28ab385-d8a3-591c-99df-eeab09d05d0b",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "5329.00",
+     "txnDate": "2026-02-13T14:04:59+05:30",
+     "valueDate": "2026-02-13",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "8e32ef0e-7e64-53bb-89a0-b2fb493e251b",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "11112.00",
+     "txnDate": "2026-02-20T23:54:24+05:30",
+     "valueDate": "2026-02-20",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "605121988151"
+    },
+    {
+     "txnId": "04bfd9a3-66ba-52d0-a2cb-d08c42d588b0",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "10277.00",
+     "txnDate": "2026-03-07T19:14:57+05:30",
+     "valueDate": "2026-03-07",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "20076c0d-a79b-54cf-b766-926e90da7393",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "3131.00",
+     "txnDate": "2026-03-07T20:49:30+05:30",
+     "valueDate": "2026-03-07",
+     "narration": "TRENT LTD WESTSIDE JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "cb55fd8a-f7ba-5322-b74b-f41df936fecf",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "24419.00",
+     "txnDate": "2026-03-18T18:54:17+05:30",
+     "valueDate": "2026-03-18",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "607716129024"
+    },
+    {
+     "txnId": "b57e01cf-f559-5011-9e41-9b9f5b9debe9",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "750.00",
+     "txnDate": "2026-03-29T18:58:56+05:30",
+     "valueDate": "2026-03-29",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "bab9b6e7-14bf-513b-b415-addc78bb190c",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "2539.00",
+     "txnDate": "2026-04-16T15:57:41+05:30",
+     "valueDate": "2026-04-16",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "7d67dd85-3f93-560b-9ed5-0203dcbe982d",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "7819.00",
+     "txnDate": "2026-04-17T10:00:11+05:30",
+     "valueDate": "2026-04-17",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0fdbf47f-c46e-57b6-a1fd-22c61cf14cf8",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "14158.00",
+     "txnDate": "2026-04-17T20:06:00+05:30",
+     "valueDate": "2026-04-17",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "610717326142"
+    },
+    {
+     "txnId": "b0ea6448-aca4-5dd4-aaf2-e70269660fae",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "2309.00",
+     "txnDate": "2026-04-19T13:39:48+05:30",
+     "valueDate": "2026-04-19",
+     "narration": "LIFESTYLE INTERNATIONA JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0114f74e-5628-547d-a9eb-ec354c836691",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "1518.00",
+     "txnDate": "2026-04-21T17:39:48+05:30",
+     "valueDate": "2026-04-21",
+     "narration": "REFUND LIFESTYLE INTERNATIONA",
+     "reference": ""
+    },
+    {
+     "txnId": "edf3c5d3-562c-5fdc-b4aa-fc6bb9c8d963",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "11229.00",
+     "txnDate": "2026-05-08T19:50:26+05:30",
+     "valueDate": "2026-05-08",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "368c8464-c244-51a3-9f6b-5ad7a4e9d304",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "11149.00",
+     "txnDate": "2026-05-19T22:02:57+05:30",
+     "valueDate": "2026-05-19",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "613918976925"
+    },
+    {
+     "txnId": "adb3ba33-64a0-5790-96bc-08166ce4810f",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "6932.00",
+     "txnDate": "2026-06-11T12:35:22+05:30",
+     "valueDate": "2026-06-11",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e39da8af-3b3f-5f72-807c-50af85e5cf54",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1247.00",
+     "txnDate": "2026-06-12T12:46:40+05:30",
+     "valueDate": "2026-06-12",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d78915a0-4026-5acc-972b-3a72d00f794e",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "11229.00",
+     "txnDate": "2026-06-17T00:12:07+05:30",
+     "valueDate": "2026-06-17",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "616721875780"
+    },
+    {
+     "txnId": "db3ada1e-40b1-5fe7-8793-a37af061420b",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1685.00",
+     "txnDate": "2026-06-18T20:53:45+05:30",
+     "valueDate": "2026-06-18",
+     "narration": "RELIANCE RETAIL TRENDS JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "042de2eb-ab0b-59ce-86af-a2ade73b41fd",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "3721.00",
+     "txnDate": "2026-06-28T19:23:26+05:30",
+     "valueDate": "2026-06-28",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "3089ee4d-1339-5556-9a0f-b8b9c2a70733",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "6797.00",
+     "txnDate": "2026-07-17T13:37:16+05:30",
+     "valueDate": "2026-07-17",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0e5346e0-6f4a-5962-bfe5-805add76891c",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "13585.00",
+     "txnDate": "2026-07-20T19:32:26+05:30",
+     "valueDate": "2026-07-20",
+     "narration": "CC PAYMENT RECEIVED NETBANKING",
+     "reference": "620116005331"
+    },
+    {
+     "txnId": "e1a281d8-688f-5fd4-82e1-9b8ff8baf74f",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "4203.00",
+     "txnDate": "2026-07-26T11:39:17+05:30",
+     "valueDate": "2026-07-26",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "0fbb5da8-759f-5ea8-937b-84c923385d11",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "11000.00",
+     "txnDate": "2026-08-20T22:15:43+05:30",
+     "valueDate": "2026-08-20",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "623220184583"
+    },
+    {
+     "txnId": "8ed7a815-a42c-57f2-9789-2620645ce533",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "11997.00",
+     "txnDate": "2026-08-23T20:33:35+05:30",
+     "valueDate": "2026-08-23",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "6e390712-89b6-52d6-a5da-03a5ae7ff34a",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "2444.00",
+     "txnDate": "2026-08-29T09:45:49+05:30",
+     "valueDate": "2026-08-29",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "e91531c7-78aa-534d-8c0a-f0c6977f1b77",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "2213.00",
+     "txnDate": "2026-09-02T19:34:29+05:30",
+     "valueDate": "2026-09-02",
+     "narration": "FLIPKART BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "5e722792-ed86-5a15-bcdb-b418e1cc4bab",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "11655.00",
+     "txnDate": "2026-09-18T19:35:18+05:30",
+     "valueDate": "2026-09-18",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "34019e8c-c7ca-5d82-927b-6653de3e3f03",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "1700.00",
+     "txnDate": "2026-09-19T18:06:10+05:30",
+     "valueDate": "2026-09-19",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "626217223448"
+    },
+    {
+     "txnId": "a93658bc-c9ec-5728-968b-6c04cdef9c75",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1097.00",
+     "txnDate": "2026-09-27T20:02:47+05:30",
+     "valueDate": "2026-09-27",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "61ab1a3c-02aa-5317-91a1-f5dbf57f5ee7",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "4746.00",
+     "txnDate": "2026-10-02T13:57:26+05:30",
+     "valueDate": "2026-10-02",
+     "narration": "LENSKART SOLUTIONS JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "5022b385-5ef2-5c15-9cf6-99f75b81ff93",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "523.39",
+     "txnDate": "2026-10-02T20:15:00+05:30",
+     "valueDate": "2026-10-02",
+     "narration": "FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "23411820-8a2b-583c-8f41-de27da95ec0b",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "94.21",
+     "txnDate": "2026-10-02T20:15:01+05:30",
+     "valueDate": "2026-10-02",
+     "narration": "IGST ON FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "7e08185b-3327-530e-adc0-b9470109637e",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "10964.00",
+     "txnDate": "2026-10-10T20:44:24+05:30",
+     "valueDate": "2026-10-10",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "362cab54-0fcc-5007-b652-4cf0d8ef2b30",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "1806.00",
+     "txnDate": "2026-10-11T17:59:49+05:30",
+     "valueDate": "2026-10-11",
+     "narration": "AMAZON PAY INDIA PVT L BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b1b9df0b-666f-5809-84d8-47b7c14c1de3",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "2262.00",
+     "txnDate": "2026-10-17T19:48:38+05:30",
+     "valueDate": "2026-10-17",
+     "narration": "FLIPKART INTERNET PVT BANGALORE IN",
+     "reference": ""
+    },
+    {
+     "txnId": "143e49d1-87ec-5466-acc8-c49069fa7dc4",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "940.00",
+     "txnDate": "2026-10-18T11:54:31+05:30",
+     "valueDate": "2026-10-18",
+     "narration": "LENSKART SOLUTIONS JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "d8066258-f5ba-5ad0-a0b0-43a2eb2cdc70",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "3300.00",
+     "txnDate": "2026-10-18T20:38:27+05:30",
+     "valueDate": "2026-10-18",
+     "narration": "PAYMENT RECEIVED - THANK YOU",
+     "reference": "629119563702"
+    },
+    {
+     "txnId": "1d1675c0-f5c7-5df9-9827-cbc87440477a",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "42800.00",
+     "txnDate": "2026-10-24T20:58:44+05:30",
+     "valueDate": "2026-10-24",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "b720f9a8-ea73-5dc3-bebb-f5a190d96130",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "26450.00",
+     "txnDate": "2026-10-28T19:51:03+05:30",
+     "valueDate": "2026-10-28",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "6ac91e09-87af-5331-bdc8-a2dfffcd4194",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "593.00",
+     "txnDate": "2026-10-29T16:14:55+05:30",
+     "valueDate": "2026-10-29",
+     "narration": "BATA INDIA LTD JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "57d37ef2-167f-5329-9c22-26ff54b1faa6",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "1041.94",
+     "txnDate": "2026-11-02T20:15:00+05:30",
+     "valueDate": "2026-11-02",
+     "narration": "FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "9ffdfc67-5009-59b3-a2bb-c57c2bab518d",
+     "txnType": "DEBIT",
+     "mcc": null,
+     "amount": "187.55",
+     "txnDate": "2026-11-02T20:15:01+05:30",
+     "valueDate": "2026-11-02",
+     "narration": "IGST ON FINANCE CHARGES",
+     "reference": ""
+    },
+    {
+     "txnId": "02e20177-fed7-5d0f-93e4-d08143d4cbe4",
+     "txnType": "DEBIT",
+     "mcc": 5300,
+     "amount": "8092.00",
+     "txnDate": "2026-11-04T20:51:09+05:30",
+     "valueDate": "2026-11-04",
+     "narration": "METRO CASH AND CARRY I JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "8893d6ee-8da3-54bc-9833-aea5796cd3d8",
+     "txnType": "DEBIT",
+     "mcc": 5311,
+     "amount": "21500.00",
+     "txnDate": "2026-11-05T12:48:39+05:30",
+     "valueDate": "2026-11-05",
+     "narration": "TITAN COMPANY TANISHQ JAIPUR IN",
+     "reference": ""
+    },
+    {
+     "txnId": "bb0681b3-c562-5dea-ad2c-45aafa66ce59",
+     "txnType": "CREDIT",
+     "mcc": null,
+     "amount": "11700.00",
+     "txnDate": "2026-11-19T23:59:59+05:30",
+     "valueDate": "2026-11-19",
+     "narration": "BBPS PAYMENT RECEIVED",
+     "reference": "632320931789"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "Account": {
+  "type": "deposit",
+  "maskedAccNumber": "XXXXXXX8564",
+  "version": "1.1",
+  "linkedAccRef": "714630d7-884b-5cab-9830-ef9d891d1cd0",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "RAHUL KUMAR",
+      "dob": "1997-07-27",
+      "mobile": "XXXXXX6747",
+      "nominee": "REGISTERED",
+      "email": "rahul.472@example.com",
+      "pan": "XXXXX5561X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "currentBalance": "66428.19",
+   "currency": "INR",
+   "exchgeRate": "",
+   "balanceDateTime": "2026-11-19T23:59:59+05:30",
+   "type": "SAVINGS",
+   "branch": "LAXMI NAGAR, DELHI",
+   "facility": "",
+   "ifscCode": "SBIN0000509",
+   "micrCode": "968409038",
+   "openingDate": "2015-06-14",
+   "currentODLimit": "0",
+   "drawingLimit": "0",
+   "status": "ACTIVE",
+   "Pending": {
+    "transactionType": "DEBIT",
+    "amount": "0.00"
+   }
+  },
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "46a09a5a-1c0f-53c7-a3db-50886340dbc6",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "64982.30",
+     "transactionTimestamp": "2025-12-24T03:54:32+05:30",
+     "valueDate": "2025-12-24",
+     "narration": "SMS ALERT CHARGES SMS CHGS OCT-DEC25--",
+     "reference": ""
+    },
+    {
+     "txnId": "0f803ec9-ef11-5029-807c-fbd5886b65a7",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "271.57",
+     "currentBalance": "65253.87",
+     "transactionTimestamp": "2025-12-31T23:30:00+05:30",
+     "valueDate": "2025-12-31",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "865beff9-e1ca-5b72-b8e8-b179f53ddb83",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "65236.17",
+     "transactionTimestamp": "2026-03-20T01:00:00+05:30",
+     "valueDate": "2026-03-20",
+     "narration": "SMS ALERT CHARGES SMS CHGS JAN-MAR26--",
+     "reference": ""
+    },
+    {
+     "txnId": "8cd1ad64-d6d7-577e-bfa6-2802b0dba7d0",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "402.24",
+     "currentBalance": "65638.41",
+     "transactionTimestamp": "2026-03-31T23:30:00+05:30",
+     "valueDate": "2026-03-31",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "0ed0262e-ca25-5689-aa8a-7a6bf1adf1c4",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "65620.71",
+     "transactionTimestamp": "2026-06-26T04:03:13+05:30",
+     "valueDate": "2026-06-26",
+     "narration": "SMS ALERT CHARGES SMS CHGS APR-JUN26--",
+     "reference": ""
+    },
+    {
+     "txnId": "ddbf576d-b418-5919-ba39-a22f7de03590",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "409.11",
+     "currentBalance": "66029.82",
+     "transactionTimestamp": "2026-06-30T23:30:00+05:30",
+     "valueDate": "2026-06-30",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "db80f524-6a73-5075-9dd5-511dec7dc1f1",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "66012.12",
+     "transactionTimestamp": "2026-09-21T04:59:55+05:30",
+     "valueDate": "2026-09-21",
+     "narration": "SMS ALERT CHARGES SMS CHGS JUL-SEP26--",
+     "reference": ""
+    },
+    {
+     "txnId": "b194aa9a-a779-5f16-94b2-eb36f296cba0",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "416.07",
+     "currentBalance": "66428.19",
+     "transactionTimestamp": "2026-09-30T23:30:00+05:30",
+     "valueDate": "2026-09-30",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    }
+   ]
+  }
+ }
+}

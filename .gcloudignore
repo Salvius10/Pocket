@@ -1,0 +1,23 @@
+# What `gcloud builds submit` uploads. Secrets and anything the images do not need stay here.
+.git
+.gitignore
+.venv
+.env
+.env.*
+!.env.example
+.local
+infra/demo.env
+apps
+docs
+evals
+data/eval
+data/demo/sources
+data/demo/groups.json
+data/*.sql
+**/__pycache__
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+.hypothesis
+*.db
+*.log

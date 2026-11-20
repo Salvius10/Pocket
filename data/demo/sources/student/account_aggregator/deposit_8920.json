@@ -1,0 +1,148 @@
+{
+ "Account": {
+  "type": "deposit",
+  "maskedAccNumber": "XXXXXXX8920",
+  "version": "1.1",
+  "linkedAccRef": "2c0df21c-d434-5631-8b60-99f9dec667df",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "KARTHIK RAMASAMY",
+      "dob": "2006-03-04",
+      "mobile": "XXXXXX1916",
+      "nominee": "REGISTERED",
+      "email": "karthik.147@example.com",
+      "pan": "XXXXX9159X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "currentBalance": "47815.92",
+   "currency": "INR",
+   "exchgeRate": "",
+   "balanceDateTime": "2026-11-19T23:59:59+05:30",
+   "type": "SAVINGS",
+   "branch": "VELACHERY, CHENNAI",
+   "facility": "",
+   "ifscCode": "SBIN0009239",
+   "micrCode": "822035284",
+   "openingDate": "2023-06-10",
+   "currentODLimit": "0",
+   "drawingLimit": "0",
+   "status": "ACTIVE",
+   "Pending": {
+    "transactionType": "DEBIT",
+    "amount": "0.00"
+   }
+  },
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "e336f3aa-75f3-5ef1-9eae-961a016d6844",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "5582.30",
+     "transactionTimestamp": "2025-12-24T05:35:32+05:30",
+     "valueDate": "2025-12-24",
+     "narration": "SMS ALERT CHARGES SMS CHGS OCT-DEC25--",
+     "reference": ""
+    },
+    {
+     "txnId": "fce94256-d256-5b8a-b62a-2a4f4945c52b",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "23.39",
+     "currentBalance": "5605.69",
+     "transactionTimestamp": "2025-12-31T23:30:00+05:30",
+     "valueDate": "2025-12-31",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "69836b80-5f4c-5dd8-8e2f-c9932311e097",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "5587.99",
+     "transactionTimestamp": "2026-03-21T03:08:15+05:30",
+     "valueDate": "2026-03-21",
+     "narration": "SMS ALERT CHARGES SMS CHGS JAN-MAR26--",
+     "reference": ""
+    },
+    {
+     "txnId": "be858330-09df-51a1-bf19-3dc90c6c7293",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "34.54",
+     "currentBalance": "5622.53",
+     "transactionTimestamp": "2026-03-31T23:30:00+05:30",
+     "valueDate": "2026-03-31",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "2efd96e8-5bde-5561-822b-ca57257a7f62",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "5604.83",
+     "transactionTimestamp": "2026-06-27T01:05:26+05:30",
+     "valueDate": "2026-06-27",
+     "narration": "SMS ALERT CHARGES SMS CHGS APR-JUN26--",
+     "reference": ""
+    },
+    {
+     "txnId": "1a989723-0607-5bdb-8bbb-31fea666ee8e",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "35.04",
+     "currentBalance": "5639.87",
+     "transactionTimestamp": "2026-06-30T23:30:00+05:30",
+     "valueDate": "2026-06-30",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "8b62691c-393a-598b-bcf7-333b6ec66b48",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "42000.00",
+     "currentBalance": "47639.87",
+     "transactionTimestamp": "2026-08-07T17:41:34+05:30",
+     "valueDate": "2026-08-07",
+     "narration": "BY TRANSFER-NEFT*ICIC0000911*SBINN26219004947*PFMS POST MATRIC--",
+     "reference": "SBINN26219004947"
+    },
+    {
+     "txnId": "d92d0d3f-f8bf-5e9d-a6c7-4adec3a5177d",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "47622.17",
+     "transactionTimestamp": "2026-09-27T01:14:51+05:30",
+     "valueDate": "2026-09-27",
+     "narration": "SMS ALERT CHARGES SMS CHGS JUL-SEP26--",
+     "reference": ""
+    },
+    {
+     "txnId": "1e07496d-9140-578f-b6fb-94aff42fd0e1",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "193.75",
+     "currentBalance": "47815.92",
+     "transactionTimestamp": "2026-09-30T23:30:00+05:30",
+     "valueDate": "2026-09-30",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    }
+   ]
+  }
+ }
+}

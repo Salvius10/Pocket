@@ -1,0 +1,324 @@
+{
+ "Account": {
+  "type": "deposit",
+  "maskedAccNumber": "XXXXXXX2924",
+  "version": "1.1",
+  "linkedAccRef": "43b80f60-b45f-5450-a649-dcb911e51215",
+  "Profile": {
+   "Holders": {
+    "type": "SINGLE",
+    "Holder": [
+     {
+      "name": "ANANYA SRINIVASAN",
+      "dob": "2002-07-20",
+      "mobile": "XXXXXX7695",
+      "nominee": "REGISTERED",
+      "email": "ananya.540@example.com",
+      "pan": "XXXXX5843X",
+      "ckycCompliance": true
+     }
+    ]
+   }
+  },
+  "Summary": {
+   "currentBalance": "8139.12",
+   "currency": "INR",
+   "exchgeRate": "",
+   "balanceDateTime": "2026-11-19T23:59:59+05:30",
+   "type": "SAVINGS",
+   "branch": "HSR LAYOUT, BENGALURU",
+   "facility": "",
+   "ifscCode": "SBIN0007639",
+   "micrCode": "443659101",
+   "openingDate": "2019-09-02",
+   "currentODLimit": "0",
+   "drawingLimit": "0",
+   "status": "ACTIVE",
+   "Pending": {
+    "transactionType": "DEBIT",
+    "amount": "0.00"
+   }
+  },
+  "Transactions": {
+   "startDate": "2025-11-01",
+   "endDate": "2026-11-19",
+   "Transaction": [
+    {
+     "txnId": "e8ab65c8-4916-5823-a1db-89c8d996853d",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "5300.00",
+     "transactionTimestamp": "2025-11-02T17:11:22+05:30",
+     "valueDate": "2025-11-02",
+     "narration": "BY TRANSFER-IMPS/P2A/530617639666/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "530617639666"
+    },
+    {
+     "txnId": "f93fa43a-f145-5cfc-94a6-2206672224dd",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "6300.00",
+     "transactionTimestamp": "2025-12-02T20:35:07+05:30",
+     "valueDate": "2025-12-02",
+     "narration": "BY TRANSFER-IMPS/P2A/533620488975/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "533620488975"
+    },
+    {
+     "txnId": "6ad9b527-c60a-56f5-85f1-313a27027cd8",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "6282.30",
+     "transactionTimestamp": "2025-12-23T03:49:07+05:30",
+     "valueDate": "2025-12-23",
+     "narration": "SMS ALERT CHARGES SMS CHGS OCT-DEC25--",
+     "reference": ""
+    },
+    {
+     "txnId": "3b048804-da9f-5963-af4f-a6880f9ee28d",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "24.12",
+     "currentBalance": "6306.42",
+     "transactionTimestamp": "2025-12-31T23:30:00+05:30",
+     "valueDate": "2025-12-31",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "f28c5ff2-7832-57b3-bea0-42924265b1f9",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "7306.42",
+     "transactionTimestamp": "2026-01-02T22:41:38+05:30",
+     "valueDate": "2026-01-02",
+     "narration": "BY TRANSFER-IMPS/P2A/600222932306/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "600222932306"
+    },
+    {
+     "txnId": "d43b6ff5-416b-546a-9318-e0ed5ee380f3",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "2312.00",
+     "currentBalance": "4994.42",
+     "transactionTimestamp": "2026-01-20T04:29:01+05:30",
+     "valueDate": "2026-01-20",
+     "narration": "DEBIT-ACHDr 049820778272 LIFE INSURANCE CORPO",
+     "reference": "UMRN8710049820778272"
+    },
+    {
+     "txnId": "9ce84943-9604-550b-9016-bdd44328bc4e",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "5994.42",
+     "transactionTimestamp": "2026-02-02T22:53:02+05:30",
+     "valueDate": "2026-02-02",
+     "narration": "BY TRANSFER-IMPS/P2A/603322618757/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "603322618757"
+    },
+    {
+     "txnId": "580ecaa7-5870-5895-9cc5-a1a68211eaa7",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "6994.42",
+     "transactionTimestamp": "2026-03-02T18:30:49+05:30",
+     "valueDate": "2026-03-02",
+     "narration": "BY TRANSFER-IMPS/P2A/606118831144/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "606118831144"
+    },
+    {
+     "txnId": "a2dc9093-fa5b-58a9-9c57-71573d9d9366",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "6976.72",
+     "transactionTimestamp": "2026-03-20T03:25:56+05:30",
+     "valueDate": "2026-03-20",
+     "narration": "SMS ALERT CHARGES SMS CHGS JAN-MAR26--",
+     "reference": ""
+    },
+    {
+     "txnId": "59bebccd-f64b-59b6-b1b9-f974531eb44f",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "39.74",
+     "currentBalance": "7016.46",
+     "transactionTimestamp": "2026-03-31T23:30:00+05:30",
+     "valueDate": "2026-03-31",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "89b792ef-db4a-5817-905a-35f2908e7c71",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "8016.46",
+     "transactionTimestamp": "2026-04-02T17:55:18+05:30",
+     "valueDate": "2026-04-02",
+     "narration": "BY TRANSFER-IMPS/P2A/609217057528/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "609217057528"
+    },
+    {
+     "txnId": "2beea70f-892d-5a5a-ae4e-0b2e1d2b87a4",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "2312.00",
+     "currentBalance": "5704.46",
+     "transactionTimestamp": "2026-04-20T04:17:01+05:30",
+     "valueDate": "2026-04-20",
+     "narration": "DEBIT-ACHDr 082360471628 LIFE INSURANCE CORPO",
+     "reference": "UMRN9867082360471628"
+    },
+    {
+     "txnId": "6ad7fea0-cbc7-59cd-af4c-ee3f460d91b9",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "6704.46",
+     "transactionTimestamp": "2026-05-02T21:35:19+05:30",
+     "valueDate": "2026-05-02",
+     "narration": "BY TRANSFER-IMPS/P2A/612221371724/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "612221371724"
+    },
+    {
+     "txnId": "482fe241-8e14-5abe-910a-2b37fa2aa8c7",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "7704.46",
+     "transactionTimestamp": "2026-06-02T20:59:42+05:30",
+     "valueDate": "2026-06-02",
+     "narration": "BY TRANSFER-IMPS/P2A/615320908096/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "615320908096"
+    },
+    {
+     "txnId": "93a90ff5-8d41-5bd0-9b31-3a3cdd4f630e",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "7686.76",
+     "transactionTimestamp": "2026-06-23T04:16:37+05:30",
+     "valueDate": "2026-06-23",
+     "narration": "SMS ALERT CHARGES SMS CHGS APR-JUN26--",
+     "reference": ""
+    },
+    {
+     "txnId": "52498b03-4adc-51c0-9f89-62f1631751d0",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "44.58",
+     "currentBalance": "7731.34",
+     "transactionTimestamp": "2026-06-30T23:30:00+05:30",
+     "valueDate": "2026-06-30",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "12e731d1-4e43-53b0-8119-c0b173aa2c59",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "8731.34",
+     "transactionTimestamp": "2026-07-02T18:04:45+05:30",
+     "valueDate": "2026-07-02",
+     "narration": "BY TRANSFER-IMPS/P2A/618318127571/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "618318127571"
+    },
+    {
+     "txnId": "b4d39115-e687-546e-82ab-9e70d84c90d0",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "2312.00",
+     "currentBalance": "6419.34",
+     "transactionTimestamp": "2026-07-20T01:00:48+05:30",
+     "valueDate": "2026-07-20",
+     "narration": "DEBIT-ACHDr 707162302104 LIFE INSURANCE CORPO",
+     "reference": "UMRN8911707162302104"
+    },
+    {
+     "txnId": "e033b894-15a3-5278-a5af-269ec1a11e59",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "7419.34",
+     "transactionTimestamp": "2026-08-02T22:00:13+05:30",
+     "valueDate": "2026-08-02",
+     "narration": "BY TRANSFER-IMPS/P2A/621421143652/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "621421143652"
+    },
+    {
+     "txnId": "65af069b-dbe1-58c6-a413-15b524d03828",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "8419.34",
+     "transactionTimestamp": "2026-09-02T17:16:54+05:30",
+     "valueDate": "2026-09-02",
+     "narration": "BY TRANSFER-IMPS/P2A/624517355455/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "624517355455"
+    },
+    {
+     "txnId": "78549334-4c53-53d7-92a8-8091731ae251",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "17.70",
+     "currentBalance": "8401.64",
+     "transactionTimestamp": "2026-09-25T05:26:58+05:30",
+     "valueDate": "2026-09-25",
+     "narration": "SMS ALERT CHARGES SMS CHGS JUL-SEP26--",
+     "reference": ""
+    },
+    {
+     "txnId": "0f13585f-c336-5e15-8769-0b761fce3af7",
+     "type": "CREDIT",
+     "mode": "OTHERS",
+     "amount": "49.48",
+     "currentBalance": "8451.12",
+     "transactionTimestamp": "2026-09-30T23:30:00+05:30",
+     "valueDate": "2026-09-30",
+     "narration": "CREDIT INTEREST--",
+     "reference": ""
+    },
+    {
+     "txnId": "8916d1e9-9235-53d5-9ec8-0d2c0c92a415",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "9451.12",
+     "transactionTimestamp": "2026-10-02T16:50:07+05:30",
+     "valueDate": "2026-10-02",
+     "narration": "BY TRANSFER-IMPS/P2A/627516278666/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "627516278666"
+    },
+    {
+     "txnId": "cf14444c-a6b3-5e42-97f9-f3130d17c748",
+     "type": "DEBIT",
+     "mode": "OTHERS",
+     "amount": "2312.00",
+     "currentBalance": "7139.12",
+     "transactionTimestamp": "2026-10-21T03:53:53+05:30",
+     "valueDate": "2026-10-21",
+     "narration": "DEBIT-ACHDr 259526832013 LIFE INSURANCE CORPO",
+     "reference": "UMRN3263259526832013"
+    },
+    {
+     "txnId": "c842702f-8a21-540f-92b2-026d2807b111",
+     "type": "CREDIT",
+     "mode": "FT",
+     "amount": "1000.00",
+     "currentBalance": "8139.12",
+     "transactionTimestamp": "2026-11-02T20:47:07+05:30",
+     "valueDate": "2026-11-02",
+     "narration": "BY TRANSFER-IMPS/P2A/630620227271/ANANYA SRINIVASAN/SBIN/SELF--",
+     "reference": "630620227271"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,8 @@
+bank_code,name,ifsc_prefix,sms_sender_codes,card_sms_sender_codes,savings_rate_bps_approx,account_number_length
+HDFC,HDFC Bank,HDFC0,HDFCBK,HDFCBK,275,14
+SBI,State Bank of India,SBIN0,SBIUPI|SBIINB|CBSSBI|ATMSBI,SBICRD,250,11
+ICICI,ICICI Bank,ICIC0,ICICIT|ICICIB,ICICIT,275,12
+AXIS,Axis Bank,UTIB0,AXISBK,AXISBK,300,15
+KOTAK,Kotak Mahindra Bank,KKBK0,KOTAKB,KOTAKB,275,10
+CANARA,Canara Bank,CNRB0,CANBNK,CANBNK,275,13
+BOB,Bank of Baroda,BARB0,BOBTXN|BOBSMS,BOBCRD,275,14

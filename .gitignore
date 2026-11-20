@@ -1,0 +1,53 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.key.json
+service-account*.json
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+*.egg-info/
+dist/
+
+# local runtime
+.local/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.log
+
+# large evaluation data: unzip pocket-synthetic-data-eval.zip into data/eval (see data/README.md)
+data/eval/
+
+# flutter
+apps/mobile/.dart_tool/
+apps/mobile/build/
+apps/mobile/.flutter-plugins
+apps/mobile/.flutter-plugins-dependencies
+apps/mobile/android/.gradle/
+apps/mobile/android/local.properties
+apps/mobile/android/app/google-services.json
+apps/mobile/**/GeneratedPluginRegistrant.*
+apps/mobile/.idea/
+*.iml
+
+# firebase
+.firebase/
+firebase-debug.log
+
+# os / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# deploy config with real values
+infra/demo.env
