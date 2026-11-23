@@ -53,6 +53,7 @@ def require_internal(x_internal_token: Annotated[str | None, Header()] = None) -
         raise HTTPException(403, "internal endpoint")
 
 
+@app.get("/health")  # Cloud Run keeps /healthz for itself and answers 404 without reaching the service
 @app.get("/healthz")
 async def healthz() -> dict[str, str]:
     return {"status": "ok", "service": "agent", "mode": get_settings().gemini_mode}

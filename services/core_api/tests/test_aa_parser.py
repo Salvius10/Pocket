@@ -46,6 +46,10 @@ NARRATIONS: list[tuple[str, str, str, tuple[str, str | None, str | None]]] = [
     ("TRF TO FD NO 82328820746", "OTHERS", "debit", ("other", "FD 82328820746", None)),
     ("TD CLOSURE PROCEEDS 32018061067", "OTHERS", "credit", ("other", "FD CLOSURE PROCEEDS", None)),
     ("TO TRANSFER-INB BILLDESK CC 3757--", "OTHERS", "debit", ("other", "BILLDESK", None)),
+    ("IB/BILLPAY/BILLDESK/4382", "OTHERS", "debit", ("other", "BILLDESK", None)),
+    ("BIL/INFT/IB7731450921/PPF ACCOUNT TRANSFER", "OTHERS", "debit", ("other", "PPF ACCOUNT TRANSFER", None)),
+    ("IB KENDRIYA VIDYALAYA SCH IB2117885748", "OTHERS", "debit", ("other", "KENDRIYA VIDYALAYA SCH", None)),
+    ("TRF TO FD 61212698040", "OTHERS", "debit", ("other", "FD 61212698040", None)),
 ]
 
 
@@ -75,6 +79,10 @@ def test_reversals_and_own_account_transfers_are_marked() -> None:
     _, name, _, reversal, own = read_narration("IMPS-530617639666-ANANYA SRINIVASAN-XXXXXXXX2924-SELF", reference="530617639666",
                                                aa_mode="FT", direction="debit", on_card=False)
     assert (name, reversal, own) == ("ANANYA SRINIVASAN", False, True)
+    # the bank moving money to a bare account number, no payee named: the customer's own deposit
+    _, name, _, reversal, own = read_narration("TO TRANSFER-TRANSFER TO 84081400132--", reference=None, aa_mode="OTHERS",
+                                               direction="debit", on_card=False)
+    assert (name, reversal, own) == ("A/C 84081400132", False, True)
 
 
 def test_a_deposit_statement() -> None:

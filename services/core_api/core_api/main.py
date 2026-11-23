@@ -17,7 +17,7 @@ from core_api import models as m
 from core_api.api import internal, public
 from core_api.config import get_settings
 from core_api.db import dispose_engine, get_engine, get_sessionmaker
-from core_api.seed.loader import seed_reference
+from core_api.seed.loader import check_ledger_source, seed_reference
 
 
 class JsonFormatter(logging.Formatter):
@@ -44,6 +44,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     if settings.env != "local" and settings.auth_mode == "dev":
         raise RuntimeError("AUTH_MODE=dev is for local only")
+    check_ledger_source()
     engine = get_engine()
     if engine.url.get_backend_name() == "sqlite":
         # Zero-setup fallback: no migrations to run, so create the schema directly.
@@ -62,6 +63,7 @@ app.include_router(public.router)
 app.include_router(internal.router)
 
 
+@app.get("/health")  # Cloud Run keeps /healthz for itself and answers 404 without reaching the service
 @app.get("/healthz")
 async def healthz() -> dict[str, str]:
     return {"status": "ok", "service": "core-api"}

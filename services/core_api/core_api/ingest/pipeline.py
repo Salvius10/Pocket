@@ -14,6 +14,7 @@ it reverses.
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
 from datetime import datetime
 from typing import Any
@@ -47,27 +48,86 @@ def _norm(text: str) -> str:
     return " ".join(text.upper().split())
 
 
-def match_merchant(merchants: dict[str, m.Merchant], counterparty: str | None, vpa: str | None) -> m.Merchant | None:
-    """The merchant behind an SMS: by VPA, then by name or alias, then by a name the bank cut short."""
-    if vpa:
-        for x in merchants.values():
-            if x.vpa_pattern and x.vpa_pattern.lower() == vpa.lower():
-                return x
-    if not counterparty:
-        return None
-    want = _norm(counterparty)
-    names: dict[str, m.Merchant] = {}
-    for x in merchants.values():
-        for name in (x.name, x.narration_name, *(x.aliases or "").split("|")):
-            if name.strip():
-                names.setdefault(_norm(name), x)
-    if want in names:
-        return names[want]
-    if len(want) >= 6:  # banks cut long names ("LIFE INSURANCE CORPORATIO"): accept one unambiguous prefix match
-        hits = {x.key: x for name, x in names.items() if name.startswith(want) or (len(name) >= 6 and want.startswith(name))}
-        if len(hits) == 1:
-            return next(iter(hits.values()))
-    return None
+PAYOUT_CATEGORIES = frozenset({"salary", "gig_payout", "business_income", "allowance", "interest_income", "other_income"})
+_MIN_NAME = 6  # shorter than this, a name is only matched whole
+_MIN_CUT = 16  # banks cut names at about 20 characters: anything shorter was not cut, so it is not matched as the start of a longer name
+
+
+class MerchantIndex:
+    """Finds the merchant behind a payment: by VPA, then by name or alias, then by a name the bank cut short.
+
+    Built once and asked many times (the feed loader asks for every statement row)."""
+
+    def __init__(self, merchants: Iterable[m.Merchant]) -> None:
+        self.by_vpa: dict[str, m.Merchant] = {}
+        self.by_name: dict[str, m.Merchant] = {}
+        for x in merchants:
+            if x.vpa_pattern:
+                self.by_vpa.setdefault(x.vpa_pattern.lower(), x)
+            for name in (x.name, x.narration_name, *(x.aliases or "").split("|")):
+                if name.strip():
+                    self.by_name.setdefault(_norm(name), x)
+        self._by_part: dict[tuple[str, bool | None], m.Merchant | None] = {}
+
+    def find(self, counterparty: str | None, vpa: str | None, direction: str | None = None, mode: str | None = None) -> m.Merchant | None:
+        """`direction` and `mode` settle a cut-short name that a company and its payout account share
+        ("ROPPEN TRANSPORTATIO"): money going out is to the company; money coming in by bank transfer
+        is a payout; money coming back by UPI or card is a refund from the company."""
+        if vpa and vpa.lower() in self.by_vpa:
+            return self.by_vpa[vpa.lower()]
+        if not counterparty:
+            return None
+        want = _norm(counterparty)
+        if want in self.by_name:
+            return self.by_name[want]
+        if len(want) < _MIN_NAME:
+            return None
+        pays_out: bool | None = None
+        if direction == "debit":
+            pays_out = False
+        elif direction == "credit" and mode:
+            pays_out = mode in ("imps", "neft")
+        key = (want, pays_out)
+        if key not in self._by_part:
+            self._by_part[key] = self._by_part_of_name(want, pays_out)
+        return self._by_part[key]
+
+    def _starting_with(self, text: str, pays_out: bool | None) -> m.Merchant | None:
+        """The one merchant with a name that starts with `text`. When two do, `pays_out` picks between
+        a company and its payout account. None when there is no single answer."""
+        hits = {x.key: x for name, x in self.by_name.items() if name.startswith(text)}
+        if len(hits) > 1 and pays_out is not None:
+            hits = {key: x for key, x in hits.items() if (x.category_id in PAYOUT_CATEGORIES) == pays_out}
+        return next(iter(hits.values())) if len(hits) == 1 else None
+
+    def _by_part_of_name(self, want: str, pays_out: bool | None) -> m.Merchant | None:
+        if len(want) >= _MIN_CUT:
+            # 1. the bank cut the name short ("LIFE INSURANCE CORPORATIO")
+            hit = self._starting_with(want, pays_out)
+            if hit is not None:
+                return hit
+            # 2. cut short with a remark after it ("ZOMATO LTD DELIVERY PA WEEKLY PAYOUT"): drop words from the end
+            words = want.split()
+            for n in range(len(words) - 1, 0, -1):
+                shorter = " ".join(words[:n])
+                if len(shorter) < _MIN_CUT:
+                    break
+                hit = self._starting_with(shorter, pays_out)
+                if hit is not None:
+                    return hit
+        # 3. the whole name with something after it ("SWIGGY BANGALORE"): the longest name that fits, if only one merchant has it
+        fits = [(len(name), x) for name, x in self.by_name.items() if len(name) >= _MIN_NAME and want.startswith(name)]
+        if not fits:
+            return None
+        longest = max(length for length, _ in fits)
+        best = {x.key: x for length, x in fits if length == longest}
+        return next(iter(best.values())) if len(best) == 1 else None
+
+
+def match_merchant(merchants: dict[str, m.Merchant], counterparty: str | None, vpa: str | None,
+                   direction: str | None = None, mode: str | None = None) -> m.Merchant | None:
+    """The merchant behind one SMS (see `MerchantIndex`)."""
+    return MerchantIndex(merchants.values()).find(counterparty, vpa, direction, mode)
 
 
 def _find_account(ctx: Ctx, parsed: ParsedSms) -> m.Account | None:
@@ -131,7 +191,7 @@ async def ingest_sms(
             sms.parse_status, sms.transaction_id = "duplicate", old.id
             return Ingested("duplicate", sms, parsed, old)
 
-    merchant = match_merchant(merchants, parsed.counterparty, parsed.vpa)
+    merchant = match_merchant(merchants, parsed.counterparty, parsed.vpa, parsed.kind, parsed.mode)
     before = _from_history(ctx, parsed)
     is_reversal = parsed.kind == "credit" and "revers" in body.lower()
     item = next((r for r in ctx.recurring if before is not None and r.id == before.recurring_item_id and r.status == "active"), None)

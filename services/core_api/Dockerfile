@@ -14,9 +14,11 @@ RUN mkdir -p packages/pocket_synth/pocket_synth services/agent/agent \
  && touch packages/pocket_synth/pocket_synth/__init__.py services/agent/agent/__init__.py \
  && uv sync --frozen --no-dev --package core-api
 
-# Only what the app reads at runtime: reference tables, the six demo personas, layout content.
+# Only what the app reads at runtime: reference tables, the six demo personas (their set-up in db/,
+# their account statements and bank SMS in sources/, which the loader parses), layout content.
 COPY data/reference data/reference
 COPY data/demo/db data/demo/db
+COPY data/demo/sources data/demo/sources
 COPY data/content data/content
 
 ENV PATH="/app/.venv/bin:$PATH" ENV=demo PORT=8080

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:dio/dio.dart';
@@ -65,6 +66,23 @@ class AuthService {
   Future<Map<String, String>> headers() async {
     final t = await token();
     return t != null ? {'Authorization': 'Bearer $t'} : {'X-Dev-User': devUser};
+  }
+}
+
+/// Deployed servers sleep when idle and take a few seconds to start. Knock on both as the app opens,
+/// so they are up by the time the first real request goes out. The answer is not used.
+void wakeServers() {
+  final dio = Dio(BaseOptions(connectTimeout: const Duration(seconds: 8), receiveTimeout: const Duration(seconds: 40)));
+  for (final base in {Env.apiBase, Env.agentBase}) {
+    unawaited(_knock(dio, base));
+  }
+}
+
+Future<void> _knock(Dio dio, String base) async {
+  try {
+    await dio.get<dynamic>('$base/health');
+  } on DioException {
+    // Nothing to do here: the first real request reports its own error.
   }
 }
 

@@ -5,7 +5,7 @@ from datetime import UTC, datetime
 
 import pytest
 from core_api import models as m
-from core_api.config import IST
+from core_api.config import IST, get_settings
 from core_api.demo import sms_wording
 from core_api.demo.inject import inject
 from core_api.ingest.pipeline import ingest_sms, match_merchant
@@ -134,10 +134,28 @@ async def test_salary_preset_is_income_not_spending(session: AsyncSession) -> No
     assert (result.transaction.direction, result.transaction.spend_class, result.transaction.amount_paise) == ("credit", "income", 25_000_00)
 
 
+async def test_linking_through_the_feed_gives_the_figures_of_the_shipped_ledger(session: AsyncSession, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Persona link runs the statements and SMS through the parsers and the loader (the default).
+    The ready-made ledger is still there as a setting, and both must show the same money."""
+    assert get_settings().ledger_source == "feed"
+    user = await linked(session, "family")
+    ctx = await load_ctx(session, user)
+    by_feed = (len(ctx.txns), summary.sts_calc(ctx), sum(a.balance_paise for a in ctx.accounts))
+    assert all(t.source == "aa" for t in ctx.txns) and by_feed[0] == 995
+
+    monkeypatch.setattr(get_settings(), "ledger_source", "processed")
+    await loader.link_persona(session, user, "family")
+    await session.commit()
+    clear_caches()
+    ctx = await load_ctx(session, user)
+    assert (len(ctx.txns), summary.sts_calc(ctx), sum(a.balance_paise for a in ctx.accounts)) == by_feed
+
+
 # ---------- loader invariants (BUILD_PLAN M2) ----------
-def test_transfer_pairs_are_symmetric_and_failed_payments_are_excluded() -> None:
+@pytest.mark.parametrize("source", loader.LEDGER_SOURCES)
+def test_transfer_pairs_are_symmetric_and_failed_payments_are_excluded(source: str) -> None:
     pairs = failed = 0
-    for _, ctx in Dataset("demo").contexts():
+    for _, ctx in Dataset("demo", source).contexts():
         for t in ctx.txns:
             if t.status != "success":
                 failed += 1

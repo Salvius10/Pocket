@@ -1,0 +1,9 @@
+# Builds the web page image from the folder infra/deploy.ps1 stages (Dockerfile, nginx.conf, web/).
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "${_IMAGE}", "."]
+images: ["${_IMAGE}"]
+substitutions:
+  _IMAGE: ""
+options:
+  logging: CLOUD_LOGGING_ONLY

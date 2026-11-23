@@ -52,7 +52,9 @@ Owners: **B** = Backend, **A** = AI, **M** = Mobile. One agent can do all three;
 
 **Done when:**
 - [x] `make eval-parsers`: ≥ 95% of synthetic SMS fully correct, run on held-out template variants **(Gate 4)** — 99.98% on 20 Nov 2026 (see DECISIONS_LOG for the method)
-- [x] Loader invariants are tested: transfer pairs are symmetric, and failed transactions are excluded
+- [x] Loader invariants are tested: transfer pairs are symmetric, and failed transactions are excluded (on the feed-loaded ledger and on the shipped one)
+
+As built (20 Nov 2026): persona link loads through the parsers and `ingest/feed.py`. The loader matches merchants, assigns categories, pairs own-account transfers, links reversals, refunds and group payments, and sets the budget month and spend class. It **links** recurring items from a list it is given (the dataset's `recurring_items`, which the dataset marks as a label); it does not detect them. `make eval-loader` on 206 users: with that list every money figure matches the dataset's ledger and category agrees on 93.9% of rows; without it (`--without-bills`) category is 91.1% and the committed / flexible split matches for no user. There is no gate for the loader; details are in `DECISIONS_LOG.md`.
 
 ## M3 — Ledger and money maths (B)
 
@@ -75,7 +77,7 @@ Owners: **B** = Backend, **A** = AI, **M** = Mobile. One agent can do all three;
 - Ranking: severity first, then money impact. Titles and bodies come from i18n templates, never from the LLM.
 
 **Done when:**
-- [x] `make eval-insights`: recall ≥ 0.90 and precision ≥ 0.80 on the six planted types **(Gate 1)** — recall 1.000, precision 0.996 on 206 users, 20 Nov 2026
+- [x] `make eval-insights`: recall ≥ 0.90 and precision ≥ 0.80 on the six planted types **(Gate 1)** — recall 1.000, precision 0.996 on 206 users, 20 Nov 2026, on the dataset's processed ledger (which carries label columns); recall 0.958, precision 0.994 on a ledger built from the bank feed with no label given to the loader
 
 ## M5 — App shell and fixed screens (M) — *parallel with M3–M4 once M2 is done*
 

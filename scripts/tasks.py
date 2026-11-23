@@ -203,7 +203,8 @@ def eval_target(name: str) -> None:
 TARGETS = {
     "setup": setup, "dev": dev, "migrate": migrate, "seed-demo": seed_demo, "funds": funds, "sms-variants": sms_variants,
     "lint": lint, "typecheck": typecheck, "test": test, "l10n": l10n, "app": app, "web": web, "apk": apk, "serve-web": serve_web,
-    "eval-parsers": lambda: eval_target("eval_parsers"), "eval-insights": lambda: eval_target("eval_insights"),
+    "eval-parsers": lambda: eval_target("eval_parsers"), "eval-loader": lambda: eval_target("eval_loader"),
+    "eval-insights": lambda: eval_target("eval_insights"),
     "eval-composer": lambda: eval_target("eval_composer"), "eval-chats": lambda: eval_target("eval_chats"),
 }
 

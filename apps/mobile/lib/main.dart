@@ -8,6 +8,7 @@ import 'core/state.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  wakeServers();
   final prefs = await SharedPreferences.getInstance();
   final auth = AuthService(prefs);
   await auth.init();

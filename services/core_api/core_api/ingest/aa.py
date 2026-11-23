@@ -73,10 +73,11 @@ _VPA = re.compile(r"(?<![A-Za-z0-9._\-])([A-Za-z0-9][A-Za-z0-9._\-]*@[A-Za-z][A-
 _SEPARATORS = re.compile(r"\s*[/*]\s*|\s*-+\s*")
 _CHANNEL_WORDS = re.compile(
     r"^(?:TO TRANSFER|BY TRANSFER|TRANSFER|UPI(?: REV)?|IMPS|NEFT(?: DR| CR)?|RTGS|DR|CR|P2A|P2M|REV|INB|DEBIT|CREDIT|ACH(?: ?DR?)?|N?ACH|"
-    r"NETBANKING TRF|IB BILLPAY DR|ATM(?: WDL| CASH)?|CASH(?: WDL)?|WDL|NWD|ATL|MMT|SELF|AUTOPAY|PAYMENT|SENT|MANDATE REG|BBPS BILLPAY)$",
+    r"NETBANKING TRF|IB BILLPAY DR|ATM(?: WDL| CASH)?|CASH(?: WDL)?|WDL|NWD|ATL|MMT|SELF|AUTOPAY|PAYMENT|SENT|MANDATE REG|BBPS BILLPAY|"
+    r"BIL|INFT|IB|TPFT|BILLPAY)$",
     re.I,
 )
-_LEADING_WORDS = re.compile(r"^(?:(?:N?ACH ?D[Rr]?|ACHDr|NEFT(?: CR| DR)?|IMPS|RTGS|INB|ATM CASH|ATM WDL|ATM)\s+)+", re.I)
+_LEADING_WORDS = re.compile(r"^(?:(?:N?ACH ?D[Rr]?|ACHDr|NEFT(?: CR| DR)?|IMPS|RTGS|INB|IB|ATM CASH|ATM WDL|ATM)\s+)+", re.I)
 _CARD_TAIL = re.compile(r"\s+CC\s+X*\d+$|(?:\s+\d+)+$", re.I)  # "BILLDESK CC 3757", "BAJAJ FINANCE LTD 441905966095"
 _TWO_WORD_CITY = ("NEW", "NAVI", "GREATER")
 _BANK_CODE = re.compile(r"^[A-Z]{4}0[A-Z0-9]{6}$|^(?:SBIN|HDFC|ICIC|UTIB|KKBK|BARB|CNRB|YESB|PUNB|IDIB|IOBA|UBIN|IDFB|INDB|FDRL|AIRP|PYTM|CITI|HSBC|SCBL|MAHB|BKID|UCBA|RATN|AUBL|KVBL|TMBL|CSBK|DBSS|JAKA|ESFB|UTKS)$")
@@ -157,9 +158,12 @@ def read_narration(narration: str, *, reference: str | None, aa_mode: str | None
         return "cash", "CASH DEPOSIT", None, False, False
     if re.search(r"\bINT(?:EREST)?\b|INT\.PD", upper) and direction == "credit":
         return "interest", "INTEREST", None, False, False
-    fd = re.match(r"(?:TRF TO FD NO|FD BOOKED|TO FD)\s+(\d+)", upper)
+    fd = re.match(r"(?:TRF TO FD(?: NO)?|FD BOOKED|TO FD)\s+(\d+)", upper)
     if fd:
         return "other", f"FD {fd.group(1)}", None, False, False
+    own = re.fullmatch(r"(?:TO TRANSFER-)?TRANSFER TO (\d{6,})-*", upper)
+    if own:  # the bank moving money to an account number with no payee named: the customer's own deposit
+        return "other", f"A/C {own.group(1)}", None, False, True
     if upper.startswith("TD CLOSURE"):
         return "other", "FD CLOSURE PROCEEDS", None, False, False
 

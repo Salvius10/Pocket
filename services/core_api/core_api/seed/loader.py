@@ -10,7 +10,7 @@ from __future__ import annotations
 import csv
 import json
 from collections import defaultdict
-from collections.abc import Callable
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
@@ -24,10 +24,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from core_api import models as m
 from core_api.config import IST, get_settings, today_ist
+from core_api.ingest.feed import GroupLinks, Row, SettlementLink, load_feed
+from core_api.ingest.pipeline import MerchantIndex
+from core_api.ingest.sms import parse_sms
 from core_api.ledger.classify import RECURRING_KIND_MAP, SALARY_CATEGORIES, next_due_date, spend_class
 from core_api.ledger.mathx import budget_month_for
 
 PERSONAS = ("student", "first_job", "family", "gig", "shop", "investor")
+LEDGER_SOURCES = ("processed", "feed")
 # `profile_facts.source` for what the user said to the mascot themselves (the persona's own lines are "onboarding").
 TOLD_BY_USER = "mascot"
 
@@ -202,11 +206,109 @@ class UserRows:
     my_groups: list[dict[str, str | None]]
 
 
-def build_user_rows(data: DemoData, src_uid: str, user_id: str, today: date, nid: Callable[[str | None], str | None]) -> UserRows:
+def feed_statements(data: DemoData, persona_id: str) -> list[dict[str, Any]]:
+    """A demo persona's account statements, as the Account Aggregator would return them."""
+    folder = data.db_dir.parent / "sources" / persona_id / "account_aggregator"
+    return [json.loads(path.read_text(encoding="utf-8")) for path in sorted(folder.glob("*.json"))]
+
+
+def group_links(data: DemoData, src_uid: str) -> GroupLinks:
+    """What the user's own groups say about their bank rows: which payment an expense was split
+    from, and which settle-ups they marked as paid."""
+    expenses: dict[str, tuple[str, str, str | None]] = {}
+    settlements: list[SettlementLink] = []
+    for g in data.groups:
+        gdata = data.by_group[str(g["group_id"])]
+        names = {mm["member_id"]: str(mm["display_name"] or "") for mm in gdata["group_members"]}
+        me = next((mm["member_id"] for mm in gdata["group_members"] if mm["user_id"] == src_uid), None)
+        if me is None:  # not one of this user's groups
+            continue
+        for e in gdata["group_expenses"]:
+            if e["linked_transaction_id"] and e["paid_by_member_id"] == me and not _b(e["is_deleted"]):
+                expenses[str(e["linked_transaction_id"])] = (str(e["expense_id"]), str(g["group_id"]), e["category_id"])
+        for s in gdata["settlements"]:
+            if s["status"] not in ("marked_paid", "confirmed") or me not in (s["from_member_id"], s["to_member_id"]):
+                continue
+            paid_by_me = s["from_member_id"] == me
+            settlements.append(SettlementLink(
+                settlement_id=str(s["settlement_id"]), group_id=str(g["group_id"]), amount_paise=_i(s["amount_paise"]) or 0,
+                direction="debit" if paid_by_me else "credit",
+                other_name=names.get(s["to_member_id"] if paid_by_me else s["from_member_id"], ""),
+                at=_ts(s["marked_paid_at"]) or _ts(s["created_at"]),
+            ))
+    return GroupLinks(expenses, settlements)
+
+
+def feed_sms(data: DemoData, persona_id: str) -> list[dict[str, Any]]:
+    """A demo persona's bank SMS for the same period: `{sender_id, body, received_at, ...}` per message."""
+    path = data.db_dir.parent / "sources" / persona_id / "sms.jsonl"
+    with path.open(encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+def feed_transactions(data: DemoData, src_uid: str, statements: list[dict[str, Any]], merchants: MerchantIndex,
+                      sms: Iterable[dict[str, Any]] = (), *, given_bills: bool = True) -> list[Row]:
+    """Dataset user `src_uid`'s transactions worked out from their account statements and bank SMS
+    (`ingest/feed.py`), in the shape of `transactions.csv`. Besides the feed, the loader is given the
+    user's set-up: accounts, groups, how they earn, and their list of recurring items.
+
+    The dataset marks `recurring_items` (and `accounts.role`, which it refers to) as labels: it is
+    what a recurring detector should find. The app has no such detector and loads the list as the
+    user's bills, so the loader is given it too. `given_bills=False` withholds it, to measure what
+    the loader does from the feed alone."""
+    rows = data.by_user[src_uid]
+    user = next(u for u in data.all_users if u["user_id"] == src_uid)
+    known = {str(a["masked_number"])[-4:] for a in rows["accounts"] if a["masked_number"]}
+    parsed = (parse_sms(str(s["sender_id"]), str(s["body"]), datetime.fromisoformat(str(s["received_at"])), known) for s in sms)
+    return load_feed(
+        statements, accounts=rows["accounts"], recurring=rows["recurring_items"] if given_bills else [], merchants=merchants,
+        categories=data.category_map, owner_name=str(user["display_name"] or ""), income_pattern=user["income_pattern"],
+        city=user["city"], links=group_links(data, src_uid), sms=parsed,
+    )
+
+
+@lru_cache
+def demo_merchant_index() -> MerchantIndex:
+    return MerchantIndex(merchant_models(demo_data()))
+
+
+def ledger_source() -> str:
+    """The configured source of a persona's transactions. An unknown value fails loudly."""
+    source = get_settings().ledger_source
+    if source not in LEDGER_SOURCES:
+        raise ValueError(f"LEDGER_SOURCE must be one of {LEDGER_SOURCES}, not {source!r}")
+    return source
+
+
+def check_ledger_source() -> None:
+    """Called at start-up: with the feed as the source, every persona's statements and SMS must be on disk.
+    Failing here stops a deploy that left them out, instead of failing when someone links a persona."""
+    if ledger_source() != "feed":
+        return
+    data = demo_data()
+    for persona_id in PERSONAS:
+        folder = data.db_dir.parent / "sources" / persona_id
+        if not any((folder / "account_aggregator").glob("*.json")) or not (folder / "sms.jsonl").exists():
+            raise RuntimeError(f"LEDGER_SOURCE=feed but {folder} has no account statements or SMS. "
+                               "Ship data/demo/sources, or set LEDGER_SOURCE=processed.")
+
+
+@lru_cache(maxsize=len(PERSONAS))
+def persona_feed_rows(persona_id: str) -> tuple[Row, ...]:
+    """A persona's transactions from their statements and SMS. The same for everyone who links that
+    persona (ids are remapped per user afterwards), so they are worked out once and kept."""
+    data = demo_data()
+    src_uid = str(data.users[persona_id]["user_id"])
+    return tuple(feed_transactions(data, src_uid, feed_statements(data, persona_id), demo_merchant_index(), feed_sms(data, persona_id)))
+
+
+def build_user_rows(data: DemoData, src_uid: str, user_id: str, today: date, nid: Callable[[str | None], str | None],
+                    txn_rows: list[Row] | None = None) -> UserRows:
     """Pure (no database): shape dataset user `src_uid`'s rows for app user `user_id`.
 
     `nid` maps dataset ids to this user's ids. Linking a persona remaps them with uuid5; the evals
-    pass an identity function so the ids still match the dataset's answer key."""
+    pass an identity function so the ids still match the dataset's answer key. `txn_rows` replaces
+    the dataset's processed transactions (the feed loader's rows, or one streamed user's)."""
     rows = data.by_user[src_uid]
     ns = UUID(user_id)
 
@@ -259,7 +361,7 @@ def build_user_rows(data: DemoData, src_uid: str, user_id: str, today: date, nid
     # --- transactions ---
     last_paid: dict[str, list[date]] = defaultdict(list)
     txns: list[dict[str, Any]] = []
-    for t in rows["transactions"]:
+    for t in rows["transactions"] if txn_rows is None else txn_rows:
         occurred = _ts(t["occurred_at"])
         assert occurred is not None
         local = occurred.astimezone(IST).date()
@@ -413,7 +515,8 @@ async def link_persona(session: AsyncSession, user: m.User, persona_id: str) -> 
     user.occupation = src_user["occupation"]
     user.data_version = (user.data_version or 0) + 1
 
-    built = build_user_rows(data, src_uid, user.id, today, nid)
+    txn_rows = list(persona_feed_rows(persona_id)) if ledger_source() == "feed" else None
+    built = build_user_rows(data, src_uid, user.id, today, nid, txn_rows)
     my_groups = built.my_groups
     # Their own words replace the persona's line for the same thing (what they save for, what worries them).
     told_keys = {row["key"] for row in told}

@@ -32,6 +32,9 @@ class Settings(BaseSettings):
     agent_url: str = "http://localhost:8081"
     pocket_today: str = ""
     data_dir: str = ""
+    # Where a linked persona's transactions come from: "feed" works them out from the account statements
+    # and bank SMS with the parsers and the loader; "processed" copies the dataset's ready-made ledger.
+    ledger_source: str = "feed"
     cors_origins: str = "*"
     gold_price_per_gram_paise: int = 0
     nifty_proxy_scheme_code: int = 120716  # UTI Nifty 50 Index Fund - Direct Growth
